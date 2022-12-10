@@ -1,0 +1,43 @@
+@import "../../scss/vars";
+
+.title {
+
+  @media screen and (max-width: 512px){
+    flex-wrap: wrap;
+  }
+
+  display: flex;
+  align-items: center;
+  margin-bottom: 48px;
+  &>h1 {
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: 32px;
+    position: relative;
+    margin-right: 15px;
+    &::before {
+      content: "#";
+      font-weight: 500;
+      color: $accentColor;
+      position: absolute;
+      top: 0;
+      left: 0px;
+    }
+  }
+  &__line {
+    min-width: 40px;
+    flex-grow: 1;
+    height: 1px;
+    background: $accentColor;
+  }
+  &__more {
+    a {
+      color: #FFFFFF;
+      margin-left: 10%;
+      white-space: nowrap;
+      span {
+        display: inline-block;
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@import "src/scss/vars";
+.welcomeBlock {
+  margin-bottom: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (max-width: 650px) {
+    flex-direction: column-reverse;
+  }
+  &__text {
+    width: calc(100% - 360px);
+    @media screen and (max-width: 800px) {
+      width: calc(100% - 40%);
+    }
+
+    @media screen and (max-width: 650px) {
+      width: 100%;
+    }
+    padding-top: 74px;
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+    align-items: start;
+
+    &>h1 {
+      margin-bottom: 32px;
+      font-weight: 600;
+      font-size: 32px;
+
+      @media screen and (max-width: 420px){
+        font-size: 25px;
+      }
+    }
+    &>p{
+      margin-bottom: 24px;
+      font-size: 16px;
+      font-weight: 400;
+      color: $textGrayColor;
+    }
+
+    &>button {
+      font-weight: 500;
+      color: #FFFFFF;
+      background-color: transparent;
+      border: 1px solid $accentColor;
+
+      &:hover {
+        background: rgba(199, 120, 221, 0.2);
+      }
+
+      @media screen and (max-width: 650px) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__photo {
+    width: 360px;
+    height: 360px;
+    max-width: 95%;
+    overflow: hidden;
+    border-radius: 50%;
+
+    @media screen and (max-width: 800px) {
+      width: 40%;
+      height: auto;
+    }
+    @media screen and (max-width: 650px) {
+      width: 80%;
+    }
+  }
+}

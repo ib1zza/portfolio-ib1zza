@@ -1,0 +1,52 @@
+@import "src/scss/vars";
+.skillsBlock {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  &__grid {
+    align-self: flex-end;
+    display: flex;
+    width: 60%;
+    min-width: 430px;
+
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+      min-width: 200px;
+      width: 100%;
+      .skill:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+    &>.col {
+      display: flex;
+      flex-direction: column;
+      &:not(:last-child) {
+        margin-right: 16px;
+
+        @media screen and (max-width: 500px) {
+          margin-right: 0;
+          margin-bottom: 16px;
+        }
+      }
+
+      &>.skill {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid $textGrayColor;
+        &:not(:last-child) {
+          margin-bottom: 16px;
+        }
+
+        &>* {
+          padding: 8px;
+        }
+
+        &>h4 {
+          border-bottom: 1px solid $textGrayColor;
+        }
+      }
+    }
+  }
+
+
+}

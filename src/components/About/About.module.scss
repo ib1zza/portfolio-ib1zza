@@ -1,0 +1,16 @@
+@import "src/scss/vars";
+
+
+.aboutBlock {
+  margin-top: 70px;
+  &__text {
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    &>p {
+      margin-bottom: 20px;
+    }
+  }
+}
+

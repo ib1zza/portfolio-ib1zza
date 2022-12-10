@@ -1,0 +1,68 @@
+@import "src/scss/vars";
+.footer {
+  margin-top: 130px;
+  width: 100%;
+  border-top: 1px solid $textGrayColor;
+
+  padding: 32px 0;
+  display: grid;
+  grid-template-areas: "logo media"
+    "copyright copyright";
+  justify-content: space-between;
+
+  &__logo {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    grid-area: logo;
+  }
+  &__media {
+    display: flex;
+    flex-direction: column;
+    grid-area: media;
+
+    &>h2 {
+      font-size: 24px;
+    }
+    &__links>a{
+
+      font-size: 30px;
+      color: $accentColor;
+
+      &:hover {
+        color: $accentLightColor;
+      }
+    }
+  }
+
+  &>span {
+    font-size: 16px;
+    padding-top: 48px;
+    display: block;
+    width: 100%;
+    grid-area: copyright;
+    text-align: center;
+  }
+
+  @media  screen and (max-width: 450px) {
+    grid-template-areas: "logo logo"
+        "media media"
+         "copyright copyright";
+
+    &__media {
+      margin-top: 20px;
+      &>h2 {
+        display: none;
+        font-size: 24px;
+      }
+      &__links {
+        display: flex;
+      }
+      &__links>a{
+        text-align: center;
+        font-size: 50px;
+        width: 25%;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import "src/scss/vars";
+.button {
+  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  color: #FFFFFF;
+  background-color: transparent;
+  border: 1px solid $accentColor;
+  &>:not(:last-child) {
+    margin-right: 5px;
+  }
+  &:hover {
+    background: rgba(199, 120, 221, 0.2);
+  }
+}
