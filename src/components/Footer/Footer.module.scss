@@ -1,9 +1,13 @@
 @import "src/scss/vars";
-.footer {
+
+
+.footer__borderTop {
   margin-top: 130px;
   width: 100%;
   border-top: 1px solid $textGrayColor;
-
+}
+.footer {
+  width: 100%;
   padding: 32px 0;
   display: grid;
   grid-template-areas: "logo media"
@@ -15,6 +19,10 @@
     font-weight: bold;
     display: flex;
     grid-area: logo;
+
+    div {
+      margin-right: 10px;
+    }
   }
   &__media {
     display: flex;
@@ -22,6 +30,7 @@
     grid-area: media;
 
     &>h2 {
+      text-align: center;
       font-size: 24px;
     }
     &__links>a{
@@ -31,6 +40,9 @@
 
       &:hover {
         color: $accentLightColor;
+      }
+      &:not(:last-child) {
+        margin-right: 15px;
       }
     }
   }

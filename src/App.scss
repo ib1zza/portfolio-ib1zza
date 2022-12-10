@@ -1,0 +1,22 @@
+@import "scss/vars";
+@import "scss/nullstyle";
+@import "scss/transitions";
+
+body {
+    background-color: $bgColor;
+    min-height: 100vh;
+    font-family: 'Fira Code', monospace;
+    color: $textGrayColor;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    color: #FFFFFF;
+}
+

@@ -1,7 +1,7 @@
 @import "../../scss/vars";
 
 .title {
-
+  overflow: hidden;
   @media screen and (max-width: 512px){
     flex-wrap: wrap;
   }
@@ -21,7 +21,7 @@
       color: $accentColor;
       position: absolute;
       top: 0;
-      left: 0px;
+      left: 0;
     }
   }
   &__line {
@@ -29,11 +29,12 @@
     flex-grow: 1;
     height: 1px;
     background: $accentColor;
+    padding-right: 10%;
   }
   &__more {
+    padding-left: 15px;
     a {
       color: #FFFFFF;
-      margin-left: 10%;
       white-space: nowrap;
       span {
         display: inline-block;

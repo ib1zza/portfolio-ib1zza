@@ -1,5 +1,4 @@
 import React from "react";
-import "../../scss/index.scss";
 import Button from "../../UI/Button/Button";
 import s from "./Projects.module.scss";
 import BlockTitle from "../BlockTitle/BlockTitle";
@@ -7,8 +6,8 @@ const Projects = () => {
   return (
     <div className={s.projectsBlock}>
       <BlockTitle text={"projects"}>
-        <a href="#" className="arrow">
-          View all <span>{"~~ >"}</span>
+        <a href="#" className={s.arrow}>
+          View all <span>{"~~>"}</span>
         </a>
       </BlockTitle>
       <div className={s.projectsBlock__projects}>

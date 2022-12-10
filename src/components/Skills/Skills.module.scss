@@ -3,39 +3,37 @@
   margin-top: 70px;
   display: flex;
   flex-direction: column;
+
   &__grid {
     align-self: flex-end;
     display: flex;
-    width: 60%;
+    align-items: flex-start;
+    flex-wrap: wrap;
     min-width: 430px;
 
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 915px) {
       flex-direction: column;
       min-width: 200px;
       width: 100%;
-      .skill:not(:last-child) {
-        margin-bottom: 20px;
-      }
     }
-    &>.col {
-      display: flex;
-      flex-direction: column;
-      &:not(:last-child) {
-        margin-right: 16px;
-
-        @media screen and (max-width: 500px) {
-          margin-right: 0;
-          margin-bottom: 16px;
-        }
-      }
 
       &>.skill {
+        width: 200px;
         display: flex;
         flex-direction: column;
         border: 1px solid $textGrayColor;
-        &:not(:last-child) {
+
+        @media screen and (max-width: 915px) {
+          width: 100%;
+          margin-right: 0;
           margin-bottom: 16px;
         }
+
+        &:not(:last-child) {
+          margin-right: 16px;
+        }
+
+
 
         &>* {
           padding: 8px;
@@ -49,4 +47,3 @@
   }
 
 
-}
