@@ -1,6 +1,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import s from "../../../components/Header/Header.module.scss";
+import s from "../Burger.module.scss";
 import { NavLink } from "react-router-dom";
 import { AppRoutes } from "../../../AppRoutes";
 

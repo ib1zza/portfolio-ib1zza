@@ -82,6 +82,11 @@
 
       .projects__image {
         min-height: 260px;
+        overflow: hidden;
+        img {
+
+          height: 100%;
+        }
         //background-image: url("../img/projects-screens/todo1.jpg");
       }
     }

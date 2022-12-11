@@ -3,13 +3,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReact } from "@fortawesome/free-brands-svg-icons";
 import s from "./Header.module.scss";
 import Wrapper from "../../UI/Wrapper/Wrapper";
-import { AnimatePresence, motion } from "framer-motion";
-import Button from "../../UI/Button/Button";
+import { motion } from "framer-motion";
 import Burger from "../../UI/Burger/Burger";
+import { NavLink } from "react-router-dom";
+import { AppRoutes } from "../../AppRoutes";
 
 const Header = () => {
   const [burger, setBurger] = useState(false);
-
+  const setStyles = (isActive: boolean) => {
+    return isActive ? s.link__active : s.link;
+  };
   return (
     <Wrapper>
       <header className={s.header}>
@@ -32,10 +35,30 @@ const Header = () => {
         </div>
         <Burger onChange={setBurger} flag={burger} />
         <div className={s.header__links}>
-          <a href="#">home</a>
-          <a href="projects.html">works</a>
-          <a href="#">about-me</a>
-          <a href="#">contacts</a>
+          <NavLink
+            className={({ isActive }) => setStyles(isActive)}
+            to={AppRoutes.HOME}
+          >
+            home
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => setStyles(isActive)}
+            to={AppRoutes.PROJECTS}
+          >
+            works
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => setStyles(isActive)}
+            to={AppRoutes.HOME}
+          >
+            about-me
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => setStyles(isActive)}
+            to={AppRoutes.HOME}
+          >
+            contacts
+          </NavLink>
         </div>
       </header>
     </Wrapper>

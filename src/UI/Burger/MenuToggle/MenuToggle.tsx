@@ -1,5 +1,5 @@
 import React from "react";
-import s from "../../../components/Header/Header.module.scss";
+import s from "../Burger.module.scss";
 import { motion } from "framer-motion";
 const Path = (props: any) => (
   <motion.path

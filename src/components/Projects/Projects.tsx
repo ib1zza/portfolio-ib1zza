@@ -2,6 +2,8 @@ import React from "react";
 import Button from "../../UI/Button/Button";
 import s from "./Projects.module.scss";
 import BlockTitle from "../BlockTitle/BlockTitle";
+
+import image from "../../assets/img/projects-screens/todo1.jpg";
 const Projects = () => {
   return (
     <div className={s.projectsBlock}>
@@ -12,8 +14,8 @@ const Projects = () => {
       </BlockTitle>
       <div className={s.projectsBlock__projects}>
         <div className={s.projectsBlock__projects__item}>
-          <div className={s.ibg + " " + s.projects__image}>
-            <img src="../img/projects-screens/todo1.jpg" alt="project demo" />
+          <div className={s.projects__image}>
+            <img src={image} alt="project demo" />
           </div>
           <div className={s.project__item__text}>
             <div className={s.technologies}>
@@ -31,8 +33,8 @@ const Projects = () => {
           </div>
         </div>
         <div className={s.projectsBlock__projects__item}>
-          <div className={s.ibg + " " + s.projects__image}>
-            <img src="../img/projects-screens/todo1.jpg" alt="project demo" />
+          <div className={s.projects__image}>
+            <img src={image} alt="project demo" />
           </div>
           <div className={s.project__item__text}>
             <div className={s.technologies}>
@@ -48,8 +50,8 @@ const Projects = () => {
           </div>
         </div>
         <div className={s.projectsBlock__projects__item}>
-          <div className={s.ibg + " " + s.projects__image}>
-            <img src="../img/projects-screens/todo1.jpg" alt="project demo" />
+          <div className={s.projects__image}>
+            <img src={image} alt="project demo" />
           </div>
           <div className={s.project__item__text}>
             <div className={s.technologies}>

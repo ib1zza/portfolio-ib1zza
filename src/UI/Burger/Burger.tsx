@@ -1,6 +1,6 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import s from "../../components/Header/Header.module.scss";
+import s from "./Burger.module.scss";
 import MenuToggle from "./MenuToggle/MenuToggle";
 import { Navigation } from "./Navigation/Navigation";
 

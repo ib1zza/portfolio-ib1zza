@@ -24,61 +24,6 @@
     margin-left: 10px;
   }
 }
-@media screen and (min-width: 650px) {
-  .header__burger {
-    display: none;
-  }
-}
-.header__burger__button {
-  position: absolute;
-  top:  calc(45px);
-  right: calc(40px - 20px);
-  background-color: transparent;
-  display: block;
-  width: 40px;
-  height: 30px;
-  z-index: 23;
-}
-
-
-.header__burger__nav {
-  width: 250px;
-  padding-top: 120px;
-  position: fixed;
-  top: 0;
-  z-index: 20;
-  display: flex;
-  flex-flow: column;
-  height: 130vh;
-  background-color: transparent;
-  right: 0;
-}
-
-.header__burger__nav__link {
-  padding: 18px 35px;
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-
-  a {
-    color: #1E1E1E;
-    font-weight: bold;
-
-  }
-  z-index: 11;
-}
-.header__burger__overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 10;
-  display: block;
-  background-color: rgba(0, 0, 0, 0.5);
-}
 
 .header__links {
   justify-content: flex-end;
@@ -107,15 +52,28 @@
 .header__links > a:not(:last-child) {
   margin-right: 20%;
 }
-.header__links a {
+
+.link {
   color: #ABB2BF;
-  transition: all 0.5s linear;
+  transition: all 0.2s;
+
+  &:hover {
+    color: #FFFFFF;
+    transition: all 0.2s;
+    border-bottom: 1px solid white;
+  }
 }
-.header__links a:focus, .header__links a:active, .header__links a:hover {
+.link__active {
   color: #FFFFFF;
-  border-bottom: 2px solid white;
-  transition: all 0.5s linear;
+  transition: all 0.2s;
+  border-bottom: 3px solid #ffffff;
+
+  &:hover {
+    transition: all 0.2s;
+    color: #FFFFFF;
+  }
 }
+
 
 .react {
   margin: 0;
@@ -123,14 +81,3 @@
   display: inline-block;
 }
 
-
-.burger__background {
-  height: 1000px;
-  z-index: 11;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 250px;
-  background: #fff;
-}

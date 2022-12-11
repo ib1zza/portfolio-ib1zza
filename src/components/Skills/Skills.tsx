@@ -22,10 +22,10 @@ const Skills = () => {
       <BlockTitle text={"skills"} />
 
       <div className={s.skillsBlock__grid}>
-        {Object.keys(data).map((category) => (
-          <div className={s.skill}>
+        {Object.keys(data).map((category: string) => (
+          <div className={s.skill} key={category}>
             <h4>{category}</h4>
-            {/* @ts-ignore*/}
+            {/*@ts-ignore*/}
             <p>{data[category].join(" ")}</p>
           </div>
         ))}
