@@ -7,6 +7,7 @@
   border-top: 1px solid $textGrayColor;
 }
 .footer {
+  justify-self: flex-end;
   width: 100%;
   padding: 32px 0;
   display: grid;

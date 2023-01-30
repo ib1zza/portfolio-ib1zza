@@ -3,11 +3,12 @@ import BlockTitle from "../BlockTitle/BlockTitle";
 import s from "./Contacts.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiscord, faTelegram } from "@fortawesome/free-brands-svg-icons";
+import { Element } from "react-scroll";
 const Contacts = () => {
   return (
     <div className={s.contactsBlock}>
       <BlockTitle text={"contacts"} />
-
+      <Element name={"contacts"} />
       <div className={s.contactsBlock__text}>
         <p>
           I'm always open to suggestions for collaborative development! I like

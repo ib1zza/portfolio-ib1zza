@@ -2,13 +2,16 @@ import React from "react";
 import s from "./Welcome.module.scss";
 import Button from "../../UI/Button/Button";
 import photo from "../../assets/img/im.jpg";
+import { Link } from "react-scroll";
 const Welcome = () => {
   return (
     <div className={s.welcomeBlock}>
       <div className={s.welcomeBlock__text}>
         <h1>Mikhail is a web designer and front-end developer</h1>
         <p>He crafts responsive websites where technologies meet creativity</p>
-        <Button>Contact me!!</Button>
+        <Link to={"contacts"} smooth={true} offset={-70} duration={500}>
+          <Button>Contact me!!</Button>
+        </Link>
       </div>
 
       <div className={s.welcomeBlock__photo}>

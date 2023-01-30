@@ -1,10 +1,41 @@
 @import "src/scss/vars";
 .projectsBlock {
-  &__projects {
+  width: 100%;
+  overflow: hidden;
 
+  position: relative;
+  .button__prev, .button__next {
+    position: absolute;
+    top: calc(50% + 40px);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }
+  .button__prev {
+    left: 0px;
+  }
+  .button__next{
+    right:0px;
+  }
+  @media screen and (max-width: 1100px){
+    .button__prev, .button__next {
+      display: none;
+    }
+  }
+
+  &__projects {
+    padding: 0 40px;
+    width: fit-content;
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
+    flex-wrap: nowrap;
+    @media screen and (max-width: 1100px){
+      &>* {
+        margin-bottom: 20px;
+      }
+      flex-wrap: wrap;
+      padding: 0;
+    }
 
     @media screen and (max-width: 860px){
       flex-direction: column;
@@ -15,7 +46,17 @@
       flex-direction: column;
 
       border: 1px solid $textGrayColor;
-      width: 30%;
+      flex-basis: 320px;
+      flex-shrink: 0;
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+      @media screen and (max-width: 1100px){
+        &:not(:first-child) {
+          margin-left: 0;
+        }
+      }
+
 
       @media screen and (max-width: 860px){
         flex-direction: row;
@@ -34,6 +75,13 @@
           width: 50%;
           height: 330px;
           // background-image: url("../img/projects-screens/todo1.jpg");
+        }
+
+        .project__info > a {
+          width: 100%;
+          &> button {
+            width: 100%;
+          }
         }
       }
 
@@ -64,6 +112,10 @@
         border-width: 0 0 1px 0;
         font-weight: 400;
         font-size: 16px;
+        display: flex;
+        flex-wrap: wrap;
+
+
 
       }
 
@@ -77,6 +129,10 @@
         flex-grow: 1;
         &>*:not(:last-child) {
           margin-bottom: 16px;
+        }
+        
+        button {
+          cursor: pointer;
         }
       }
 
@@ -92,3 +148,4 @@
     }
   }
 }
+

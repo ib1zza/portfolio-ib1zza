@@ -8,10 +8,18 @@
   color: #FFFFFF;
   background-color: transparent;
   border: 1px solid $accentColor;
+  position: relative;
   &>:not(:last-child) {
     margin-right: 5px;
   }
   &:hover {
     background: rgba(199, 120, 221, 0.2);
+  }
+
+  a {
+    color: White;
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 }

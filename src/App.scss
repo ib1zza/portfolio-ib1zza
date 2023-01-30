@@ -1,12 +1,20 @@
 @import "scss/vars";
 @import "scss/nullstyle";
 @import "scss/transitions";
+@import "scss/fonts";
 
 body {
     background-color: $bgColor;
     min-height: 100vh;
     font-family: 'Fira Code', monospace;
     color: $textGrayColor;
+
+}
+
+*,*:hover, *:active {
+    outline: none;
+    border: none;
+    box-sizing: border-box;
 }
 
 

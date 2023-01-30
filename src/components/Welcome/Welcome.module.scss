@@ -38,21 +38,24 @@
       font-weight: 400;
       color: $textGrayColor;
     }
+    &> a {
+      width: 100%;
+      &>button {
+        font-weight: 500;
+        color: #FFFFFF;
+        background-color: transparent;
+        border: 1px solid $accentColor;
 
-    &>button {
-      font-weight: 500;
-      color: #FFFFFF;
-      background-color: transparent;
-      border: 1px solid $accentColor;
+        &:hover {
+          background: rgba(199, 120, 221, 0.2);
+        }
 
-      &:hover {
-        background: rgba(199, 120, 221, 0.2);
-      }
-
-      @media screen and (max-width: 650px) {
-        width: 100%;
+        @media screen and (max-width: 650px) {
+          width: 100%;
+        }
       }
     }
+
   }
 
   &__photo {

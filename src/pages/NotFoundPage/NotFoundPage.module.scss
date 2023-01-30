@@ -1,0 +1,19 @@
+.container {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    text-align: center;
+  }
+
+  p {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  button {
+    width: 200px;
+  }
+}

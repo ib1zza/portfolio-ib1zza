@@ -28,9 +28,9 @@ const NavLinkVariants = {
 
 const links = [
   { name: "home", to: AppRoutes.HOME },
-  { name: "works", to: AppRoutes.HOME },
-  { name: "about-me", to: AppRoutes.HOME },
-  { name: "contacts", to: AppRoutes.HOME },
+  { name: "works", to: AppRoutes.PROJECTS },
+  { name: "about-me", to: AppRoutes.NOT_FOUND },
+  // { name: "contacts", to: AppRoutes.HOME },
 ];
 
 export const Navigation = () => (
@@ -42,7 +42,7 @@ export const Navigation = () => (
       initial={"hidden"}
       animate={"visible"}
       exit={"hidden"}
-      transition={{ duration: 0.7, ease: "easeInOut" }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       {links.map((link, i) => (
         <motion.div

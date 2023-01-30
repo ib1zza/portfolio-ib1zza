@@ -50,7 +50,7 @@
   left: -10px;
 }
 .header__links > a:not(:last-child) {
-  margin-right: 20%;
+  margin-right: 40px;
 }
 
 .link {
@@ -78,6 +78,9 @@
 .react {
   margin: 0;
   padding: 0;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 

@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReact } from "@fortawesome/free-brands-svg-icons";
 import s from "./Header.module.scss";
 import Wrapper from "../../UI/Wrapper/Wrapper";
 import { motion } from "framer-motion";
 import Burger from "../../UI/Burger/Burger";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { AppRoutes } from "../../AppRoutes";
 
 const Header = () => {
@@ -13,6 +13,11 @@ const Header = () => {
   const setStyles = (isActive: boolean) => {
     return isActive ? s.link__active : s.link;
   };
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    setBurger(false);
+  }, [pathname]);
   return (
     <Wrapper>
       <header className={s.header}>
@@ -22,7 +27,7 @@ const Header = () => {
               className={s.react}
               animate={{ rotate: 360 }}
               transition={{
-                duration: 2,
+                duration: 3,
                 ease: "linear",
                 repeatType: "loop",
                 repeat: Infinity,
@@ -47,18 +52,18 @@ const Header = () => {
           >
             works
           </NavLink>
-          <NavLink
-            className={({ isActive }) => setStyles(isActive)}
-            to={AppRoutes.HOME}
-          >
-            about-me
-          </NavLink>
-          <NavLink
-            className={({ isActive }) => setStyles(isActive)}
-            to={AppRoutes.HOME}
-          >
-            contacts
-          </NavLink>
+          {/*<NavLink*/}
+          {/*  className={({ isActive }) => setStyles(isActive)}*/}
+          {/*  to={AppRoutes.HOME}*/}
+          {/*>*/}
+          {/*  about-me*/}
+          {/*</NavLink>*/}
+          {/*<NavLink*/}
+          {/*  className={({ isActive }) => setStyles(isActive)}*/}
+          {/*  to={AppRoutes.HOME}*/}
+          {/*>*/}
+          {/*  contacts*/}
+          {/*</NavLink>*/}
         </div>
       </header>
     </Wrapper>
