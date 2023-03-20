@@ -9,6 +9,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import s from "./Footer.module.scss";
+import { motion } from "framer-motion";
+
 const Footer = () => {
   return (
     <>
@@ -24,21 +26,21 @@ const Footer = () => {
           <div className={s.footer__media}>
             <h2>Media</h2>
             <div className={s.footer__media__links}>
-              <a href="#">
+              <motion.a href="https://t.me/ib1zza">
                 <FontAwesomeIcon icon={faTelegram} />
-              </a>
-              <a href="#">
+              </motion.a>
+              <motion.a href="https://github.com/ib1zza">
                 <FontAwesomeIcon icon={faGithub} />
-              </a>
-              <a href="#">
+              </motion.a>
+              <motion.a href="https://vk.com/ib1zza">
                 <FontAwesomeIcon icon={faVk} />
-              </a>
-              <a href="#">
+              </motion.a>
+              <motion.a href="mailto: dremast1337@gmail.com">
                 <FontAwesomeIcon icon={faEnvelope} />
-              </a>
+              </motion.a>
             </div>
           </div>
-          <span>© Copyright 2022. Made by ib1zza</span>
+          <span>© Copyright {new Date().getFullYear()}. Made by ib1zza</span>
         </div>
       </Wrapper>
     </>

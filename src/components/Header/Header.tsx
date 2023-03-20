@@ -5,7 +5,7 @@ import s from "./Header.module.scss";
 import Wrapper from "../../UI/Wrapper/Wrapper";
 import { motion } from "framer-motion";
 import Burger from "../../UI/Burger/Burger";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { AppRoutes } from "../../AppRoutes";
 
 const Header = () => {
@@ -21,23 +21,25 @@ const Header = () => {
   return (
     <Wrapper>
       <header className={s.header}>
-        <div className={s.header__logo}>
-          <div className={s.header__logo__reactContainer}>
-            <motion.div
-              className={s.react}
-              animate={{ rotate: 360 }}
-              transition={{
-                duration: 3,
-                ease: "linear",
-                repeatType: "loop",
-                repeat: Infinity,
-              }}
-            >
-              <FontAwesomeIcon icon={faReact} />{" "}
-            </motion.div>
+        <Link to={AppRoutes.HOME}>
+          <div className={s.header__logo}>
+            <div className={s.header__logo__reactContainer}>
+              <motion.div
+                className={s.react}
+                animate={{ rotate: 360 }}
+                transition={{
+                  duration: 3,
+                  ease: "linear",
+                  repeatType: "loop",
+                  repeat: Infinity,
+                }}
+              >
+                <FontAwesomeIcon icon={faReact} />{" "}
+              </motion.div>
+            </div>
+            <span>ib1zza</span>
           </div>
-          <span>ib1zza</span>
-        </div>
+        </Link>
         <Burger onChange={setBurger} flag={burger} />
         <div className={s.header__links}>
           <NavLink

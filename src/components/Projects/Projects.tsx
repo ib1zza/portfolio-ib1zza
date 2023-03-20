@@ -3,52 +3,30 @@ import Button from "../../UI/Button/Button";
 import s from "./Projects.module.scss";
 import BlockTitle from "../BlockTitle/BlockTitle";
 
-import image from "../../assets/img/projects-screens/todo1.jpg";
 import { Link } from "react-router-dom";
 import { AppRoutes } from "../../AppRoutes";
-import data, { IData } from "../../data";
+import data from "../../data";
 import { motion, useAnimation } from "framer-motion";
-
-const variants = {
-  open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at calc(100% - 40px) 55px)`,
-
-    transition: {
-      type: "spring",
-      stiffness: 20,
-      restDelta: 2,
-    },
-  }),
-  closed: {
-    clipPath: "circle(25px at calc(100% - 40px) 55px)",
-
-    transition: {
-      type: "spring",
-      stiffness: 400,
-      damping: 40,
-    },
-  },
-};
 
 const Projects = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [pageNumber, setPageNumber] = useState(0);
   const nextHandler = () => {
-    setPageNumber((prev) => (prev > 0 ? 1 : prev + 1));
+    setPageNumber((prev) => (prev >= 1 ? 0 : prev + 1));
   };
   const prevHandler = () => {
-    setPageNumber((prev) => (prev <= 1 ? 0 : prev - 1));
+    setPageNumber((prev) => (prev <= 0 ? 0 : prev - 1));
   };
 
   useEffect(() => {
     if (!containerRef.current) return;
     controls.start({
-      translateX: `calc(-${pageNumber * 100}% - ${pageNumber * 40}px)`,
+      translateX: `calc(-${pageNumber * 100}% - ${pageNumber * 20}px)`,
     });
   }, [pageNumber]);
 
   const controls = useAnimation();
-
+  console.log(data);
   return (
     <div className={s.projectsBlock}>
       <BlockTitle text={"projects"} />
@@ -64,7 +42,9 @@ const Projects = () => {
             animate={controls}
           >
             <div className={s.projects__image}>
-              <img src={image} alt="project demo" />
+              <Link to={AppRoutes.PROJECTS + "/" + el.id}>
+                <img src={el.images?.desktop[0]} alt={el.displayName} />
+              </Link>
             </div>
             <div className={s.project__item__text}>
               <div className={s.technologies}>{el.stack.join(" ")}</div>
@@ -79,12 +59,12 @@ const Projects = () => {
           </motion.div>
         ))}
       </motion.div>
-      <button className={s.button__prev} onClick={prevHandler}>
+      <Button className={s.button__prev} onClick={prevHandler}>
         {"<"}
-      </button>
-      <button className={s.button__next} onClick={nextHandler}>
+      </Button>
+      <Button className={s.button__next} onClick={nextHandler}>
         {">"}
-      </button>
+      </Button>
     </div>
   );
 };
