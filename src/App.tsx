@@ -8,6 +8,8 @@ import ProjectsPage from "./pages/ProjectsPage";
 import { AppRoutes } from "./AppRoutes";
 import ProjectInfoPage from "./pages/ProjectInfoPage/ProjectInfoPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import MyFavouriteMemes from "./pages/MyFavouriteMemes/MyFavouriteMemes";
+import ContactForm from "./pages/ContactForm/ContactForm";
 
 function App() {
   const { pathname } = useLocation();
@@ -24,6 +26,8 @@ function App() {
           path={AppRoutes.PROJECTS + "/:projectId"}
           element={<ProjectInfoPage />}
         />
+        <Route path={AppRoutes.FORM} element={<ContactForm />} />
+        <Route path={AppRoutes.MEMES} element={<MyFavouriteMemes />} />
         <Route path={"*"} element={<NotFoundPage />} />
       </Routes>
       <Footer />

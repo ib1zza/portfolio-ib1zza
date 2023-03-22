@@ -1,0 +1,35 @@
+@import "src/scss/vars";
+
+.heading {
+  text-align: center;
+}
+.form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  width: 800px;
+  div {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    input, textarea{
+      font-size: 18px;
+      padding: 10px;
+      min-height: 30px;
+      border-radius: 10px;
+    }
+  }
+  button {
+    font-size: 18px;
+    padding: 10px;
+    min-height: 30px;
+    border-radius: 10px;
+    background-color: $accentColor;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+}
+

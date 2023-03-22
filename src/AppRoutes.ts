@@ -3,4 +3,7 @@ export enum AppRoutes {
   PROJECTS = "/projects",
 
   NOT_FOUND = "/404",
+
+  MEMES = "/memes",
+  FORM = "/form",
 }
