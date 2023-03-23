@@ -54,6 +54,18 @@ const Header = () => {
           >
             works
           </NavLink>
+          <NavLink
+            className={({ isActive }) => setStyles(isActive)}
+            to={AppRoutes.MEMES}
+          >
+            videos
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => setStyles(isActive)}
+            to={AppRoutes.FORM}
+          >
+            contact
+          </NavLink>
           {/*<NavLink*/}
           {/*  className={({ isActive }) => setStyles(isActive)}*/}
           {/*  to={AppRoutes.HOME}*/}
