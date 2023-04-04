@@ -17,6 +17,11 @@ h2 {
 }
 
 .slider {
-
+  width: calc(100% - 60px);
+  margin: 0 auto;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 650px ) {
+    width: 100%;
+  }
 }

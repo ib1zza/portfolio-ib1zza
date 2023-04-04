@@ -48,7 +48,7 @@ export default [
       desktop: [todoImageDesktop1],
       mockup: [todoMockup],
     },
-    link: "todo-project-localstorage.vercel.app",
+    link: "https://todo-project-localstorage.vercel.app",
   },
   {
     id: "pizza",
@@ -69,7 +69,7 @@ export default [
       desktop: [pizzaImageDesktop1, pizzaImageDesktop2],
       mockup: [pizzaMockup],
     },
-    link: "react-pizza-red.vercel.app",
+    link: "https://react-pizza-red.vercel.app",
   },
   {
     id: "weather",
@@ -117,5 +117,28 @@ export default [
       mockup: [movieMockup], // TODO
     },
     link: "https://react-movie-ashy.vercel.app/",
+  },
+
+  {
+    id: "chat",
+    displayName: "Realtime chat app",
+    stack: [
+      "REACTJS",
+      "TYPESCRIPT",
+      "SCSS",
+      "FIREBASE",
+      "REDUX-TOOLKIT",
+      "FRAMER-MOTION",
+      "VITE",
+    ],
+    description: {
+      mini: "That project is currently developing.",
+      base: "",
+    },
+    images: {
+      desktop: [], // TODO
+      mockup: [movieMockup], // TODO
+    },
+    link: "https://react-chat-dusky.vercel.app",
   },
 ] as IData[];

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Wrapper from "../../UI/Wrapper/Wrapper";
 import { AppRoutes } from "../../AppRoutes";
 import s from "./ProjectInfoPage.module.scss";
@@ -29,6 +29,23 @@ const ProjectInfoPage = () => {
     slidesToScroll: 1,
     autoplay: true,
     pauseOnFocus: true,
+    pauseOnHover: true,
+    dots: false,
+    arrows: true,
+    adaptiveHeightMin: true,
+
+    responsive: [
+      {
+        breakpoint: 650,
+        settings: {
+          arrows: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+    ],
   };
   return (
     <Wrapper>
@@ -55,6 +72,15 @@ const ProjectInfoPage = () => {
       <div className={s.description}>
         <h2>Description:</h2>
         <p className={s.description}>{info.description.mini}</p>
+      </div>
+
+      <div className={s.description}>
+        <h2>
+          You want to check it out?{" "}
+          <a href={info.link} target={"_blank"} rel="noreferrer">
+            view deployment
+          </a>
+        </h2>
       </div>
     </Wrapper>
   );
