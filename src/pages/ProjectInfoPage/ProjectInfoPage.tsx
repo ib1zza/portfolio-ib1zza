@@ -71,7 +71,7 @@ const ProjectInfoPage = () => {
       </div>
       <div className={s.description}>
         <h2>Description:</h2>
-        <p className={s.description}>{info.description.mini}</p>
+        <p className={s.description}>{info.description.base}</p>
       </div>
 
       <div className={s.description}>
