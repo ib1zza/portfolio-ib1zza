@@ -10,7 +10,7 @@ interface Props {
 }
 const button = {
   open: {
-    scale: 1.1,
+    scaleY: 1.1,
     borderRadius: 20,
 
     transition: {

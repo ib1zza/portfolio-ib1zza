@@ -109,7 +109,9 @@ export default [
       "AXIOS",
     ],
     description: {
-      mini: "That project is currently developing.",
+      mini: `
+      Movie search application. It uses moviesdatabase
+      to retrieve information about movies.`,
       base: "",
     },
     images: {
@@ -130,9 +132,11 @@ export default [
       "REDUX-TOOLKIT",
       "FRAMER-MOTION",
       "VITE",
+      "I18NEXT",
+      "DATE-FNS",
     ],
     description: {
-      mini: "That project is currently developing.",
+      mini: "Chat application with a lot of functions. Built using Google Firebase.",
       base: "",
     },
     images: {

@@ -10,6 +10,7 @@
   border: 1px solid $accentColor;
   position: relative;
   cursor: pointer;
+
   &>:not(:last-child) {
     margin-right: 5px;
   }

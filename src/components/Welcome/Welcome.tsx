@@ -3,6 +3,21 @@ import s from "./Welcome.module.scss";
 import Button from "../../UI/Button/Button";
 import photo from "../../assets/img/im.jpg";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
+
+const button = {
+  open: {
+    borderRadius: "20%",
+    // scale: 1.4,
+
+    transition: {
+      type: "spring",
+      duration: 1,
+    },
+  },
+  closed: {},
+};
+
 const Welcome = () => {
   return (
     <div className={s.welcomeBlock}>
@@ -14,9 +29,13 @@ const Welcome = () => {
         </Link>
       </div>
 
-      <div className={s.welcomeBlock__photo}>
+      <motion.div
+        variants={button}
+        whileHover={"open"}
+        className={s.welcomeBlock__photo}
+      >
         <img src={photo} alt="asd" />
-      </div>
+      </motion.div>
     </div>
   );
 };

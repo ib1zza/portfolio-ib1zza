@@ -6,7 +6,6 @@ import BlockTitle from "../BlockTitle/BlockTitle";
 import { Link } from "react-router-dom";
 import { AppRoutes } from "../../AppRoutes";
 import data from "../../data";
-import { motion, useAnimation } from "framer-motion";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -16,9 +15,10 @@ const settings = {
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
-  // autoplay: true,
-  margin: 20,
-  pauseOnFocus: true,
+
+  autoplay: true,
+  autoplaySpeed: 2500,
+
   pauseOnHover: true,
   dots: false,
   arrows: true,
@@ -29,46 +29,31 @@ const settings = {
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,
-        infinite: true,
-        dots: true,
       },
     },
     {
       breakpoint: 750,
       settings: {
-        arrows: false,
+        // arrows: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        infinite: true,
-        dots: true,
       },
     },
   ],
 };
 
 const Projects = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [pageNumber, setPageNumber] = useState(0);
-  const nextHandler = () => {
-    setPageNumber((prev) => (prev >= 2 ? 0 : prev + 1));
-  };
-  const prevHandler = () => {
-    setPageNumber((prev) => (prev <= 0 ? 0 : prev - 1));
-  };
-
-  useEffect(() => {
-    if (!containerRef.current) return;
-    controls.start({
-      translateX: `calc(-${pageNumber * 100}% - ${pageNumber * 20}px)`,
-    });
-  }, [pageNumber]);
-
-  const controls = useAnimation();
   console.log(data);
   return (
     <div className={s.projectsBlock}>
       <BlockTitle text={"projects"} />
-      <Slider swipe={true} {...settings} className={s.projects__slider}>
+      <Slider
+        easing={"ease-in"}
+        swipeToSlide={true}
+        swipe={true}
+        {...settings}
+        className={s.projects__slider}
+      >
         {data.map((el) => (
           <div className={s.projects__slider__container}>
             <div className={s.projects__slider__item} key={el.id}>
