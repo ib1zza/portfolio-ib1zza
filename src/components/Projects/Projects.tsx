@@ -10,6 +10,7 @@ import data from "../../data";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useTranslation } from "react-i18next";
 const settings = {
   infinite: true,
   speed: 500,
@@ -43,6 +44,7 @@ const settings = {
 };
 
 const Projects = () => {
+  const { t } = useTranslation();
   console.log(data);
   return (
     <div className={s.projectsBlock}>
@@ -67,7 +69,7 @@ const Projects = () => {
                 <div className={s.project__info}>
                   <h2 className={s.project__name}>{el.displayName}</h2>
                   <p className={s.project__description}>
-                    {el.description.mini}
+                    {t(el.description.mini)}
                   </p>
                   <Link to={AppRoutes.PROJECTS + "/" + el.id}>
                     <Button>{"View ->"}</Button>

@@ -19,7 +19,6 @@ import movieMockup from "./assets/img/projects-screens/movie/movieMockup.png";
 import chatImageDesktop1 from "./assets/img/projects-screens/chat/chat1.png";
 import chatImageDesktop2 from "./assets/img/projects-screens/chat/chat2.png";
 import chatImageDesktop3 from "./assets/img/projects-screens/chat/chat3.png";
-
 import chatMockup from "./assets/img/projects-screens/chat/chatMockup.png";
 
 export interface IData {
@@ -40,6 +39,7 @@ export interface IData {
 export default [
   {
     id: "todo",
+
     displayName: "TodoList",
     stack: [
       "REACTJS",
@@ -51,11 +51,8 @@ export default [
       "FRAMER-MOTION",
     ],
     description: {
-      mini: "Simple todo list with basic functions: add todo, complete, edit, delete. Also added list of completed todos.",
-      base: `
-      Simple todo list with basic functions: add todo, complete, edit, delete. Also added list of completed todos.
-      
- `,
+      mini: "todo.mini",
+      base: "todo.base",
     },
     images: {
       desktop: [todoImageDesktop1],
@@ -75,8 +72,8 @@ export default [
       "AXIOS",
     ],
     description: {
-      mini: "That project is currently developing.",
-      base: `That project is currently developing.`,
+      mini: "pizza.mini",
+      base: "pizza.base",
     },
     images: {
       desktop: [pizzaImageDesktop1, pizzaImageDesktop2],
@@ -96,10 +93,8 @@ export default [
       "AXIOS",
     ],
     description: {
-      mini: "Simple todo list with basic functions: add todo, complete, edit, delete. Also added list of completed todos.",
-      base: `
-      Simple todo list with basic functions: add todo, complete, edit, delete. Also added list of completed todos.
-      `,
+      mini: "weather.mini",
+      base: "weather.base",
     },
     images: {
       desktop: [
@@ -124,12 +119,8 @@ export default [
       "AXIOS",
     ],
     description: {
-      mini: `
-      Movie search application. It uses moviesdatabase
-      to retrieve information about movies.`,
-      base: `
-      Movie search application. It uses moviesdatabase
-      to retrieve information about movies.`,
+      mini: "movies.mini",
+      base: "movies.base",
     },
     images: {
       desktop: [movieImageDesktop1, movieImageDesktop2, movieImageDesktop3],
@@ -153,19 +144,12 @@ export default [
       "DATE-FNS",
     ],
     description: {
-      mini: "Chat application with a lot of functions. Built using Google Firebase.",
-      base: `
-      Chat application with a lot of functions. Built using Google Firebase.
-      The website features registration and login functionality (with email/Google account), 
-      user search by username, real-time messaging with the ability to send files along with text,
-       chat deletion for both users, editing of personal information such as username and avatar,
-        changing the app's theme, and switching between Russian and English languages. 
-        The site is fully responsive, displaying correctly on any device with a screen size ranging from 320 to 4096 pixels.
-      `,
+      mini: "chat.mini",
+      base: "chat.base",
     },
     images: {
-      desktop: [chatImageDesktop1, chatImageDesktop2, chatImageDesktop3], // TODO
-      mockup: [chatMockup], // TODO
+      desktop: [chatImageDesktop1, chatImageDesktop2, chatImageDesktop3],
+      mockup: [chatMockup],
     },
     link: "https://react-chat-dusky.vercel.app",
   },

@@ -1,0 +1,31 @@
+{
+  "todo": {
+    "mini": "Simple todo list with basic functions: add todo, complete, edit, delete. Also added list of completed todos.",
+    "base": "Simple todo list with basic functions: add todo, complete, edit, delete. Also added list of completed todos."
+  },
+  "pizza": {
+    "mini": "Website for ordering pizzas. There is functionality for selecting pizzas by category, searching by name and sorting by popularity.",
+    "base": "Website for ordering pizzas. There is functionality for selecting pizzas by category, searching by name and sorting by popularity. Pizza can be added to the cart, each type of dough and pizza size has its own price and is added to the cart as a separate item. The site displays correctly on any device (320 - 4096)px."
+  },
+  "weather": {
+    "mini": "Weather website with weakly and daily forecast. Built using openweathermap.org API.",
+    "base": "Weather website with weakly and daily forecast. Built using openweathermap.org API. There is a functional search of the city, the output of information about the weather by the day, or in the format for every three hours. Also, the last selected cities are stored in the localStorage and for quick access to the history you can use select, which is located in the header of the site. There is also the functionality to change the light and dark theme. The layout is responsive and adjusts to any screen size."
+  },
+  "movies": {
+    "mini": "This is a movie search application built using React, Redux-Toolkit, and TypeScript. It uses moviesdatabase.p.rapidapi.com to retrieve information about movies.",
+    "base": " This is a movie search application built using React, Redux-Toolkit, and TypeScript. It uses moviesdatabase.p.rapidapi.com to retrieve information about movies. The app has a wide range of functionality to search for movies, sampling by category, release date, and genre. Each movie has its own page with details about it. For TV series, their series by season are also displayed. There is also functionality to add a movie to your favorites. The application is hosted by vercel."
+  },
+  "chat": {
+    "mini": "Chat application with a lot of functions. Built using Google Firebase.",
+    "base": "A website with chat functionality. Authentication and storage of chat and user data using google firebase. There is functionality of registration and logging into the account (using email / google account, search for users by username, sending and receiving messages in real time, sending files together with the text, delete chat for both users, edit personal information (username, avatar), change of application theme, change of language (Russian, English). The site is displayed correctly on any device (320 - 4096)px."
+  },
+  "me": {
+    "heading": "Mikhail is a front-end developer",
+    "subheading": "I create websites using modern development tools and try to develop my skills in frontend development.",
+    "contactme": "Contact me"
+  },
+  "links": {
+      "home": "home",
+      "works": "works"
+  }
+}

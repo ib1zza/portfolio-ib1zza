@@ -29,7 +29,7 @@ const NavLinkVariants = {
 const links = [
   { name: "home", to: AppRoutes.HOME },
   { name: "works", to: AppRoutes.PROJECTS },
-  { name: "about-me", to: AppRoutes.NOT_FOUND },
+  // { name: "about-me", to: AppRoutes.NOT_FOUND },
   // { name: "contacts", to: AppRoutes.HOME },
 ];
 

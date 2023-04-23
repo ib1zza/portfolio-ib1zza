@@ -7,8 +7,10 @@ import data, { IData } from "../../data";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useTranslation } from "react-i18next";
 
 const ProjectInfoPage = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { projectId } = useParams();
   let info = data.find((el) => el.id === projectId) as IData;
@@ -53,7 +55,7 @@ const ProjectInfoPage = () => {
       {info.images?.desktop && (
         <Slider {...settings} className={s.slider}>
           {info.images.desktop.map((el) => (
-            <div className={s.project__image}>
+            <div key={el} className={s.project__image}>
               <img src={el} alt={info.displayName} />
             </div>
           ))}
@@ -61,7 +63,7 @@ const ProjectInfoPage = () => {
       )}
 
       {info.images?.mockup.map((el) => (
-        <div className={s.project__image}>
+        <div key={el} className={s.project__image}>
           <img src={el} alt={info.displayName} />
         </div>
       ))}
@@ -71,7 +73,7 @@ const ProjectInfoPage = () => {
       </div>
       <div className={s.description}>
         <h2>Description:</h2>
-        <p className={s.description}>{info.description.base}</p>
+        <p className={s.description}>{t(info.description.base)}</p>
       </div>
 
       <div className={s.description}>

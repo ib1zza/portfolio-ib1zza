@@ -10,6 +10,7 @@
     width: calc(100% - 60px);
 
     .projects__slider__container {
+      overflow: hidden;
       padding-right: 10px;
 
       @media screen and (max-width: 750px) {
