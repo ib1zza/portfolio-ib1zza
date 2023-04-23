@@ -68,19 +68,19 @@ const ProjectInfoPage = () => {
         </div>
       ))}
       <div className={s.stack}>
-        <h2>Stack:</h2>
+        <h2>{t("projects.stack")}:</h2>
         <div className={s.stack}>{info.stack.join(" ")}</div>
       </div>
       <div className={s.description}>
-        <h2>Description:</h2>
+        <h2>{t("projects.description")}:</h2>
         <p className={s.description}>{t(info.description.base)}</p>
       </div>
 
       <div className={s.description}>
         <h2>
-          You want to check it out?{" "}
+          {t("projects.wantToCheck")}{" "}
           <a href={info.link} target={"_blank"} rel="noreferrer">
-            view deployment
+            {t("projects.viewDeployment")}
           </a>
         </h2>
       </div>

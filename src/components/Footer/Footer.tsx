@@ -10,8 +10,11 @@ import {
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import s from "./Footer.module.scss";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className={s.footer__borderTop} />
@@ -24,7 +27,7 @@ const Footer = () => {
             ib1zza
           </div>
           <div className={s.footer__media}>
-            <h2>Media</h2>
+            <h2>{t("global.media")}</h2>
             <div className={s.footer__media__links}>
               <motion.a href="https://t.me/ib1zza">
                 <FontAwesomeIcon icon={faTelegram} />
@@ -40,7 +43,7 @@ const Footer = () => {
               </motion.a>
             </div>
           </div>
-          <span>© Copyright {new Date().getFullYear()}. Made by ib1zza</span>
+          <span>Made by ib1zza</span>
         </div>
       </Wrapper>
     </>

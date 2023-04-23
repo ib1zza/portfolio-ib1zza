@@ -48,7 +48,7 @@ const Projects = () => {
   console.log(data);
   return (
     <div className={s.projectsBlock}>
-      <BlockTitle text={"projects"} />
+      <BlockTitle text={t("global.projects")} />
       <Slider
         easing={"ease-in"}
         swipeToSlide={true}
@@ -72,7 +72,7 @@ const Projects = () => {
                     {t(el.description.mini)}
                   </p>
                   <Link to={AppRoutes.PROJECTS + "/" + el.id}>
-                    <Button>{"View ->"}</Button>
+                    <Button>{t("view") + " ->"}</Button>
                   </Link>
                 </div>
               </div>

@@ -11,6 +11,7 @@ import { AppRoutes } from "../../AppRoutes";
 import { useTranslation } from "react-i18next";
 import { langs } from "../../locales/i18n";
 import i18n from "i18next";
+import ChangeLang from "../ChangeLang/ChangeLang";
 const Header = () => {
   const { t } = useTranslation();
   const [burger, setBurger] = useState(false);
@@ -24,20 +25,6 @@ const Header = () => {
   }, [pathname]);
   return (
     <Wrapper>
-      <h1>asd{t("hello")}</h1>
-      <div className={s.changeLanguage}>
-        {langs.map((lang) => (
-          <button
-            key={lang}
-            className={
-              s.lang + " " + (i18n.resolvedLanguage == lang ? s.active : "")
-            }
-            onClick={() => i18n.changeLanguage(lang)}
-          >
-            {lang}
-          </button>
-        ))}
-      </div>
       <header className={s.header}>
         <Link to={AppRoutes.HOME}>
           <div className={s.header__logo}>
@@ -96,6 +83,7 @@ const Header = () => {
           {/*>*/}
           {/*  contacts*/}
           {/*</NavLink>*/}
+          <ChangeLang />
         </div>
       </header>
     </Wrapper>

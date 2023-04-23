@@ -22,10 +22,25 @@
   "me": {
     "heading": "Mikhail is a front-end developer",
     "subheading": "I create websites using modern development tools and try to develop my skills in frontend development.",
-    "contactme": "Contact me"
+    "contactme": "Contact me",
+    "contactsText": "I'm always open to suggestions for collaborative development! I like to get the experience of teamwork on projects. If you are interested, please write to me!",
+    "messageMeHere": "Message me here"
   },
   "links": {
       "home": "home",
       "works": "works"
+  },
+  "global": {
+    "projects": "projects",
+    "skills": "skills",
+    "contacts": "contacts",
+    "media": "media"
+  },
+  "view" : "view",
+  "projects": {
+    "stack": "stack",
+    "description": "description",
+    "wantToCheck": "You want to check it out?",
+    "viewDeployment": "view deployment"
   }
 }

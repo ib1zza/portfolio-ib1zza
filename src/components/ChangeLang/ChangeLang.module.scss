@@ -1,0 +1,23 @@
+@import "src/scss/vars";
+
+.changeLanguage {
+  display: flex;
+  gap: 10px;
+
+  button {
+    padding: 3px 15px;
+    border-radius: 10px;
+    border: 1px solid $accentColor;
+    color: #fff;
+    background-color: transparent;
+
+    &:hover {
+      background-color: $accentLightColor;
+    }
+
+    &.active {
+      //background-color: $accentColor;
+      border-bottom: 4px solid $accentColor;
+    }
+  }
+}

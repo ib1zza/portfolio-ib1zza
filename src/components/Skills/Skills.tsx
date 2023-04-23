@@ -1,11 +1,14 @@
 import React from "react";
 import s from "./Skills.module.scss";
 import BlockTitle from "../BlockTitle/BlockTitle";
+import { useTranslation } from "react-i18next";
 const Skills = () => {
+  const { t } = useTranslation();
+
   const data = {
-    languages: ["JavaScript", "TypeScript"],
-    frameworks: ["React"],
-    tools: [
+    [t("skills.languages")]: ["JavaScript", "TypeScript"],
+    [t("skills.frameworks")]: ["React"],
+    [t("skills.tools")]: [
       "Redux",
       "Redux-thunk",
       "Redux-Toolkit",
@@ -13,13 +16,14 @@ const Skills = () => {
       "Axios",
       "Tailwind.css",
       "framer-motion",
+      "i18next",
     ],
-    other: ["HTML", "CSS", "SCSS"],
+    [t("skills.other")]: ["HTML", "CSS", "SCSS"],
   };
 
   return (
     <div className={s.skillsBlock}>
-      <BlockTitle text={"skills"} />
+      <BlockTitle text={t("global.skills")} />
 
       <div className={s.skillsBlock__grid}>
         {Object.keys(data).map((category: string) => (

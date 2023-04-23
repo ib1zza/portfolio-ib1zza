@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import s from "../Burger.module.scss";
 import { NavLink } from "react-router-dom";
 import { AppRoutes } from "../../../AppRoutes";
+import ChangeLang from "../../../components/ChangeLang/ChangeLang";
+import { useTranslation } from "react-i18next";
 
 const NavVariants = {
   visible: {
@@ -27,36 +29,49 @@ const NavLinkVariants = {
 };
 
 const links = [
-  { name: "home", to: AppRoutes.HOME },
-  { name: "works", to: AppRoutes.PROJECTS },
+  { name: "links.home", to: AppRoutes.HOME },
+  { name: "links.works", to: AppRoutes.PROJECTS },
   // { name: "about-me", to: AppRoutes.NOT_FOUND },
   // { name: "contacts", to: AppRoutes.HOME },
 ];
 
-export const Navigation = () => (
-  <>
-    <motion.nav
-      // layout
-      className={s.header__burger__nav}
-      variants={NavVariants}
-      initial={"hidden"}
-      animate={"visible"}
-      exit={"hidden"}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-    >
-      {links.map((link, i) => (
+export const Navigation = () => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <motion.nav
+        className={s.header__burger__nav}
+        variants={NavVariants}
+        initial={"hidden"}
+        animate={"visible"}
+        exit={"hidden"}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+      >
+        {links.map((link, i) => (
+          <motion.div
+            key={link.name}
+            custom={i}
+            variants={NavLinkVariants}
+            animate={"visible"}
+            initial={"hidden"}
+            exit={"hidden"}
+            className={s.header__burger__nav__link}
+          >
+            <NavLink to={link.to}>{t(link.name)}</NavLink>
+          </motion.div>
+        ))}
+
         <motion.div
-          key={link.name}
-          custom={i}
+          custom={3}
           variants={NavLinkVariants}
           animate={"visible"}
           initial={"hidden"}
           exit={"hidden"}
           className={s.header__burger__nav__link}
         >
-          <NavLink to={link.to}>{link.name}</NavLink>
+          <ChangeLang color={"#000"} />
         </motion.div>
-      ))}
-    </motion.nav>
-  </>
-);
+      </motion.nav>
+    </>
+  );
+};
