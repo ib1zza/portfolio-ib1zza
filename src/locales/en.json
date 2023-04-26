@@ -27,8 +27,8 @@
     "messageMeHere": "Message me here"
   },
   "links": {
-      "home": "home",
-      "works": "works"
+    "home": "home",
+    "works": "works"
   },
   "global": {
     "projects": "projects",
@@ -36,7 +36,13 @@
     "contacts": "contacts",
     "media": "media"
   },
-  "view" : "view",
+  "skills": {
+    "languages": "languages",
+    "frameworks": "frameworks",
+    "tools": "tools",
+    "other": "other"
+  },
+  "view": "view",
   "projects": {
     "stack": "stack",
     "description": "description",
