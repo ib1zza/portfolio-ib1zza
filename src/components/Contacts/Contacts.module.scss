@@ -13,13 +13,6 @@
       width: 50%;
     }
 
-    section {
-      border: 1px solid $textGrayColor;
-      display: flex;
-      flex-direction: column;
-      padding: 16px;
-      justify-content: space-between;
-    }
     @media screen and (max-width: 620px) {
       flex-direction: column;
 
@@ -28,5 +21,27 @@
         margin-bottom: 30px;
       }
     }
+  }
+
+  &__section {
+    border: 1px solid $textGrayColor;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    justify-content: space-between;
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    & a:hover {
+      text-decoration: underline;
+    }
+
+    & svg {
+      width: 20px;
+      margin-right: 10px;
+    }
+
   }
 }

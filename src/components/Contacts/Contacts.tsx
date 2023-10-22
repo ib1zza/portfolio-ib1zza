@@ -14,14 +14,16 @@ const Contacts = () => {
       <Element name={"contacts"} />
       <div className={s.contactsBlock__text}>
         <p>{t("me.contactsText")}</p>
-        <section>
+        <section className={s.contactsBlock__section}>
           <h3>{t("me.messageMeHere")}</h3>
           <div>
-            <FontAwesomeIcon icon={faDiscord} /> #3634 ib1zza
+            <FontAwesomeIcon icon={faDiscord} />
+            #3634 ib1zza
           </div>
-          <div>
-            <FontAwesomeIcon icon={faTelegram} /> @ib1zza
-          </div>
+          <a href={"https://t.me/ib1zza"} target={"_blank"}>
+            <FontAwesomeIcon icon={faTelegram} />
+            @ib1zza
+          </a>
         </section>
       </div>
     </div>

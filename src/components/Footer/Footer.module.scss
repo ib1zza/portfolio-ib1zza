@@ -19,6 +19,8 @@
     font-size: 24px;
     font-weight: bold;
     display: flex;
+    align-items: center;
+    justify-content: center;
     grid-area: logo;
 
     div {
@@ -38,9 +40,12 @@
 
       font-size: 30px;
       color: $accentColor;
+      transition: .2s ease-in-out;
 
       &:hover {
         color: $accentLightColor;
+        transition: .2s ease-in-out;
+
       }
       &:not(:last-child) {
         margin-right: 15px;

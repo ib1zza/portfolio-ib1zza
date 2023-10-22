@@ -30,7 +30,6 @@ const button = {
   },
 };
 const Button: React.FC<Props> = ({ children, onClick, className, ...rest }) => {
-  console.log(rest);
   return (
     <motion.button
       className={s.button + (className ? " " + className : "")}

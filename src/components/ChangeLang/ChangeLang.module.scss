@@ -10,9 +10,17 @@
     border: 1px solid $accentColor;
     color: #fff;
     background-color: transparent;
+    transition: .2s ease-in-out;
 
     &:hover {
       background-color: $accentLightColor;
+      border: 1px solid $accentLightColor;
+      transition: .2s ease-in-out;
+
+      &.active {
+        //background-color: $accentColor;
+        border-bottom: 4px solid transparent;
+      }
     }
 
     &.active {

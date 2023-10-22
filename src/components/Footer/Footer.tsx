@@ -12,6 +12,28 @@ import s from "./Footer.module.scss";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
+const links = [
+  {
+    href: "https://t.me/ib1zza",
+    text: "telegram",
+    icon: faTelegram,
+  },
+  {
+    href: "https://github.com/ib1zza",
+    text: "github",
+    icon: faGithub,
+  },
+  {
+    href: "https://vk.com/ib1zza",
+    text: "vk",
+    icon: faVk,
+  },
+  {
+    href: "mailto:Ks5nI@example.com",
+    text: "email",
+    icon: faEnvelope,
+  },
+];
 const Footer = () => {
   const { t } = useTranslation();
 
@@ -22,28 +44,31 @@ const Footer = () => {
         <div className={s.footer}>
           <div className={s.footer__logo}>
             <div className={s.react}>
-              <FontAwesomeIcon icon={faReact} />
+              <motion.div
+                className={s.react}
+                animate={{ rotate: 360 }}
+                transition={{
+                  duration: 3,
+                  ease: "linear",
+                  repeatType: "loop",
+                  repeat: Infinity,
+                }}
+              >
+                <FontAwesomeIcon icon={faReact} />{" "}
+              </motion.div>
             </div>
             ib1zza
           </div>
           <div className={s.footer__media}>
             <h2>{t("global.media")}</h2>
             <div className={s.footer__media__links}>
-              <motion.a href="https://t.me/ib1zza">
-                <FontAwesomeIcon icon={faTelegram} />
-              </motion.a>
-              <motion.a href="https://github.com/ib1zza">
-                <FontAwesomeIcon icon={faGithub} />
-              </motion.a>
-              <motion.a href="https://vk.com/ib1zza">
-                <FontAwesomeIcon icon={faVk} />
-              </motion.a>
-              <motion.a href="mailto: dremast1337@gmail.com">
-                <FontAwesomeIcon icon={faEnvelope} />
-              </motion.a>
+              {links.map((link) => (
+                <motion.a key={link.href} href={link.href}>
+                  <FontAwesomeIcon icon={link.icon} />
+                </motion.a>
+              ))}
             </div>
           </div>
-          <span>Made by ib1zza</span>
         </div>
       </Wrapper>
     </>

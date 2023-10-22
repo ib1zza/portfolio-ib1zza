@@ -7,10 +7,7 @@ import { motion } from "framer-motion";
 import Burger from "../../UI/Burger/Burger";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AppRoutes } from "../../AppRoutes";
-
 import { useTranslation } from "react-i18next";
-import { langs } from "../../locales/i18n";
-import i18n from "i18next";
 import ChangeLang from "../ChangeLang/ChangeLang";
 const Header = () => {
   const { t } = useTranslation();

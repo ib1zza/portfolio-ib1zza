@@ -45,7 +45,7 @@ const settings = {
 
 const Projects = () => {
   const { t } = useTranslation();
-  console.log(data);
+
   return (
     <div className={s.projectsBlock}>
       <BlockTitle text={t("global.projects")} />
@@ -57,7 +57,7 @@ const Projects = () => {
         className={s.projects__slider}
       >
         {data.map((el) => (
-          <div className={s.projects__slider__container}>
+          <div key={el.id} className={s.projects__slider__container}>
             <div className={s.projects__slider__item} key={el.id}>
               <div className={s.projects__image}>
                 <Link to={AppRoutes.PROJECTS + "/" + el.id}>
