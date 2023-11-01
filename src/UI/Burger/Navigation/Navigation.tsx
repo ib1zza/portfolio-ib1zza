@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import { AppRoutes } from "../../../AppRoutes";
 import ChangeLang from "../../../components/ChangeLang/ChangeLang";
 import { useTranslation } from "react-i18next";
+import ThemePicker from "../../../components/ThemePicker/ThemePicker";
 
 const NavVariants = {
   visible: {
@@ -69,7 +70,18 @@ export const Navigation = () => {
           exit={"hidden"}
           className={s.header__burger__nav__link}
         >
-          <ChangeLang color={"#000"} />
+          <ChangeLang inBurger={true} />
+        </motion.div>
+
+        <motion.div
+          custom={4}
+          variants={NavLinkVariants}
+          animate={"visible"}
+          initial={"hidden"}
+          exit={"hidden"}
+          className={s.header__burger__nav__link}
+        >
+          <ThemePicker />
         </motion.div>
       </motion.nav>
     </>

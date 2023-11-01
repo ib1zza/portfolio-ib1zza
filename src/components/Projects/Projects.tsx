@@ -11,6 +11,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useTranslation } from "react-i18next";
+import OneProjectCard from "../OneProjectCard/OneProjectCard";
 const settings = {
   infinite: true,
   speed: 500,
@@ -44,11 +45,9 @@ const settings = {
 };
 
 const Projects = () => {
-  const { t } = useTranslation();
-
+  console.log("rerender");
   return (
     <div className={s.projectsBlock}>
-      <BlockTitle text={t("global.projects")} />
       <Slider
         easing={"ease-in"}
         swipeToSlide={true}
@@ -58,25 +57,7 @@ const Projects = () => {
       >
         {data.map((el) => (
           <div key={el.id} className={s.projects__slider__container}>
-            <div className={s.projects__slider__item} key={el.id}>
-              <div className={s.projects__image}>
-                <Link to={AppRoutes.PROJECTS + "/" + el.id}>
-                  <img src={el.images?.desktop[0]} alt={el.displayName} />
-                </Link>
-              </div>
-              <div className={s.project__item__text}>
-                <div className={s.technologies}>{el.stack.join(" ")}</div>
-                <div className={s.project__info}>
-                  <h2 className={s.project__name}>{el.displayName}</h2>
-                  <p className={s.project__description}>
-                    {t(el.description.mini)}
-                  </p>
-                  <Link to={AppRoutes.PROJECTS + "/" + el.id}>
-                    <Button>{t("view") + " ->"}</Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <OneProjectCard projectInfo={el} key={el.id} />
           </div>
         ))}
       </Slider>

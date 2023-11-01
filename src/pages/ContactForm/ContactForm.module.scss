@@ -1,4 +1,4 @@
-@import "src/scss/vars";
+
 
 .heading {
   text-align: center;
@@ -27,7 +27,7 @@
     padding: 10px;
     min-height: 30px;
     border-radius: 10px;
-    background-color: $accentColor;
+    background-color: var(--accentColor);
     cursor: pointer;
     margin-top: 30px;
   }

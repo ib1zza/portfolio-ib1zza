@@ -23,8 +23,6 @@ const Skills = () => {
 
   return (
     <div className={s.skillsBlock}>
-      <BlockTitle text={t("global.skills")} />
-
       <div className={s.skillsBlock__grid}>
         {Object.keys(data).map((category: string) => (
           <div className={s.skill} key={category}>

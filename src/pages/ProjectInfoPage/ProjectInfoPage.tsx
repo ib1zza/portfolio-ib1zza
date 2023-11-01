@@ -51,38 +51,40 @@ const ProjectInfoPage = () => {
   };
   return (
     <Wrapper>
-      <h1 className={s.project__name}>{info.displayName}</h1>
-      {info.images?.desktop && (
-        <Slider {...settings} className={s.slider}>
-          {info.images.desktop.map((el) => (
-            <div key={el} className={s.project__image}>
-              <img src={el} alt={info.displayName} />
-            </div>
-          ))}
-        </Slider>
-      )}
+      <div className={s.wrapper}>
+        <h1 className={s.project__name}>{info.displayName}</h1>
+        {info.images?.desktop && (
+          <Slider {...settings} className={s.slider}>
+            {info.images.desktop.map((el) => (
+              <div key={el} className={s.project__image}>
+                <img src={el} alt={info.displayName} />
+              </div>
+            ))}
+          </Slider>
+        )}
 
-      {info.images?.mockup.map((el) => (
-        <div key={el} className={s.project__image}>
-          <img src={el} alt={info.displayName} />
+        {info.images?.mockup.map((el) => (
+          <div key={el} className={s.project__image}>
+            <img src={el} alt={info.displayName} />
+          </div>
+        ))}
+        <div className={s.stack}>
+          <h2>{t("projects.stack")}:</h2>
+          <div className={s.stack}>{info.stack.join(" ")}</div>
         </div>
-      ))}
-      <div className={s.stack}>
-        <h2>{t("projects.stack")}:</h2>
-        <div className={s.stack}>{info.stack.join(" ")}</div>
-      </div>
-      <div className={s.description}>
-        <h2>{t("projects.description")}:</h2>
-        <p className={s.description}>{t(info.description.base)}</p>
-      </div>
+        <div className={s.description}>
+          <h2>{t("projects.description")}:</h2>
+          <p className={s.description}>{t(info.description.base)}</p>
+        </div>
 
-      <div className={s.description}>
-        <h2>
-          {t("projects.wantToCheck")}{" "}
-          <a href={info.link} target={"_blank"} rel="noreferrer">
-            {t("projects.viewDeployment")}
-          </a>
-        </h2>
+        <div className={s.description}>
+          <h2>
+            {t("projects.wantToCheck")}{" "}
+            <a href={info.link} target={"_blank"} rel="noreferrer">
+              {t("projects.viewDeployment")}
+            </a>
+          </h2>
+        </div>
       </div>
     </Wrapper>
   );

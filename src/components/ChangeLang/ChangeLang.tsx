@@ -3,19 +3,24 @@ import { langs } from "../../locales/i18n";
 import i18n from "i18next";
 import s from "./ChangeLang.module.scss";
 
-const ChangeLang: React.FC<{ color?: string }> = ({ color }) => {
+interface Props {
+  inBurger?: boolean;
+}
+const ChangeLang = ({ inBurger }: Props) => {
+  function onClick(lang: string) {
+    i18n.resolvedLanguage !== lang && i18n.changeLanguage(lang);
+  }
   return (
-    <div className={s.changeLanguage}>
+    <div className={s.changeLanguage + " " + (inBurger ? s.inBurger : "")}>
       {langs.map((lang) => (
         <button
-          style={color ? { color: color } : {}}
           key={lang}
           className={
             s.lang + " " + (i18n.resolvedLanguage === lang ? s.active : "")
           }
-          onClick={() => i18n.changeLanguage(lang)}
+          onClick={() => onClick(lang)}
         >
-          {lang}
+          {lang.toUpperCase()}
         </button>
       ))}
     </div>

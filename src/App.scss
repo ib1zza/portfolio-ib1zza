@@ -1,17 +1,17 @@
 @import "scss/vars";
+@import "scss/themes";
 @import "scss/nullstyle";
 @import "scss/transitions";
 @import "scss/fonts";
 
-body {
-    background-color: $bgColor;
+.App {
+    background-color: var(--bgColor);
     min-height: 100vh;
-    font-family: 'Fira Code', monospace;
-    color: $textGrayColor;
-
+    //font-family: 'Fira Code', monospace;
+    color: var(--textGrayColor);
 }
 
-*,*:hover, *:active {
+* {
     outline: none;
     border: none;
     box-sizing: border-box;
@@ -22,6 +22,11 @@ a {
     color: inherit;
 }
 
+* {
+    font-family: "Roboto Condensed", sans-serif;
+    letter-spacing: 1px;
+}
+
 h1,
 h2,
 h3,
@@ -29,7 +34,9 @@ h4,
 h5,
 h6
 {
-    color: #FFFFFF;
+    color: var(--accentLightColor);
+    font-family: 'Roboto', serif !important;
+    letter-spacing: 2px;
 }
 
 button {

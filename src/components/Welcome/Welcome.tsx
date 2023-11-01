@@ -6,7 +6,7 @@ import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-const button = {
+const avatarVar = {
   open: {
     borderRadius: "20%",
     // scale: 1.4,
@@ -31,13 +31,13 @@ const Welcome = () => {
         </Link>
       </div>
 
-      <motion.div
-        variants={button}
-        whileHover={"open"}
+      <div
+        // variants={avatarVar}
+        // whileHover={"open"}
         className={s.welcomeBlock__photo}
       >
         <img src={photo} alt="me" />
-      </motion.div>
+      </div>
     </div>
   );
 };

@@ -1,10 +1,10 @@
-@import "src/scss/vars";
+
 
 
 .footer__borderTop {
   margin-top: 130px;
   width: 100%;
-  border-top: 1px solid $textGrayColor;
+  border-top: 1px solid var(--textGrayColor);
 }
 .footer {
   justify-self: flex-end;
@@ -22,7 +22,7 @@
     align-items: center;
     justify-content: center;
     grid-area: logo;
-
+    font-family: 'Playfair Display', serif;
     div {
       margin-right: 10px;
     }
@@ -39,11 +39,11 @@
     &__links>a{
 
       font-size: 30px;
-      color: $accentColor;
+      color: var(--accentColor);
       transition: .2s ease-in-out;
 
       &:hover {
-        color: $accentLightColor;
+        color: var(--accentLightColor);
         transition: .2s ease-in-out;
 
       }

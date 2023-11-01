@@ -9,6 +9,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { AppRoutes } from "../../AppRoutes";
 import { useTranslation } from "react-i18next";
 import ChangeLang from "../ChangeLang/ChangeLang";
+import ThemePicker from "../ThemePicker/ThemePicker";
 const Header = () => {
   const { t } = useTranslation();
   const [burger, setBurger] = useState(false);
@@ -81,6 +82,7 @@ const Header = () => {
           {/*  contacts*/}
           {/*</NavLink>*/}
           <ChangeLang />
+          <ThemePicker />
         </div>
       </header>
     </Wrapper>

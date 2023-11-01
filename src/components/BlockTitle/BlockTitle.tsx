@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 interface Props {
   text: string;
   children?: React.ReactNode;
+  isHovered?: boolean;
 }
 
 const AnimationVariants = {
@@ -12,10 +13,10 @@ const AnimationVariants = {
   visible: { opacity: 1, x: 0 },
   exit: { opacity: 0, x: -200 },
 };
-const BlockTitle: React.FC<Props> = ({ text, children }) => {
+const BlockTitle: React.FC<Props> = ({ text, children, isHovered }) => {
   return (
     <motion.div
-      className={s.title}
+      className={s.title + (isHovered ? " " + s.title__hovered : "")}
       viewport={{ amount: 0.2 }}
       initial={"hidden"}
       whileInView={"visible"}
@@ -25,7 +26,6 @@ const BlockTitle: React.FC<Props> = ({ text, children }) => {
     >
       <h1>{text}</h1>
       <div className={s.title__line} />
-      <div className={s.title__more}>{children}</div>
     </motion.div>
   );
 };

@@ -1,4 +1,4 @@
-@import "src/scss/vars";
+
 
 .header {
   margin-bottom: 70px;
@@ -11,10 +11,12 @@
 }
 
 .header__logo {
-  color: #FFFFFF;
+  color: var(--accentLightColor);
   font-weight: 700;
   font-size: 30px;
   display: flex;
+  font-family: 'Playfair Display', serif;
+
 
   &__reactContainer {
     width: 50px;
@@ -25,6 +27,8 @@
 
   span {
     margin-left: 10px;
+    font-family: 'Playfair Display', serif;
+
   }
 
 }
@@ -35,6 +39,7 @@
   font-size: 16px;
   font-weight: 600;
   align-items: center;
+  gap: 40px;
 }
 
 @media screen and (max-width: 650px) {
@@ -51,35 +56,33 @@
 .header__links > a::before {
   content: "#";
   font-weight: 500;
-  color: #C778DD;
+  color: var(--accentColor);
   position: absolute;
   top: 0;
   left: -10px;
 }
 
-.header__links > a:not(:last-child) {
-  margin-right: 40px;
-}
+
 
 .link {
-  color: #ABB2BF;
+  color: var(--textGrayColor);
   transition: all 0.2s;
 
   &:hover {
-    color: #FFFFFF;
+    color: var(--accentLightColor);
     transition: all 0.2s;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--accentLightColor);
   }
 }
 
 .link__active {
-  color: #FFFFFF;
+  color: var(--accentLightColor);
   transition: all 0.2s;
-  border-bottom: 3px solid #ffffff;
+  border-bottom: 3px solid var(--accentLightColor);
 
   &:hover {
     transition: all 0.2s;
-    color: #FFFFFF;
+    color: var(--accentLightColor);
   }
 }
 
@@ -90,5 +93,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
 }

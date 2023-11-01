@@ -1,0 +1,172 @@
+@import "../../scss/vars";
+
+$size: 35px;
+$sizeInner: $size - 10px;
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.arrow {
+  transition: 0.3s ease-in-out;
+
+  &.open {
+    transform: rotateX(-180deg);
+    transition: 0.3s ease-in-out;
+  }
+}
+
+
+.circle {
+  height: $size;
+  width: $size;
+  border: 2px solid var(--accentColor);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerCircle {
+  //box-shadow: inset 0 0 9px 0px var(--accentColor);
+  transform: rotate(-135deg);
+  height: $sizeInner;
+  width: $sizeInner;
+  background-color: var(--accentColor);
+  border-radius: 50%;
+  position: relative;
+  //opacity: 0.5;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: $sizeInner;
+    width: $sizeInner / 2;
+    border-top-right-radius: $sizeInner;
+    border-bottom-right-radius: $sizeInner;
+    background-color: var(--bgColor);
+    opacity: 0.8;
+    border-left: none;
+  }
+}
+
+
+.themeList {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: calc(100%);
+  right: -2.5px;
+  background: rgba(89, 89, 89, 0.8);
+  border-radius:  10px 0 10px 10px ;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  padding: 5px 0;
+  pointer-events: none;
+
+
+
+  .trio {
+    position: absolute;
+    top: -19.3px;
+    right: 0;
+    //background: rgba(255, 255, 255, 0.22);
+    height: 10px;
+    width: 10px;
+    //transform: rotate(-135deg);
+     /* Положение треугольника */
+    border: 10px solid transparent; /* Прозрачные границы */
+    border-bottom: 10px solid rgba(89, 89, 89, 0.8); /* Добавляем треугольник */
+  }
+
+
+  &.open {
+    top: calc(100% + 10px);
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+    pointer-events: auto;
+  }
+
+  .themeItem {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+
+    $miniCircleSize: 20px;
+    .themeItemInnerCircle {
+      transform: rotate(-135deg);
+      height: $miniCircleSize;
+      width: $miniCircleSize;
+      background-color: var(--accentColor);
+      border-radius: 50%;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        height: $miniCircleSize;
+        width: $miniCircleSize / 2;
+        border-top-right-radius: $miniCircleSize;
+        border-bottom-right-radius: $miniCircleSize;
+        background-color: var(--bgColor);
+        opacity: 0.8;
+        border-left: none;
+      }
+    }
+
+    &.violet {
+      color: $accentColorViolet;
+
+
+      .themeItemInnerCircle {
+        background-color: $accentColorViolet;
+        &::before {
+          background-color: $bgColorViolet;
+        }
+      }
+    }
+
+    &.green {
+      color: $accentColorGreen;
+
+      .themeItemInnerCircle {
+        background-color: $accentColorGreen;
+        &::before {
+          background-color: $bgColorGreen;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 650px) {
+    right: auto;
+    left: $sizeInner / 2 - 5px;
+
+    border-radius:  0 10px 10px 10px ;
+
+    .trio {
+      right: auto;
+      left: 0;
+    }
+
+    &.open {
+      top: calc(100% + 15px);
+    }
+  }
+}
