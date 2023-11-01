@@ -105,7 +105,7 @@ export default [
       ],
       mockup: [weatherMockup],
     },
-    link: "ib1zza-react-weather.vercel.app/",
+    link: "https://ib1zza-react-weather.vercel.app/",
   },
   {
     id: "movies",
