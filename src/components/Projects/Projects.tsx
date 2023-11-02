@@ -15,8 +15,7 @@ const settings: Settings = {
   easing: "ease-in",
   dotsClass: s.dotsContainer,
   pauseOnDotsHover: true,
-  // autoplay: true,
-  // adaptiveHeight: true,
+  autoplay: true,
 
   autoplaySpeed: 2500,
   pauseOnHover: true,
@@ -48,13 +47,7 @@ const settings: Settings = {
     },
   ],
 
-  // appendDots: (dots: any) => (
-  //   <div>
-  //     <ul className={s.dotsContainer}>{dots}</ul>
-  //   </div>
-  // ),
-
-  customPaging: (i: any) => <div className={s.dot} />,
+  customPaging: () => <div className={s.dot} />,
 };
 
 const Projects = () => {
