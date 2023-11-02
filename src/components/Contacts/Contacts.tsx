@@ -18,7 +18,7 @@ const Contacts = () => {
             <FontAwesomeIcon icon={faDiscord} />
             #3634 ib1zza
           </div>
-          <a href={"https://t.me/ib1zza"} target={"_blank"}>
+          <a href={"https://t.me/ib1zza"} target={"_blank"} rel="noreferrer">
             <FontAwesomeIcon icon={faTelegram} />
             @ib1zza
           </a>

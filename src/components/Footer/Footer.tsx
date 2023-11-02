@@ -63,7 +63,12 @@ const Footer = () => {
             <h2>{t("global.media")}</h2>
             <div className={s.footer__media__links}>
               {links.map((link) => (
-                <a key={link.href} href={link.href} target={"_blank"}>
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target={"_blank"}
+                  rel="noreferrer"
+                >
                   <FontAwesomeIcon icon={link.icon} />
                 </a>
               ))}

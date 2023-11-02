@@ -29,7 +29,7 @@ const Header = () => {
             <div className={s.header__logo__reactContainer}>
               <motion.div
                 className={s.react}
-                // animate={{ rotate: 360 }}
+                animate={{ rotate: 360 }}
                 transition={{
                   duration: 3,
                   ease: "linear",

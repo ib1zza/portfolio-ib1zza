@@ -1,6 +1,5 @@
 import React from "react";
 import s from "./Skills.module.scss";
-import BlockTitle from "../BlockTitle/BlockTitle";
 import { useTranslation } from "react-i18next";
 const Skills = () => {
   const { t } = useTranslation();
@@ -27,7 +26,6 @@ const Skills = () => {
         {Object.keys(data).map((category: string) => (
           <div className={s.skill} key={category}>
             <h4>{category}</h4>
-            {/*@ts-ignore*/}
             <p>{data[category].join(" ")}</p>
           </div>
         ))}

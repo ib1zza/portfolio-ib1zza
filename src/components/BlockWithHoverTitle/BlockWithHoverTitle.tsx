@@ -1,4 +1,4 @@
-import React, { memo, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import BlockTitle from "../BlockTitle/BlockTitle";
 
 interface Props {

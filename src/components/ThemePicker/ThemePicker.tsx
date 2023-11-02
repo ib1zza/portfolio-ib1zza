@@ -17,7 +17,7 @@ const themes: { name: string; value: Theme }[] = [
 ];
 
 const ThemePicker = () => {
-  const { theme: currentTheme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
   const [listOpen, setListOpen] = useState(false);
 
   useEffect(() => {

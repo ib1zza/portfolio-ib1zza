@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Wrapper from "../../UI/Wrapper/Wrapper";
 import { AppRoutes } from "../../AppRoutes";
 import s from "./ProjectInfoPage.module.scss";
