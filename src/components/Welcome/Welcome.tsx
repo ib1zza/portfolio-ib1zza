@@ -3,39 +3,26 @@ import s from "./Welcome.module.scss";
 import Button from "../../UI/Button/Button";
 import photo from "../../assets/img/im.jpg";
 import { Link } from "react-scroll";
-import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-
-const avatarVar = {
-  open: {
-    borderRadius: "20%",
-    // scale: 1.4,
-
-    transition: {
-      type: "spring",
-      duration: 1,
-    },
-  },
-  closed: {},
-};
+import { useScroll } from "framer-motion";
 
 const Welcome = () => {
   const { t } = useTranslation();
+  const {} = useScroll();
+  function scrollToBottom() {
+    // window.scrollTo(0, document.body.scrollHeight);
+  }
   return (
     <div className={s.welcomeBlock}>
       <div className={s.welcomeBlock__text}>
         <h1>{t("me.heading")}</h1>
         <p>{t("me.subheading")}</p>
         <Link to={"contacts"} smooth={true} offset={-70} duration={500}>
-          <Button>{t("me.contactme")}</Button>
+          <Button onClick={scrollToBottom}>{t("me.contactme")}</Button>
         </Link>
       </div>
 
-      <div
-        // variants={avatarVar}
-        // whileHover={"open"}
-        className={s.welcomeBlock__photo}
-      >
+      <div className={s.welcomeBlock__photo}>
         <img src={photo} alt="me" />
       </div>
     </div>

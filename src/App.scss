@@ -9,6 +9,7 @@
     min-height: 100vh;
     //font-family: 'Fira Code', monospace;
     color: var(--textGrayColor);
+    scroll-behavior: smooth;
 }
 
 * {
@@ -43,3 +44,11 @@ button {
     cursor: pointer;
 }
 
+.scrollBody {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+}

@@ -3,6 +3,8 @@ import s from "./Contacts.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiscord, faTelegram } from "@fortawesome/free-brands-svg-icons";
 import { useTranslation } from "react-i18next";
+import { Element } from "react-scroll";
+
 const Contacts = () => {
   const { t } = useTranslation();
 
@@ -22,6 +24,7 @@ const Contacts = () => {
           </a>
         </section>
       </div>
+      <Element name={"contacts"} />
     </div>
   );
 };

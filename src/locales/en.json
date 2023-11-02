@@ -12,8 +12,8 @@
     "base": "Weather website with weakly and daily forecast. Built using openweathermap.org API. There is a functional search of the city, the output of information about the weather by the day, or in the format for every three hours. Also, the last selected cities are stored in the localStorage and for quick access to the history you can use select, which is located in the header of the site. There is also the functionality to change the light and dark theme. The layout is responsive and adjusts to any screen size."
   },
   "movies": {
-    "mini": "This is a movie search application built using React, Redux-Toolkit, and TypeScript. It uses moviesdatabase.p.rapidapi.com to retrieve information about movies.",
-    "base": " This is a movie search application built using React, Redux-Toolkit, and TypeScript. It uses moviesdatabase.p.rapidapi.com to retrieve information about movies. The app has a wide range of functionality to search for movies, sampling by category, release date, and genre. Each movie has its own page with details about it. For TV series, their series by season are also displayed. There is also functionality to add a movie to your favorites. The application is hosted by vercel."
+    "mini": "This is a movie search application built using React, Redux-Toolkit, and TypeScript. It uses moviesdatabas from rapidapi.com to retrieve information about movies.",
+    "base": " This is a movie search application built using React, Redux-Toolkit, and TypeScript. It uses moviesdatabas from rapidapi.com to retrieve information about movies. The app has a wide range of functionality to search for movies, sampling by category, release date, and genre. Each movie has its own page with details about it. For TV series, their series by season are also displayed. There is also functionality to add a movie to your favorites. The application is hosted by vercel."
   },
   "chat": {
     "mini": "Chat application with a lot of functions. Built using Google Firebase.",

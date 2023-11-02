@@ -63,9 +63,9 @@ const Footer = () => {
             <h2>{t("global.media")}</h2>
             <div className={s.footer__media__links}>
               {links.map((link) => (
-                <motion.a key={link.href} href={link.href}>
+                <a key={link.href} href={link.href} target={"_blank"}>
                   <FontAwesomeIcon icon={link.icon} />
-                </motion.a>
+                </a>
               ))}
             </div>
           </div>

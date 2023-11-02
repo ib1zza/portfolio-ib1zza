@@ -1,28 +1,26 @@
-import React, { useEffect, useRef, useState } from "react";
-import Button from "../../UI/Button/Button";
+import React from "react";
 import s from "./Projects.module.scss";
-import BlockTitle from "../BlockTitle/BlockTitle";
-
-import { Link } from "react-router-dom";
-import { AppRoutes } from "../../AppRoutes";
 import data from "../../data";
 
-import Slider from "react-slick";
+import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useTranslation } from "react-i18next";
+import "../../scss/slickCustom.scss";
 import OneProjectCard from "../OneProjectCard/OneProjectCard";
-const settings = {
+const settings: Settings = {
   infinite: true,
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
+  easing: "ease-in",
+  dotsClass: s.dotsContainer,
+  pauseOnDotsHover: true,
+  // autoplay: true,
+  // adaptiveHeight: true,
 
-  autoplay: true,
   autoplaySpeed: 2500,
-
   pauseOnHover: true,
-  dots: false,
+  dots: true,
   arrows: true,
 
   responsive: [
@@ -36,12 +34,27 @@ const settings = {
     {
       breakpoint: 750,
       settings: {
-        // arrows: false,
         slidesToShow: 1,
         slidesToScroll: 1,
       },
     },
+    {
+      breakpoint: 450,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+      },
+    },
   ],
+
+  // appendDots: (dots: any) => (
+  //   <div>
+  //     <ul className={s.dotsContainer}>{dots}</ul>
+  //   </div>
+  // ),
+
+  customPaging: (i: any) => <div className={s.dot} />,
 };
 
 const Projects = () => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { MouseEvent, useEffect, useState } from "react";
 import s from "./ThemePicker.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
@@ -19,8 +19,29 @@ const themes: { name: string; value: Theme }[] = [
 const ThemePicker = () => {
   const { theme: currentTheme, toggleTheme } = useTheme();
   const [listOpen, setListOpen] = useState(false);
+
+  useEffect(() => {
+    function listener() {
+      setListOpen(false);
+    }
+    if (listOpen) {
+      document.body.addEventListener("click", listener, {
+        once: true,
+      });
+    }
+
+    return () => {
+      document.body.removeEventListener("click", listener);
+    };
+  }, [listOpen]);
+
+  function toggleList(e: MouseEvent<HTMLDivElement>) {
+    e.stopPropagation();
+    setListOpen(!listOpen);
+  }
+
   return (
-    <div className={s.wrapper} onClick={() => setListOpen(!listOpen)}>
+    <div className={s.wrapper} onClick={toggleList}>
       <div className={s.circle}>
         <div className={s.innerCircle}></div>
       </div>

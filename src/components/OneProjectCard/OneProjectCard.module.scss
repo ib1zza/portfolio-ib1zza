@@ -22,17 +22,16 @@
     .technologies {
       width: 100%;
       padding: 8px;
-      min-height: 90px;
+      height: 85px;
+      text-overflow: ellipsis;
+      overflow: hidden;
       border: solid var(--textGrayColor);
       border-width: 0 0 1px 0;
       font-weight: 400;
       font-size: 16px;
-      display: flex;
-      flex-wrap: wrap;
-
-
-
-    }
+      //display: flex;
+      //flex-wrap: wrap;
+   }
 
     .project__info {
       width: 100%;

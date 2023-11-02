@@ -8,8 +8,6 @@ import ProjectsPage from "./pages/ProjectsPage/ProjectsPage";
 import { AppRoutes } from "./AppRoutes";
 import ProjectInfoPage from "./pages/ProjectInfoPage/ProjectInfoPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import MyFavouriteMemes from "./pages/MyFavouriteMemes/MyFavouriteMemes";
-import ContactForm from "./pages/ContactForm/ContactForm";
 import { useTheme } from "./context/ThemeContext/useTheme";
 
 function App() {

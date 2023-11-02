@@ -1,0 +1,76 @@
+//.slick-slide {
+//  opacity: 0 !important;
+//  transition: .2s ease-in-out;
+//}
+//
+//.slick-slide.slick-active {
+//  opacity: 1 !important;
+//  transition: .2s ease-in-out;
+//
+//}
+
+//.slick-arrow {
+//  background-color: var(--accentColor);
+//}
+
+$buttonSize: 20px;
+$iconSize: 16px;
+
+.slick-next, .slick-prev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: $buttonSize;
+  width: $buttonSize;
+  background-color: var(--accentColor);
+  cursor: pointer;
+  //position: absolute;
+  //top: 50%;
+  //transform: translateY(-50%);
+  z-index: 11;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--accentLightColor);
+    transition: 0.2s ease-in-out;
+  }
+
+  &::before {
+    margin: ($buttonSize - $iconSize) / 2;
+    display: block;
+    content: "";
+    background-position: center;
+    background-repeat: no-repeat;
+    height: $iconSize;
+    width: $iconSize;
+    transition: 0.2s ease-in-out;
+
+  }
+}
+
+.slick-next{
+  &::before {
+    background-image: url("../assets/icons/next.svg");
+  }
+
+  &:hover {
+      &::before {
+        transform: translateX(2px);
+        transition: 0.2s ease-in-out;
+      }
+  }
+}
+
+.slick-prev {
+  &::before {
+    background-image: url("../assets/icons/prev.svg");
+  }
+
+  &:hover {
+    &::before {
+      transform: translateX(-2px);
+      transition: 0.2s ease-in-out;
+    }
+  }
+}
