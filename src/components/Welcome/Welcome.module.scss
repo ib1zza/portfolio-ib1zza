@@ -10,9 +10,9 @@
     flex-direction: column-reverse;
   }
   &__text {
-    width: calc(100% - 360px);
+    width: calc(100% - 380px);
     @media screen and (max-width: 800px) {
-      width: calc(100% - 40%);
+      width: calc(100% - 40% - 20px);
     }
 
     @media screen and (max-width: 650px) {

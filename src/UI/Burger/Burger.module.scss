@@ -6,7 +6,8 @@
   top: 0;
   right: 0;
   bottom: 0;
-  width: 250px;
+  min-width: 250px;
+  width: calc(100% - 70px);
   background-color: var(--accentLightColor)
 }
 
@@ -29,7 +30,7 @@
 
 
 .header__burger__nav {
-  width: 250px;
+  width: calc(100% - 70px);
   padding-top: 120px;
   position: fixed;
   top: 0;
@@ -44,7 +45,7 @@
 .header__burger__nav__link {
   padding: 18px 35px;
   font-family: "Roboto", sans-serif;
-  font-size: 18px;
+  font-size: 24px;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 5px;

@@ -157,9 +157,16 @@ $sizeInner: $size - 10px;
   @media (max-width: 650px) {
     right: auto;
     left: $sizeInner / 2 - 5px;
+    background: rgb(89, 89, 89);
+
+    .trio {
+      border-bottom: 10px solid rgb(89, 89, 89); /* Добавляем треугольник */
+    }
 
     border-radius:  0 10px 10px 10px ;
-
+    .themeItem {
+      padding: 10px 20px;
+    }
     .trio {
       right: auto;
       left: 0;

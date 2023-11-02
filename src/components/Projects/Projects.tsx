@@ -51,7 +51,6 @@ const settings: Settings = {
 };
 
 const Projects = () => {
-  console.log("rerender");
   return (
     <div className={s.projectsBlock}>
       <Slider
