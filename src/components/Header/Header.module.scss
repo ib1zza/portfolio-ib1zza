@@ -1,13 +1,35 @@
 
 
 .header {
-  margin-bottom: 70px;
+
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 1024px;
+  background-color: var(--bgColor);
+  max-width: 95%;
+  margin: 0 auto;
+  z-index: 100;
+  //margin-bottom: 70px;
   padding-top: 32px;
+  padding-bottom: 32px;
+
   display: flex;
   justify-content: space-between;
 
-  height: 80px;
+  //height: 80px;
   align-items: center;
+}
+
+@media screen and (max-width: 650px) {
+  .header {
+    width: 100%;
+    padding-left: 2.5%;
+    max-width: 100%;
+  }
+
 }
 
 .header__logo {
@@ -19,9 +41,9 @@
 
 
   &__reactContainer {
-    width: 50px;
+    width: 40px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   }
 
