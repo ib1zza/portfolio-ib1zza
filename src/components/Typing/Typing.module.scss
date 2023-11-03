@@ -1,0 +1,38 @@
+$size: 25px;
+
+.word {
+  position: relative;
+  display: inline-block;
+  min-height: $size;
+  min-width: 5px;
+  line-height: 100%;
+
+
+  &::after {
+    content: "";
+    width: 3px;
+    height: $size + 10px;
+    background: var(--accentColor);
+    display: block;
+    position: absolute;
+    right: -10px;
+    bottom: 0;
+    animation: blink 0.5s ease infinite alternate-reverse;
+  }
+
+  &.empty{
+    &::after {
+      display: none;
+    }
+  }
+
+  @keyframes blink {
+    from {
+      opacity: 100%;
+    }
+
+    to {
+      opacity: 0%;
+    }
+  }
+}

@@ -37,6 +37,7 @@
   font-weight: 700;
   font-size: 30px;
   display: flex;
+  align-items: center;
   font-family: 'Playfair Display', serif;
 
 
@@ -73,6 +74,7 @@
 .header__links > a {
   position: relative;
   white-space: nowrap;
+
 }
 
 .header__links > a::before {
@@ -84,7 +86,14 @@
   left: -10px;
 }
 
-
+@keyframes linearGradientMove {
+  0% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
 
 .link {
   color: var(--textGrayColor);
@@ -93,8 +102,14 @@
   &:hover {
     color: var(--accentLightColor);
     transition: all 0.2s;
-    border-bottom: 1px solid var(--accentLightColor);
+    background: linear-gradient(90deg, var(--accentColor) 100%, transparent 0) repeat-x;
+    background-size: 100% 2px;
   }
+
+  background: linear-gradient(90deg, var(--accentColor) 50%, transparent 0) repeat-x;
+  background-size: 10% 2px;
+  //background-position: 0 100%;
+  animation: linearGradientMove 3s infinite linear;
 }
 
 .link__active {

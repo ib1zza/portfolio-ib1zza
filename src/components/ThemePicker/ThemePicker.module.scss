@@ -30,6 +30,11 @@ $sizeInner: $size - 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    border-color: var(--textGrayColor);
+    transition: 0.3s ease-in-out;
+  }
 }
 
 .innerCircle {

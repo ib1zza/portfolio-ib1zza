@@ -9,6 +9,7 @@ import { AppRoutes } from "../../AppRoutes";
 import { useTranslation } from "react-i18next";
 import ChangeLang from "../ChangeLang/ChangeLang";
 import ThemePicker from "../ThemePicker/ThemePicker";
+import Flip from "../Flip/Flip";
 const Header = () => {
   const { t } = useTranslation();
   const [burger, setBurger] = useState(false);
@@ -39,7 +40,7 @@ const Header = () => {
               <FontAwesomeIcon icon={faReact} />{" "}
             </motion.div>
           </div>
-          <span>ib1zza</span>
+          <Flip />
         </div>
       </Link>
       <Burger onChange={setBurger} flag={burger} />

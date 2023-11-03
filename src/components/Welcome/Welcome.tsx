@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import s from "./Welcome.module.scss";
 import Button from "../../UI/Button/Button";
 import { Link } from "react-scroll";
 import { useTranslation } from "react-i18next";
 import photo from "../../assets/img/im.jpg";
+import { useTypingText } from "../../hooks/useTypingText";
+import Typing from "../Typing/Typing";
 
 // const text = "frontend design development future ".toUpperCase();
 const text = "design - create - explore - future - frontend - ".toUpperCase();
 
 const Welcome = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <div className={s.welcomeBlock}>
       <div className={s.welcomeBlock__text}>
-        <h1>{t("me.heading")}</h1>
+        <h1>
+          {t("me.heading")} <Typing />
+        </h1>
         <p>{t("me.subheading")}</p>
         <Link to={"contacts"} smooth={true} offset={-70} duration={500}>
           <Button>{t("me.contactme")}</Button>

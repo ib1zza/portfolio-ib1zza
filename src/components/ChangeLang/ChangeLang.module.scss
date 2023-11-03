@@ -16,8 +16,8 @@
 
     &:hover {
       background-color: var(--accentLightColor);;
-      border: 1px solid  var(--accentLightColor);;
-      color: var(--bodyBg);
+      //border: 1px solid  var(--accentLightColor);;
+      color: var(--bgColor);
       transition: .2s ease-in-out;
 
       &.active {
@@ -34,16 +34,14 @@
 
   &.inBurger {
     button {
-      color: black !important;
+      color: black;
       font-size: 18px;
       &:hover {
         background-color: var(--accentColor);;
         border: 1px solid  var(--accentLightColor);;
-        color: black !important;
         transition: .2s ease-in-out;
 
         &.active {
-          //background-color: $accentColor;
           border-bottom: 4px solid transparent;
         }
       }
