@@ -1,0 +1,11 @@
+.mainContainer{
+  position: relative;
+}
+
+.ref {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  bottom: 0;
+  pointer-events: none;
+}

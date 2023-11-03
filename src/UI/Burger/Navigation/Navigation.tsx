@@ -58,7 +58,14 @@ export const Navigation = () => {
             exit={"hidden"}
             className={s.header__burger__nav__link}
           >
-            <NavLink to={link.to}>{t(link.name)}</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? s.header__burger__nav__link__active : ""
+              }
+              to={link.to}
+            >
+              {t(link.name)}
+            </NavLink>
           </motion.div>
         ))}
 

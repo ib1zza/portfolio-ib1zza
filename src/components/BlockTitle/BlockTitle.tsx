@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import s from "./BlockTitle.module.scss";
 import { motion } from "framer-motion";
 
@@ -30,4 +30,4 @@ const BlockTitle: React.FC<Props> = ({ text, children, isHovered }) => {
   );
 };
 
-export default BlockTitle;
+export default memo(BlockTitle);

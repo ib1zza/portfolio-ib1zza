@@ -64,6 +64,10 @@
 
   }
   z-index: 11;
+
+  &__active {
+    border-bottom: 2px solid var(--bgColor);
+  }
 }
 
 .header__burger__overlay {
