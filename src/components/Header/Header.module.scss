@@ -1,17 +1,21 @@
-
-
-.header {
-
-
+.headerContainer {
+  background-image: linear-gradient(to bottom, var(--bgColor) 90%, transparent 100%);
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
+  z-index: 100;
+
+}
+
+.header {
+
+
+
   width: 1024px;
   //background-color: var(--bgColor);
   max-width: 95%;
   margin: 0 auto;
-  z-index: 100;
   padding-top: 32px;
   padding-bottom: 36px;
 
@@ -19,7 +23,6 @@
   justify-content: space-between;
   align-items: center;
 
-  background-image: linear-gradient(to bottom, var(--bgColor) 90%, transparent 100%);
 
 }
 
