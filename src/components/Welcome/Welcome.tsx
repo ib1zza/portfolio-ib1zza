@@ -26,7 +26,9 @@ const Welcome = () => {
         <div className={s.rotate}>
           {text.split("").map((el, i) => (
             <span
-              style={{ transform: `rotate(${(i / text.length) * 360}deg)` }}
+              style={{
+                transform: `rotate(${(i / text.length) * 360}deg)`,
+              }}
               key={el + i}
               className={s.char}
             >
