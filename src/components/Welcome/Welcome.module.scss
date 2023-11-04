@@ -45,20 +45,13 @@ $blockSize: 380px;
     }
     &> a {
       width: 100%;
-      &>button {
-        font-weight: 500;
-        color: #FFFFFF;
-        background-color: transparent;
-        border: 1px solid var(--accentColor);
 
-        &:hover {
-          background: rgba(199, 120, 221, 0.2);
-        }
-
+      .button {
         @media screen and (max-width: 650px) {
           width: 100%;
         }
       }
+
     }
 
   }

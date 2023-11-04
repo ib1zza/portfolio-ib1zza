@@ -1,20 +1,36 @@
+@import "./vars";
+
 :root {
-  --bgColor: #161616;
-  --accentColor: #C778DD;
-  --accentLightColor: #ffffff;
-  --textGrayColor: #ABB2BF;
+  --bgColor: #{$bgColorViolet};
+  --accentColor: #{$accentColorViolet};
+  --accentLightColor: #{$accentLightColorViolet};
+  --textGrayColor: #{$textGrayColorViolet};
 }
 
 .App.green {
-  --bgColor: #011005;
-  --accentColor: #62c83a;
-  --accentLightColor: #ddf1d7;
-  --textGrayColor: #96bea9;
+  --bgColor: #{$bgColorGreen};
+  --accentColor: #{$accentColorGreen};
+  --accentLightColor: #{$accentLightColorGreen};
+  --textGrayColor: #{$textGrayColorGreen};
+}
+
+.App.greenLight {
+  --bgColor: #{$bgColorGreenLight};
+  --accentColor: #{$accentColorGreenLight};
+  --accentLightColor: #{$accentLightColorGreenLight};
+  --textGrayColor: #{$textGrayColorGreenLight};
 }
 
 .App.violet {
-  --bgColor: #161616;
-  --accentColor: #C778DD;
-  --accentLightColor: #fff3fe;
-  --textGrayColor: #c3b9c4;
+  --bgColor: #{$bgColorViolet};
+  --accentColor: #{$accentColorViolet};
+  --accentLightColor: #{$accentLightColorViolet};
+  --textGrayColor: #{$textGrayColorViolet};
+}
+
+.App.violetLight {
+  --bgColor: #{$bgColorVioletLight};
+  --accentColor: #{$accentColorVioletLight};
+  --accentLightColor: #{$accentLightColorVioletLight};
+  --textGrayColor: #{$textGrayColorVioletLight};
 }

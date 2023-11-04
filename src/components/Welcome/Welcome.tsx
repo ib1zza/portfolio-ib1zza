@@ -21,7 +21,7 @@ const Welcome = () => {
         </h1>
         <p>{t("me.subheading")}</p>
         <Link to={"contacts"} smooth={true} offset={-70} duration={500}>
-          <Button>{t("me.contactme")}</Button>
+          <Button className={s.button}>{t("me.contactme")}</Button>
         </Link>
       </div>
 

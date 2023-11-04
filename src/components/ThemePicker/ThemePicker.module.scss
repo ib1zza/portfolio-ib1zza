@@ -110,6 +110,10 @@ $sizeInner: $size - 10px;
       background: rgba(0, 0, 0, 0.4);
     }
 
+    .themeItemName {
+      white-space: nowrap;
+
+    }
 
     $miniCircleSize: 20px;
     .themeItemInnerCircle {
@@ -157,6 +161,29 @@ $sizeInner: $size - 10px;
         }
       }
     }
+
+    &.greenLight {
+      color: $accentColorGreenLight;
+
+      .themeItemInnerCircle {
+        background-color: $accentColorGreenLight;
+        &::before {
+          background-color: $bgColorGreenLight;
+        }
+      }
+    }
+
+    &.violetLight {
+      color: $accentColorVioletLight;
+
+      .themeItemInnerCircle {
+        background-color: $accentColorVioletLight;
+
+        &::before {
+          background-color: $bgColorVioletLight;
+        }
+      }
+    }
   }
 
   @media (max-width: 650px) {
@@ -170,7 +197,7 @@ $sizeInner: $size - 10px;
 
     border-radius:  0 10px 10px 10px ;
     .themeItem {
-      padding: 10px 20px;
+      padding: 8px 15px;
     }
     .trio {
       right: auto;

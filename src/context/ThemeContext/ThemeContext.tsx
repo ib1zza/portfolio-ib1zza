@@ -3,6 +3,8 @@ import { createContext, FC, useMemo, useState } from "react";
 export enum Theme {
   VIOLET = "violet",
   GREEN = "green",
+  VIOLET_LIGHT = "violetLight",
+  GREEN_LIGHT = "greenLight",
 }
 
 export interface ThemeContextProps {

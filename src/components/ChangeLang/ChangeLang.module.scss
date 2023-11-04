@@ -34,7 +34,7 @@
 
   &.inBurger {
     button {
-      color: black;
+      color: var(--bgColor);
       font-size: 18px;
       &:hover {
         background-color: var(--accentColor);;

@@ -11,8 +11,16 @@ const themes: { name: string; value: Theme }[] = [
     value: Theme.VIOLET,
   },
   {
+    name: "Violet Light",
+    value: Theme.VIOLET_LIGHT,
+  },
+  {
     name: "Green",
     value: Theme.GREEN,
+  },
+  {
+    name: "Green Light",
+    value: Theme.GREEN_LIGHT,
   },
 ];
 
@@ -62,7 +70,15 @@ const ThemePicker = () => {
               onClick={() => toggleTheme(theme.value)}
             >
               <div className={s.themeItemInnerCircle}></div>
-              <span>{theme.name}</span>
+              <span
+                className={
+                  s.themeItemName +
+                  " " +
+                  (theme.name.includes("Light") ? s.light : "")
+                }
+              >
+                {theme.name}
+              </span>
             </div>
           );
         })}
