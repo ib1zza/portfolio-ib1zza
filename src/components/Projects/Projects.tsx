@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./Projects.module.scss";
-import data from "../../data";
+import data from "../../constants/data";
 
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";

@@ -1,25 +1,25 @@
-import pizzaImageDesktop1 from "./assets/img/projects-screens/pizza1.png";
-import pizzaImageDesktop2 from "./assets/img/projects-screens/pizza2.png";
-import pizzaMockup from "./assets/img/projects-screens/pizzaMockup.png";
+import pizzaImageDesktop1 from "../assets/img/projects-screens/pizza1.png";
+import pizzaImageDesktop2 from "../assets/img/projects-screens/pizza2.png";
+import pizzaMockup from "../assets/img/projects-screens/pizzaMockup.png";
 
-import weatherImageDesktop1 from "./assets/img/projects-screens/weather/weather1.png";
-import weatherImageDesktop2 from "./assets/img/projects-screens/weather/weather2.png";
-import weatherImageDesktop3 from "./assets/img/projects-screens/weather/weather3.png";
-import weatherImageDesktop4 from "./assets/img/projects-screens/weather/weather4.png";
-import weatherMockup from "./assets/img/projects-screens/weather/weatherMockup.png";
+import weatherImageDesktop1 from "../assets/img/projects-screens/weather/weather1.png";
+import weatherImageDesktop2 from "../assets/img/projects-screens/weather/weather2.png";
+import weatherImageDesktop3 from "../assets/img/projects-screens/weather/weather3.png";
+import weatherImageDesktop4 from "../assets/img/projects-screens/weather/weather4.png";
+import weatherMockup from "../assets/img/projects-screens/weather/weatherMockup.png";
 
-import todoImageDesktop1 from "./assets/img/projects-screens/todo/todo1.png";
-import todoMockup from "./assets/img/projects-screens/todo/todoMockup.png";
+import todoImageDesktop1 from "../assets/img/projects-screens/todo/todo1.png";
+import todoMockup from "../assets/img/projects-screens/todo/todoMockup.png";
 
-import movieImageDesktop1 from "./assets/img/projects-screens/movie/movie1.png";
-import movieImageDesktop2 from "./assets/img/projects-screens/movie/movie2.png";
-import movieImageDesktop3 from "./assets/img/projects-screens/movie/movie3.png";
-import movieMockup from "./assets/img/projects-screens/movie/movieMockup.png";
+import movieImageDesktop1 from "../assets/img/projects-screens/movie/movie1.png";
+import movieImageDesktop2 from "../assets/img/projects-screens/movie/movie2.png";
+import movieImageDesktop3 from "../assets/img/projects-screens/movie/movie3.png";
+import movieMockup from "../assets/img/projects-screens/movie/movieMockup.png";
 
-import chatImageDesktop1 from "./assets/img/projects-screens/chat/chat1.png";
-import chatImageDesktop2 from "./assets/img/projects-screens/chat/chat2.png";
-import chatImageDesktop3 from "./assets/img/projects-screens/chat/chat3.png";
-import chatMockup from "./assets/img/projects-screens/chat/chatMockup.png";
+import chatImageDesktop1 from "../assets/img/projects-screens/chat/chat1.png";
+import chatImageDesktop2 from "../assets/img/projects-screens/chat/chat2.png";
+import chatImageDesktop3 from "../assets/img/projects-screens/chat/chat3.png";
+import chatMockup from "../assets/img/projects-screens/chat/chatMockup.png";
 
 export interface IData {
   id: string;

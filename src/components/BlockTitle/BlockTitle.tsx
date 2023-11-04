@@ -9,9 +9,9 @@ interface Props {
 }
 
 const AnimationVariants = {
-  hidden: { opacity: 0, x: -200 },
+  hidden: { opacity: 0, x: 200 },
   visible: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: -200 },
+  exit: { opacity: 0, x: 200 },
 };
 const BlockTitle: React.FC<Props> = ({ text, children, isHovered }) => {
   return (

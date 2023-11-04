@@ -9,6 +9,7 @@ import { AppRoutes } from "./AppRoutes";
 import ProjectInfoPage from "./pages/ProjectInfoPage/ProjectInfoPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import { useTheme } from "./context/ThemeContext/useTheme";
+import LeftLinks from "./components/LeftLinks/LeftLinks";
 
 function App() {
   const { pathname } = useLocation();
@@ -22,6 +23,7 @@ function App() {
     () => (
       <>
         <Header />
+        <LeftLinks />
         <Routes>
           <Route index element={<HomePage />} />
           <Route path={AppRoutes.PROJECTS} element={<ProjectsPage />} />

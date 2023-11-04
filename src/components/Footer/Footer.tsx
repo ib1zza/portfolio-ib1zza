@@ -1,39 +1,12 @@
 import React from "react";
 import Wrapper from "../../UI/Wrapper/Wrapper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGithub,
-  faReact,
-  faTelegram,
-  faVk,
-} from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faReact } from "@fortawesome/free-brands-svg-icons";
 import s from "./Footer.module.scss";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { links } from "../../constants/links";
 
-const links = [
-  {
-    href: "https://t.me/ib1zza",
-    text: "telegram",
-    icon: faTelegram,
-  },
-  {
-    href: "https://github.com/ib1zza",
-    text: "github",
-    icon: faGithub,
-  },
-  {
-    href: "https://vk.com/ib1zza",
-    text: "vk",
-    icon: faVk,
-  },
-  {
-    href: "mailto:Ks5nI@example.com",
-    text: "email",
-    icon: faEnvelope,
-  },
-];
 const Footer = () => {
   const { t } = useTranslation();
 

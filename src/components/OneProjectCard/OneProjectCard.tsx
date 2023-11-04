@@ -3,7 +3,7 @@ import s from "./OneProjectCard.module.scss";
 import { Link } from "react-router-dom";
 import { AppRoutes } from "../../AppRoutes";
 import Button from "../../UI/Button/Button";
-import { IData } from "../../data";
+import { IData } from "../../constants/data";
 import { useTranslation } from "react-i18next";
 
 interface Props {

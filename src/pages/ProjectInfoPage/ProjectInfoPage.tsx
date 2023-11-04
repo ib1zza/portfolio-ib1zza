@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Wrapper from "../../UI/Wrapper/Wrapper";
 import { AppRoutes } from "../../AppRoutes";
 import s from "./ProjectInfoPage.module.scss";
-import data, { IData } from "../../data";
+import data, { IData } from "../../constants/data";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

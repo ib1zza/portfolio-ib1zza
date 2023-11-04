@@ -1,6 +1,6 @@
 import React from "react";
 import Wrapper from "../../UI/Wrapper/Wrapper";
-import data from "../../data";
+import data from "../../constants/data";
 import OneProjectCard from "../../components/OneProjectCard/OneProjectCard";
 import s from "./ProjectsPage.module.scss";
 
