@@ -13,11 +13,8 @@ const HomePage = () => {
     <Wrapper>
       <Welcome />
       <BlockWithHoverTitle title={t("global.projects")} page={<Projects />} />
-      {/*<Projects />*/}
       <BlockWithHoverTitle title={t("global.skills")} page={<Skills />} />
-      {/*<Skills />*/}
       <BlockWithHoverTitle title={t("global.contacts")} page={<Contacts />} />
-      {/*<Contacts />*/}
     </Wrapper>
   );
 };

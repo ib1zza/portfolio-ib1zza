@@ -16,7 +16,7 @@ const Contacts = () => {
           <h3>{t("me.messageMeHere")}</h3>
           <div>
             <FontAwesomeIcon icon={faDiscord} />
-            #3634 ib1zza
+            @ib1zza
           </div>
           <a href={"https://t.me/ib1zza"} target={"_blank"} rel="noreferrer">
             <FontAwesomeIcon icon={faTelegram} />

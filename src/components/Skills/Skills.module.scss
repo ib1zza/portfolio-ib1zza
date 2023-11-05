@@ -28,7 +28,13 @@
           border-radius: 10px;
           border: 1px solid var(--accentColor);
           transition: 0.2s ease-in-out;
+
+          &>h4 {
+            color: var(--accentColor);
+            transition: 0.2s ease-in-out;
+          }
         }
+
         @media screen and (max-width: 915px) {
           width: 100%;
           margin-right: 0;
@@ -46,7 +52,9 @@
         }
 
         &>h4 {
+
           border-bottom: 1px solid var(--textGrayColor);
+          transition: 0.2s ease-in-out;
         }
       }
     }
