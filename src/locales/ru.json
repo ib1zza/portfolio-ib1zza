@@ -37,7 +37,8 @@
     "projects": "проекты",
     "skills":  "навыки",
     "contacts":  "контакты",
-    "media":  "контакты"
+    "media":  "контакты",
+    "education": "образование"
   },
   "skills": {
     "languages": "языки",

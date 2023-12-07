@@ -37,7 +37,8 @@
     "projects": "projects",
     "skills": "skills",
     "contacts": "contacts",
-    "media": "media"
+    "media": "media",
+    "education": "education"
   },
   "skills": {
     "languages": "languages",

@@ -6,6 +6,7 @@ import Welcome from "../components/Welcome/Welcome";
 import Contacts from "../components/Contacts/Contacts";
 import BlockWithHoverTitle from "../components/BlockWithHoverTitle/BlockWithHoverTitle";
 import { useTranslation } from "react-i18next";
+import Education from "../components/Education/Education";
 
 const HomePage = () => {
   const { t } = useTranslation();
@@ -14,6 +15,7 @@ const HomePage = () => {
       <Welcome />
       <BlockWithHoverTitle title={t("global.projects")} page={<Projects />} />
       <BlockWithHoverTitle title={t("global.skills")} page={<Skills />} />
+      <BlockWithHoverTitle title={t("global.education")} page={<Education />} />
       <BlockWithHoverTitle title={t("global.contacts")} page={<Contacts />} />
     </Wrapper>
   );
