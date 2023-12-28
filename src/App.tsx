@@ -10,6 +10,7 @@ import ProjectInfoPage from "./pages/ProjectInfoPage/ProjectInfoPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import { useTheme } from "./context/ThemeContext/useTheme";
 import LeftLinks from "./components/LeftLinks/LeftLinks";
+import Cursor from "./components/Cursor/Cursor";
 
 function App() {
   const { pathname } = useLocation();
@@ -22,6 +23,7 @@ function App() {
   const Components = useMemo(
     () => (
       <>
+        <Cursor />
         <Header />
         <LeftLinks />
         <Routes>

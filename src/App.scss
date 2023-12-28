@@ -13,6 +13,7 @@
     scroll-behavior: smooth;
     overflow: hidden;
     user-select: none;
+    cursor: none !important;
 }
 
 * {
@@ -44,5 +45,5 @@ h6
 }
 
 button {
-    cursor: pointer;
+    //cursor: pointer;
 }
