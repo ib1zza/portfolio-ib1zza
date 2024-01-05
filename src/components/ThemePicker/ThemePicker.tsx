@@ -50,10 +50,12 @@ const ThemePicker = () => {
 
   return (
     <div className={s.wrapper} onClick={toggleList}>
-      <div className={s.circle}>
+      <div className={s.circle + " cursorHover"}>
         <div className={s.innerCircle}></div>
       </div>
-      <div className={s.arrow + (listOpen ? " " + s.open : "")}>
+      <div
+        className={s.arrow + " cursorHover" + (listOpen ? " " + s.open : "")}
+      >
         <FontAwesomeIcon icon={faAngleDown} />
       </div>
 

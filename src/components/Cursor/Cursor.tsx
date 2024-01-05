@@ -19,7 +19,7 @@ const Cursor = () => {
       }}
       showSystemCursor={false}
       outerScale={3}
-      trailingSpeed={15}
+      trailingSpeed={3}
       clickables={[
         "a",
         'input[type="text"]',
