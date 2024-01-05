@@ -1,10 +1,7 @@
 import React from "react";
 import AnimatedCursor from "react-animated-cursor";
-import { useTheme } from "../../context/ThemeContext/useTheme";
 
 const Cursor = () => {
-  const { theme } = useTheme();
-  console.log(theme);
   const color = "255, 255, 255";
   return (
     <AnimatedCursor
