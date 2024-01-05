@@ -1,5 +1,4 @@
 import React from "react";
-import s from "./Cursor.module.scss";
 import AnimatedCursor from "react-animated-cursor";
 import { useTheme } from "../../context/ThemeContext/useTheme";
 

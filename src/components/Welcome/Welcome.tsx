@@ -3,7 +3,7 @@ import s from "./Welcome.module.scss";
 import Button from "../../UI/Button/Button";
 import { Link } from "react-scroll";
 import { useTranslation } from "react-i18next";
-import photo from "../../assets/img/im.jpg";
+// import photo from "../../../public/im.jpg";
 import { useTypingText } from "../../hooks/useTypingText";
 import Typing from "../Typing/Typing";
 
@@ -26,7 +26,7 @@ const Welcome = () => {
       </div>
 
       <div className={s.welcomeBlock__photo}>
-        <img src={photo} alt="me" />
+        <img src={"./im.jpg"} alt="me" />
         <div className={s.rotate}>
           {text.split("").map((el, i) => (
             <span
