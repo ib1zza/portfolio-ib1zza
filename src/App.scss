@@ -6,30 +6,31 @@
 
 .App {
     padding-top: 150px;
-    background-color: var(--bgColor);
     min-height: 100vh;
-    //font-family: 'Fira Code', monospace;
-    color: var(--textGrayColor);
-    scroll-behavior: smooth;
     overflow: hidden;
+    background-color: var(--bgColor);
+    color: var(--textGrayColor);
+}
+
+body {
+    background-color: var(--bgColor);
+    scroll-behavior: smooth;
     user-select: none;
     cursor: none !important;
 }
+
 
 * {
     outline: none;
     border: none;
     box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+    letter-spacing: 1px;
 }
 
 a {
     text-decoration: none;
     color: inherit;
-}
-
-* {
-    font-family: "Roboto Condensed", sans-serif;
-    letter-spacing: 1px;
 }
 
 h1,

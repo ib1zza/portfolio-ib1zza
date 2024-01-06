@@ -6,7 +6,7 @@ const Cursor = () => {
   return (
     <AnimatedCursor
       innerSize={0}
-      outerSize={15}
+      outerSize={10}
       color={color}
       outerAlpha={1}
       innerScale={0.7}
@@ -14,7 +14,7 @@ const Cursor = () => {
         mixBlendMode: "exclusion",
       }}
       showSystemCursor={false}
-      outerScale={3}
+      outerScale={2}
       trailingSpeed={3}
       clickables={[
         "a",

@@ -12,8 +12,9 @@ const Footer = () => {
 
   return (
     <>
-      <div className={s.footer__borderTop} />
       <Wrapper>
+        <div className={s.footer__borderTop} />
+
         <div className={s.footer}>
           <div className={s.footer__logo}>
             <div className={s.react}>
