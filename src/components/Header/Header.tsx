@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReact } from "@fortawesome/free-brands-svg-icons";
 import s from "./Header.module.scss";
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import Burger from "../../UI/Burger/Burger";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AppRoutes } from "../../AppRoutes";
@@ -11,6 +11,13 @@ import ChangeLang from "../ChangeLang/ChangeLang";
 import ThemePicker from "../ThemePicker/ThemePicker";
 import Flip from "../Flip/Flip";
 const Header = () => {
+  const { scrollYProgress } = useScroll();
+  // const scaleX = useSpring(scrollYProgress, {
+  //   stiffness: 100,
+  //   damping: 30,
+  //   restDelta: 0.001,
+  // });
+
   const { t } = useTranslation();
   const [burger, setBurger] = useState(false);
   const setStyles = (isActive: boolean) => {
@@ -25,6 +32,11 @@ const Header = () => {
   return (
     <div className={s.headerContainer}>
       <header className={s.header}>
+        <motion.div
+          className={s.header__progress}
+          style={{ scaleX: scrollYProgress }}
+        />
+
         <Link to={AppRoutes.HOME}>
           <div className={s.header__logo}>
             <div className={s.header__logo__reactContainer}>
