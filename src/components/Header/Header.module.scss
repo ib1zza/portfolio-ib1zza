@@ -22,8 +22,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 
+}
 
+.header__progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accentColor);
+  transform-origin: 0%;
 }
 
 @media screen and (max-width: 650px) {
@@ -59,6 +69,11 @@
 
 }
 
+.header__navigation {
+  display: flex;
+  gap: 20px;
+}
+
 .header__links {
   justify-content: flex-end;
   display: flex;
@@ -69,18 +84,19 @@
 }
 
 @media screen and (max-width: 650px) {
-  .header__links {
+  .header__links, .header__navigation {
     display: none;
   }
+
 }
 
-.header__links > a {
+.header__navigation > a {
   position: relative;
   white-space: nowrap;
 
 }
 
-.header__links > a::before {
+.header__navigation > a::before {
   content: "#";
   font-weight: 500;
   color: var(--accentColor);

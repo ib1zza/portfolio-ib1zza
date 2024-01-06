@@ -38,37 +38,32 @@ const overlayVariants = {
 const Burger: React.FC<Props> = ({ flag, onChange }) => {
   const toggler = () => onChange(!flag);
   return (
-    <div>
+    <motion.div className={s.header__burger} animate={flag ? "open" : "closed"}>
       <motion.div
-        className={s.header__burger}
-        animate={flag ? "open" : "closed"}
-      >
-        <motion.div
-          initial={false}
-          className={s.burger__background}
-          variants={sidebar}
-          style={{ position: flag ? "fixed" : "absolute" }}
-        />
-        <MenuToggle toggle={toggler} />
+        initial={false}
+        className={s.burger__background}
+        variants={sidebar}
+        style={{ position: flag ? "fixed" : "absolute" }}
+      />
+      <MenuToggle toggle={toggler} />
 
-        <AnimatePresence mode="wait">
-          {flag && (
-            <>
-              <Navigation />
-              <motion.div
-                onClick={() => onChange(false)}
-                className={s.header__burger__overlay}
-                variants={overlayVariants}
-                initial={"hidden"}
-                animate={"visible"}
-                exit={"hidden"}
-                transition={{ duration: 0.3 }}
-              />
-            </>
-          )}
-        </AnimatePresence>
-      </motion.div>
-    </div>
+      <AnimatePresence mode="wait">
+        {flag && (
+          <>
+            <Navigation />
+            <motion.div
+              onClick={() => onChange(false)}
+              className={s.header__burger__overlay}
+              variants={overlayVariants}
+              initial={"hidden"}
+              animate={"visible"}
+              exit={"hidden"}
+              transition={{ duration: 0.3 }}
+            />
+          </>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 };
 
