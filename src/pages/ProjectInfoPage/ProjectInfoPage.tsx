@@ -70,7 +70,7 @@ const ProjectInfoPage = () => {
         ))}
         <div className={s.stack}>
           <h2>{t("projects.stack")}:</h2>
-          <div className={s.stack}>{info.stack.join(" ")}</div>
+          <div className={s.stack}>{info.stack.join(" • ")}</div>
         </div>
         <div className={s.description}>
           <h2>{t("projects.description")}:</h2>

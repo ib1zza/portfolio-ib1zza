@@ -24,7 +24,7 @@ const OneProjectCard = ({ projectInfo }: Props) => {
         </Link>
       </div>
       <div className={s.project__item__text}>
-        <div className={s.technologies}>{projectInfo.stack.join(" ")}</div>
+        <div className={s.technologies}>{projectInfo.stack.join(" • ")}</div>
         <div className={s.project__info}>
           <h2 className={s.project__name}>{projectInfo.displayName}</h2>
           <p className={s.project__description}>
