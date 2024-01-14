@@ -5,6 +5,7 @@ import { AppRoutes } from "../../AppRoutes";
 import Button from "../../UI/Button/Button";
 import { IData } from "../../constants/data";
 import { useTranslation } from "react-i18next";
+import HoverSkew from "../HoverSkew/HoverSkew";
 
 interface Props {
   projectInfo: IData;
@@ -30,8 +31,12 @@ const OneProjectCard = ({ projectInfo }: Props) => {
           <p className={s.project__description}>
             {t(projectInfo.description.mini)}
           </p>
-          <Link to={AppRoutes.PROJECTS + "/" + projectInfo.id}>
-            <Button>{t("view") + " ->"}</Button>
+          <Link
+            className={s.button}
+            onMouseOver={() => console.log("hover")}
+            to={AppRoutes.PROJECTS + "/" + projectInfo.id}
+          >
+            {t("view") + " ->"}
           </Link>
         </div>
       </div>

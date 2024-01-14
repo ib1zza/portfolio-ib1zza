@@ -11,6 +11,7 @@ interface Props {
 const Button: React.FC<Props> = ({ children, onClick, className, ...rest }) => {
   return (
     <button
+      onMouseOver={() => console.log("hover")}
       className={s.button + (className ? " " + className : "")}
       {...rest}
       onClick={onClick}

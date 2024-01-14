@@ -7,6 +7,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../scss/slickCustom.scss";
 import OneProjectCard from "../OneProjectCard/OneProjectCard";
+import HoverSkew from "../HoverSkew/HoverSkew";
+
 const settings: Settings = {
   infinite: true,
   speed: 500,
@@ -62,7 +64,9 @@ const Projects = () => {
       >
         {data.map((el) => (
           <div key={el.id} className={s.projects__slider__container}>
-            <OneProjectCard projectInfo={el} key={el.id} />
+            <HoverSkew>
+              <OneProjectCard projectInfo={el} key={el.id} />
+            </HoverSkew>
           </div>
         ))}
       </Slider>

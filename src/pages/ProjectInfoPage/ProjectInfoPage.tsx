@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useTranslation } from "react-i18next";
+import HoverSkew from "../../components/HoverSkew/HoverSkew";
 
 const ProjectInfoPage = () => {
   const { t } = useTranslation();
@@ -64,9 +65,11 @@ const ProjectInfoPage = () => {
         )}
 
         {info.images?.mockup.map((el) => (
-          <div key={el} className={s.project__image}>
-            <img src={el} alt={info.displayName} />
-          </div>
+          <HoverSkew>
+            <div key={el} className={s.project__image}>
+              <img src={el} alt={info.displayName} />
+            </div>
+          </HoverSkew>
         ))}
         <div className={s.stack}>
           <h2>{t("projects.stack")}:</h2>
@@ -80,7 +83,12 @@ const ProjectInfoPage = () => {
         <div className={s.description}>
           <h2>
             {t("projects.wantToCheck")}{" "}
-            <a href={info.link} target={"_blank"} rel="noreferrer">
+            <a
+              href={info.link}
+              target={"_blank"}
+              rel="noreferrer"
+              className={s.link}
+            >
               {t("projects.viewDeployment")}
             </a>
           </h2>

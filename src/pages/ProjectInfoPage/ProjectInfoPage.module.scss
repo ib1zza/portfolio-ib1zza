@@ -8,9 +8,6 @@
 
   a {
     color: var(--accentColor);
-    &:hover {
-      text-decoration: underline;
-    }
   }
 }
 
@@ -37,5 +34,29 @@
     }
   }
 
+}
+
+
+@keyframes linearGradientMove {
+  0% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.link {
+  transition: all 0.2s;
+
+  &:hover {
+    transition: all 0.2s;
+    background: linear-gradient(90deg, var(--accentColor) 100%, transparent 0) repeat-x;
+    background-size: 100% 2px;
+  }
+
+  background: linear-gradient(90deg, var(--accentColor) 50%, transparent 0) repeat-x;
+  background-size: 5% 2px;
+  animation: linearGradientMove 5s infinite linear;
 }
 

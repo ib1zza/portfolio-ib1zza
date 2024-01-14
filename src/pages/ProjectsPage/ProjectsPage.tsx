@@ -10,8 +10,8 @@ const ProjectsPage = () => {
     <Wrapper>
       <div className={s.container}>
         {data.map((el) => (
-          <HoverSkew>
-            <OneProjectCard projectInfo={el} key={el.id} />
+          <HoverSkew key={el.id}>
+            <OneProjectCard projectInfo={el} />
           </HoverSkew>
         ))}
       </div>

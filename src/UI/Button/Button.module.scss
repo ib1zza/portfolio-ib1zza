@@ -8,13 +8,10 @@
   color: var(--accentLightColor);
   background-color: transparent;
   border: 1px solid var(--accentColor);
-  position: relative;
-  //cursor: pointer;
   transition: 0.3s ease-out;
 
   &:hover {
     background: rgba(199, 120, 221, 0.2);
-    transform: scaleY(1.1);
     border-radius: 20px;
     transition: 0.3s ease-out;
   }
