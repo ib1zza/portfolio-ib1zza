@@ -11,6 +11,7 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import { useTheme } from "./context/ThemeContext/useTheme";
 import LeftLinks from "./components/LeftLinks/LeftLinks";
 import Cursor from "./components/Cursor/Cursor";
+import HoverSkew from "./components/HoverSkew/HoverSkew";
 
 function App() {
   const { pathname } = useLocation();

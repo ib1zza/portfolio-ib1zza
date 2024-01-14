@@ -10,14 +10,24 @@
     align-items: flex-start;
     flex-wrap: wrap;
     min-width: 430px;
+    gap: 16px;
+
+
+    &>div {
+      width: auto;
+    }
 
     @media screen and (max-width: 915px) {
       flex-direction: column;
       min-width: 200px;
       width: 100%;
+
+      &>div {
+        width: 100%;
+      }
     }
 
-      &>.skill {
+      & .skill {
         width: 200px;
         display: flex;
         flex-direction: column;
@@ -44,8 +54,6 @@
         &:not(:last-child) {
           margin-right: 16px;
         }
-
-
 
         &>* {
           padding: 8px;

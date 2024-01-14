@@ -96,6 +96,7 @@ $size: $blockSize + 5px;
   }
 }
 
+
 .rotate {
   position: absolute;
   top: 0;
@@ -107,6 +108,13 @@ $size: $blockSize + 5px;
   height: 100%;
   //position: relative;
   animation: animate 15s linear infinite;
+
+  &:hover {
+
+    .char {
+      -webkit-text-stroke: 1px var(--accentLightColor);
+    }
+  }
 }
 
 .char {
@@ -121,6 +129,7 @@ $size: $blockSize + 5px;
   //font-family: 'Playfair Display', sans-serif;
   font-family: 'Roboto', sans-serif;
   -webkit-text-stroke: 1px var(--accentColor);
+  transition: 0.4s ease-in-out;
   //color: var(--accentColor);
   color: transparent;
   transform-origin: 0 center;
