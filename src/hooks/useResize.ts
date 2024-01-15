@@ -1,5 +1,6 @@
 import { useLayoutEffect, useState } from "react";
 
+// returns [width, height]
 export function useResize(): [number, number] {
   const [size, setSize] = useState<[number, number]>([0, 0]);
   useLayoutEffect(() => {

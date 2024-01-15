@@ -19,6 +19,12 @@ body {
     cursor: none !important;
 }
 
+@media screen and (max-width: 700px) {
+    body {
+        cursor: auto !important;
+    }
+}
+
 
 * {
     outline: none;

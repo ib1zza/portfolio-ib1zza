@@ -1,8 +1,16 @@
 import React from "react";
 import AnimatedCursor from "react-animated-cursor";
+import { useResize } from "../../hooks/useResize";
 
 const Cursor = () => {
   const color = "255, 255, 255";
+
+  const [width] = useResize();
+
+  const isVisible = width > 700;
+
+  if (!isVisible) return null;
+
   return (
     <AnimatedCursor
       innerSize={0}
