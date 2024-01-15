@@ -7,9 +7,9 @@
     border: 1px solid var(--textGrayColor);
     transition: 0.2s ease-in-out;
     overflow: hidden;
+    border-radius: 10px;
 
     &:hover {
-      border-radius: 10px;
       border: 1px solid var(--accentColor);
       transition: 0.2s ease-in-out;
     }
@@ -88,6 +88,7 @@
   .button {
     padding: 8px 16px;
     display: flex;
+    gap: 6px;
     justify-content: center;
     align-items: center;
     font-weight: 500;
@@ -96,10 +97,19 @@
     border: 1px solid var(--accentColor);
     transition: 0.3s ease-out;
 
+    & svg {
+      transition: 0.3s ease-out;
+    }
+
     &:hover {
       background: rgba(199, 120, 221, 0.2);
       border-radius: 20px;
       transition: 0.3s ease-out;
+
+      svg {
+        transform: translateX(5px);
+        transition: 0.3s ease-out;
+      }
     }
   }
 

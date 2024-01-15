@@ -6,6 +6,8 @@ import Button from "../../UI/Button/Button";
 import { IData } from "../../constants/data";
 import { useTranslation } from "react-i18next";
 import HoverSkew from "../HoverSkew/HoverSkew";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface Props {
   projectInfo: IData;
@@ -36,7 +38,8 @@ const OneProjectCard = ({ projectInfo }: Props) => {
             onMouseOver={() => console.log("hover")}
             to={AppRoutes.PROJECTS + "/" + projectInfo.id}
           >
-            {t("view") + " ->"}
+            {t("view")}
+            <FontAwesomeIcon icon={faArrowRight} />
           </Link>
         </div>
       </div>

@@ -14,9 +14,14 @@ type TiltProps = Partial<Omit<TiltSettings, "easing">>;
 interface Props {
   children: React.ReactNode;
   settings?: TiltProps;
+  withoutShine?: boolean;
 }
 
-const HoverSkew: React.FC<Props> = ({ children, settings = {} }) => {
+const HoverSkew: React.FC<Props> = ({
+  children,
+  settings,
+  withoutShine = false,
+}) => {
   const [tiltEffectSettings] = React.useState<TiltSettings>({
     max: 7, // max tilt rotation (degrees (deg))
     perspective: 1500, // transform perspective, the lower, the more extreme the tilt gets (pixels (px))
@@ -25,8 +30,13 @@ const HoverSkew: React.FC<Props> = ({ children, settings = {} }) => {
     easing: "cubic-bezier(.03,.98,.52,.99)", // easing (transition-timing-function) of the enter/exit transition,
     ...settings,
   });
+
+  const shineRef = React.useRef<HTMLDivElement>(null);
+
   function cardMouseEnter(event: React.MouseEvent<HTMLDivElement>) {
     setTransition(event);
+    if (withoutShine) return;
+    mouseEnterDotAnimation();
   }
 
   function cardMouseMove(event: React.MouseEvent<HTMLDivElement>) {
@@ -40,6 +50,10 @@ const HoverSkew: React.FC<Props> = ({ children, settings = {} }) => {
     const centerY = boundingClientRect.top + cardHeight / 2;
     const mouseX = event.clientX - centerX;
     const mouseY = event.clientY - centerY;
+
+    if (!withoutShine) {
+      mouseMoveDotAnimation(mouseX, mouseY);
+    }
 
     const rotateXUncapped =
       (+1 * tiltEffectSettings.max * mouseY) / (cardHeight / 2);
@@ -66,6 +80,8 @@ const HoverSkew: React.FC<Props> = ({ children, settings = {} }) => {
   function cardMouseLeave(event: React.MouseEvent<HTMLDivElement>) {
     event.currentTarget.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
     setTransition(event);
+    if (withoutShine) return;
+    mouseLeaveDotAnimation();
   }
 
   function setTransition(event: React.MouseEvent<HTMLDivElement>) {
@@ -78,6 +94,23 @@ const HoverSkew: React.FC<Props> = ({ children, settings = {} }) => {
     }, tiltEffectSettings.speed);
   }
 
+  function mouseLeaveDotAnimation() {
+    const shineElement = shineRef.current as HTMLDivElement;
+    shineElement.style.opacity = "0.7";
+    shineElement.style.transform = `translateX(0px) translateY(0px)`;
+  }
+
+  function mouseEnterDotAnimation() {
+    const shineElement = shineRef.current as HTMLDivElement;
+    shineElement.style.opacity = "1.0";
+    shineElement.style.transform = `translateX(0px) translateY(0px)`;
+  }
+
+  function mouseMoveDotAnimation(mouseX: number, mouseY: number) {
+    const shineElement = shineRef.current as HTMLDivElement;
+    shineElement.style.transform = `translateX(${mouseX}px) translateY(${mouseY}px)`;
+  }
+
   return (
     <div
       className={s.card}
@@ -85,6 +118,15 @@ const HoverSkew: React.FC<Props> = ({ children, settings = {} }) => {
       onMouseMove={cardMouseMove}
       onMouseLeave={cardMouseLeave}
     >
+      {!withoutShine && (
+        <div
+          className={s.shine}
+          ref={shineRef}
+          style={{
+            transition: `transform ${tiltEffectSettings.speed}ms ${tiltEffectSettings.easing}, opacity 0.4s ease-in`,
+          }}
+        />
+      )}
       {children}
     </div>
   );
