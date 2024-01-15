@@ -31,7 +31,6 @@ const Skills = () => {
               perspective: 500,
             }}
             key={category}
-            withoutShine
           >
             <div className={s.skill}>
               <h4>{category}</h4>

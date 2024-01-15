@@ -1,25 +1,4 @@
 
 .card {
   transform-style: preserve-3d;
-  position: relative;
-  overflow: hidden;
-}
-
-$size: 200px;
-
-.shine {
-  position: absolute;
-  top: calc(50% - $size / 2 );
-  left: calc(50% - $size / 2 );
-  width: $size;
-  height: $size;
-  background-color: var(--accentColor);
-  //translate: 100px 100px;
-  filter: blur(180px);
-  border-radius: 300px;
-  opacity: 0.7;
-  //transition: opacity 0.6 cubic-bezier(0.16, 1, 0.3, 1);
-  mix-blend-mode: soft-light;
-  will-change: transform;
-  z-index: -1;;
 }
