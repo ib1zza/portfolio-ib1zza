@@ -65,7 +65,7 @@ const ProjectInfoPage = () => {
         )}
 
         {info.images?.mockup.map((el) => (
-          <HoverSkew>
+          <HoverSkew withoutShine key={el}>
             <div key={el} className={s.project__image}>
               <img src={el} alt={info.displayName} />
             </div>
