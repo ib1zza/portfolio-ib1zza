@@ -12,6 +12,7 @@ import { useTheme } from "./context/ThemeContext/useTheme";
 import LeftLinks from "./components/LeftLinks/LeftLinks";
 import Cursor from "./components/Cursor/Cursor";
 import HoverSkew from "./components/HoverSkew/HoverSkew";
+import Background from "./components/Background/Background";
 
 function App() {
   const { pathname } = useLocation();
@@ -27,6 +28,7 @@ function App() {
         <Cursor />
         <Header />
         <LeftLinks />
+        <Background />
         <Routes>
           <Route index element={<HomePage />} />
           <Route path={AppRoutes.PROJECTS} element={<ProjectsPage />} />
