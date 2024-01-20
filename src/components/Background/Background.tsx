@@ -9,6 +9,12 @@ const getBGbyTheme = () => {
   ).getPropertyValue("--bgColor");
 };
 
+const getPrimatybyTheme = () => {
+  return getComputedStyle(
+    document.querySelector(".App") as HTMLElement
+  ).getPropertyValue("--accentColor");
+};
+
 const Background = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   // const canvas = document.getElementById('canv');
@@ -25,16 +31,19 @@ const Background = () => {
     const cols = Math.floor(w / 20) + 1;
     const ypos = Array(cols).fill(0);
 
-    ctx.fillStyle = getBGbyTheme();
+    const themeBg = getBGbyTheme();
+    const themePrim = getPrimatybyTheme();
+
+    ctx.fillStyle = themeBg;
     ctx.fillRect(0, 0, w, h);
 
     function matrix() {
-      console.log(getBGbyTheme());
-      ctx.fillStyle = getBGbyTheme() + "30";
+      console.log(themeBg);
+      ctx.fillStyle = themeBg + "30";
 
       ctx.fillRect(0, 0, w, h);
 
-      ctx.fillStyle = "#0f0";
+      ctx.fillStyle = themePrim;
       ctx.font = "15pt monospace";
 
       ypos.forEach((y, ind) => {
@@ -49,7 +58,7 @@ const Background = () => {
       });
     }
 
-    const i = setInterval(matrix, 50);
+    const i = setInterval(matrix, 100);
 
     return () => {
       clearInterval(i);
