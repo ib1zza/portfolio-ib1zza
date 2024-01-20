@@ -3,6 +3,7 @@ import diplomaEn from "../../assets/img/topDiploma/en.png";
 import diplomaRu from "../../assets/img/topDiploma/ru.png";
 import { useTranslation } from "react-i18next";
 import HoverSkew from "../HoverSkew/HoverSkew";
+import s from "./Educations.module.scss";
 
 const Education = () => {
   const { i18n } = useTranslation();
@@ -15,8 +16,8 @@ const Education = () => {
 
   return (
     <div>
-      <HoverSkew>
-        <img src={currentImage} alt="diploma" />
+      <HoverSkew withoutShine>
+        <img className={s.image} src={currentImage} alt="diploma" />
       </HoverSkew>
     </div>
   );

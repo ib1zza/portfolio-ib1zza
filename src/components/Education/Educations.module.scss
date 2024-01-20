@@ -1,0 +1,15 @@
+.image {
+
+  transition: 0.2s ease-in-out;
+  opacity: 0.75;
+    border-radius: 20px;
+  border : 0px solid var(--accentColor);
+
+
+  &:hover {
+   border : 1px solid var(--accentColor);
+    transition: 0.2s ease-in-out;
+    opacity: 0.85;
+
+  }
+}
