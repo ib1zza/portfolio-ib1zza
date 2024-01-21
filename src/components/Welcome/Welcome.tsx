@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import s from "./Welcome.module.scss";
 import Button from "../../UI/Button/Button";
 import { Link } from "react-scroll";
 import { useTranslation } from "react-i18next";
 // import photo from "../../../public/im.jpg";
-import { useTypingText } from "../../hooks/useTypingText";
 import Typing from "../Typing/Typing";
 
 // const text = "frontend design development future ".toUpperCase();
-const text = "design - create - explore - future - frontend - ".toUpperCase();
+const text = "create - explore - develop - future - frontend - ".toUpperCase();
 
 const Welcome = () => {
   const { t, i18n } = useTranslation();

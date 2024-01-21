@@ -15,12 +15,14 @@ interface Props {
   children: React.ReactNode;
   settings?: TiltProps;
   withoutShine?: boolean;
+  className?: string;
 }
 
 const HoverSkew: React.FC<Props> = ({
   children,
   settings,
   withoutShine = false,
+  className = "",
 }) => {
   const [tiltEffectSettings] = React.useState<TiltSettings>({
     max: 7, // max tilt rotation (degrees (deg))
@@ -113,7 +115,7 @@ const HoverSkew: React.FC<Props> = ({
 
   return (
     <div
-      className={s.card}
+      className={s.card + " " + className}
       onMouseEnter={cardMouseEnter}
       onMouseMove={cardMouseMove}
       onMouseLeave={cardMouseLeave}

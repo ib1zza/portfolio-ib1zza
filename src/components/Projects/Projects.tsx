@@ -64,7 +64,7 @@ const Projects = () => {
       >
         {data.map((el) => (
           <div key={el.id} className={s.projects__slider__container}>
-            <HoverSkew>
+            <HoverSkew className={s.hoverContainer}>
               <OneProjectCard projectInfo={el} key={el.id} />
             </HoverSkew>
           </div>
