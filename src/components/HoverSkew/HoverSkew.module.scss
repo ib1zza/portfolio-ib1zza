@@ -13,6 +13,7 @@ $size: 200px;
   position: absolute;
   top: calc(50% - $size / 2 );
   left: calc(50% - $size / 2 );
+  transform: translateX(0px) translateY(0px);
   width: $size;
   height: $size;
   background-color: var(--accentColor);
