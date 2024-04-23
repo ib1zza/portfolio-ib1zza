@@ -62,13 +62,15 @@ const Projects = () => {
         {...settings}
         className={s.projects__slider}
       >
-        {data.map((el) => (
-          <div key={el.id} className={s.projects__slider__container}>
-            <HoverSkew className={s.hoverContainer}>
-              <OneProjectCard projectInfo={el} key={el.id} />
-            </HoverSkew>
-          </div>
-        ))}
+        {data
+          .sort((a, b) => a.displayId - b.displayId)
+          .map((el) => (
+            <div key={el.id} className={s.projects__slider__container}>
+              <HoverSkew className={s.hoverContainer}>
+                <OneProjectCard projectInfo={el} key={el.id} />
+              </HoverSkew>
+            </div>
+          ))}
       </Slider>
     </div>
   );

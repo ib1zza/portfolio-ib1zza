@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import HoverSkew from "../HoverSkew/HoverSkew";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { convertStringToJSX } from "../../assets/utils/format";
 
 interface Props {
   projectInfo: IData;
@@ -30,9 +31,12 @@ const OneProjectCard = ({ projectInfo }: Props) => {
         <div className={s.technologies}>{projectInfo.stack.join(" • ")}</div>
         <div className={s.project__info}>
           <h2 className={s.project__name}>{projectInfo.displayName}</h2>
-          <p className={s.project__description}>
-            {t(projectInfo.description.mini)}
-          </p>
+          <p
+            className={s.project__description}
+            dangerouslySetInnerHTML={{
+              __html: convertStringToJSX(t(projectInfo.description.mini)),
+            }}
+          ></p>
           <Link
             className={s.button}
             onMouseOver={() => console.log("hover")}

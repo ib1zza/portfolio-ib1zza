@@ -4,11 +4,12 @@ import Wrapper from "../../UI/Wrapper/Wrapper";
 import { AppRoutes } from "../../AppRoutes";
 import s from "./ProjectInfoPage.module.scss";
 import data, { IData } from "../../constants/data";
-import Slider from "react-slick";
+import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useTranslation } from "react-i18next";
 import HoverSkew from "../../components/HoverSkew/HoverSkew";
+import { convertStringToJSX } from "../../assets/utils/format";
 
 const ProjectInfoPage = () => {
   const { t } = useTranslation();
@@ -25,7 +26,7 @@ const ProjectInfoPage = () => {
     return null;
   }
 
-  const settings = {
+  const settings: Settings = {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -35,7 +36,6 @@ const ProjectInfoPage = () => {
     pauseOnHover: true,
     dots: false,
     arrows: true,
-    adaptiveHeightMin: true,
 
     responsive: [
       {
@@ -77,7 +77,12 @@ const ProjectInfoPage = () => {
         </div>
         <div className={s.description}>
           <h2>{t("projects.description")}:</h2>
-          <p className={s.description}>{t(info.description.base)}</p>
+          <p
+            className={s.descriptionp__base}
+            dangerouslySetInnerHTML={{
+              __html: convertStringToJSX(t(info.description.base)),
+            }}
+          />
         </div>
 
         <div className={s.description}>

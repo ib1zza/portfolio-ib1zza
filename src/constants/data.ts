@@ -21,9 +21,15 @@ import chatImageDesktop2 from "../assets/img/projects-screens/chat/chat2.png";
 import chatImageDesktop3 from "../assets/img/projects-screens/chat/chat3.png";
 import chatMockup from "../assets/img/projects-screens/chat/chatMockup.png";
 
+import kanbanImageDesktop1 from "../assets/img/projects-screens/kanban/kanban3.png";
+import kanbanImageDesktop2 from "../assets/img/projects-screens/kanban/kanban1.png";
+import kanbanImageDesktop3 from "../assets/img/projects-screens/kanban/kanban2.png";
+import kanbanMockup from "../assets/img/projects-screens/kanban/kanbanMockup.png";
+
 export interface IData {
   id: string;
   displayName: string;
+  displayId: number;
   stack: string[];
   description: {
     mini: string;
@@ -38,8 +44,32 @@ export interface IData {
 
 export default [
   {
+    id: "kanban",
+    displayId: 1,
+    displayName: "Kanban",
+    stack: [
+      "REACTJS",
+      "TYPESCRIPT",
+      "SCSS",
+      "REDUX-TOOLKIT",
+      "REDUX-THUNK",
+      "FIREBASE",
+      "i18n",
+      "JEST",
+    ],
+    description: {
+      mini: "kanban.mini",
+      base: "kanban.base",
+    },
+    images: {
+      desktop: [kanbanImageDesktop1, kanbanImageDesktop2, kanbanImageDesktop3],
+      mockup: [kanbanMockup],
+    },
+    link: "https://react-kanban-delta.vercel.app/",
+  },
+  {
     id: "todo",
-
+    displayId: 6,
     displayName: "TodoList",
     stack: [
       "REACTJS",
@@ -63,6 +93,7 @@ export default [
   {
     id: "pizza",
     displayName: "Pizza store",
+    displayId: 5,
     stack: [
       "REACTJS",
       "TYPESCRIPT",
@@ -83,6 +114,7 @@ export default [
   },
   {
     id: "weather",
+    displayId: 4,
     displayName: "Weather website",
     stack: [
       "REACTJS",
@@ -110,6 +142,7 @@ export default [
   {
     id: "movies",
     displayName: "Online Cinema",
+    displayId: 3,
     stack: [
       "REACTJS",
       "TYPESCRIPT",
@@ -132,6 +165,7 @@ export default [
   {
     id: "chat",
     displayName: "Realtime chat app",
+    displayId: 2,
     stack: [
       "REACTJS",
       "TYPESCRIPT",

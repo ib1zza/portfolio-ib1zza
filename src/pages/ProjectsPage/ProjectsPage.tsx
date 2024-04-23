@@ -9,11 +9,13 @@ const ProjectsPage = () => {
   return (
     <Wrapper>
       <div className={s.container}>
-        {data.map((el) => (
-          <HoverSkew key={el.id}>
-            <OneProjectCard projectInfo={el} />
-          </HoverSkew>
-        ))}
+        {data
+          .sort((a, b) => a.displayId - b.displayId)
+          .map((el) => (
+            <HoverSkew key={el.id}>
+              <OneProjectCard projectInfo={el} />
+            </HoverSkew>
+          ))}
       </div>
     </Wrapper>
   );

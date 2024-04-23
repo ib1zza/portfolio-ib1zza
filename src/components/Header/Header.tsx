@@ -12,11 +12,6 @@ import ThemePicker from "../ThemePicker/ThemePicker";
 import Flip from "../Flip/Flip";
 const Header = () => {
   const { scrollYProgress } = useScroll();
-  // const scaleX = useSpring(scrollYProgress, {
-  //   stiffness: 100,
-  //   damping: 30,
-  //   restDelta: 0.001,
-  // });
 
   const { t } = useTranslation();
   const [burger, setBurger] = useState(false);
@@ -29,6 +24,13 @@ const Header = () => {
     setBurger(false);
   }, [pathname]);
 
+  function scrollOnTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
   return (
     <div className={s.headerContainer}>
       <header className={s.header}>
@@ -37,7 +39,7 @@ const Header = () => {
           style={{ scaleX: scrollYProgress }}
         />
 
-        <Link to={AppRoutes.HOME}>
+        <Link to={AppRoutes.HOME} onClick={scrollOnTop}>
           <div className={s.header__logo}>
             <div className={s.header__logo__reactContainer}>
               <motion.div

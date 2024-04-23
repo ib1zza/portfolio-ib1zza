@@ -46,6 +46,14 @@
       .project__description {
         height: 120px;
         overflow: hidden;
+
+        a {
+          color: var(--accentColor);
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
       &>*:not(:last-child) {
         margin-bottom: 16px;
