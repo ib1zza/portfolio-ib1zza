@@ -7,8 +7,6 @@ export function convertStringToJSX(string: string): string {
   // Initialize an array to store JSX elements
   const jsxElements = [];
 
-  console.log(parts);
-
   // Iterate through the parts
   for (let i = 0; i < parts.length; i++) {
     const part = parts[i];
@@ -17,7 +15,6 @@ export function convertStringToJSX(string: string): string {
     } else {
       const [link, name] = part.split(/[()]/);
 
-      // console.log(username, link);
       jsxElements.push(
         ` <a href=${link}>
           ${name}

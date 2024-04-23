@@ -36,10 +36,9 @@ const OneProjectCard = ({ projectInfo }: Props) => {
             dangerouslySetInnerHTML={{
               __html: convertStringToJSX(t(projectInfo.description.mini)),
             }}
-          ></p>
+          />
           <Link
             className={s.button}
-            onMouseOver={() => console.log("hover")}
             to={AppRoutes.PROJECTS + "/" + projectInfo.id}
           >
             {t("view")}

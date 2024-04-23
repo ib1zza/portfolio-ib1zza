@@ -9,7 +9,7 @@ const getBGbyTheme = () => {
   ).getPropertyValue("--bgColor");
 };
 
-const getPrimatybyTheme = () => {
+const getPrimaryByTheme = () => {
   return getComputedStyle(
     document.querySelector(".App") as HTMLElement
   ).getPropertyValue("--accentColor");
@@ -17,7 +17,6 @@ const getPrimatybyTheme = () => {
 
 const Background = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  // const canvas = document.getElementById('canv');
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -32,13 +31,12 @@ const Background = () => {
     const ypos = Array(cols).fill(0);
 
     const themeBg = getBGbyTheme();
-    const themePrim = getPrimatybyTheme();
+    const themePrim = getPrimaryByTheme();
 
     ctx.fillStyle = themeBg;
     ctx.fillRect(0, 0, w, h);
 
     function matrix() {
-      console.log(themeBg);
       ctx.fillStyle = themeBg + "30";
 
       ctx.fillRect(0, 0, w, h);
@@ -58,10 +56,14 @@ const Background = () => {
       });
     }
 
-    const i = setInterval(matrix, 100);
+    for (let i = 0; i < 100; i++) {
+      matrix();
+    }
+
+    const int = setInterval(matrix, 100);
 
     return () => {
-      clearInterval(i);
+      clearInterval(int);
     };
   }, [canvasRef.current, theme]);
 
