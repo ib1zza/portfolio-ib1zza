@@ -15,9 +15,6 @@
   }
 }
 
-.descriptionp__base {
-
-}
 
 .wrapper {
   h2 {
@@ -35,6 +32,7 @@
   .slider {
     width: calc(100% - 60px);
     margin: 0 auto;
+    margin-bottom: 20px;
     margin-bottom: 20px;
     border-radius: 20px ;
     //overflow: hidden;
@@ -68,6 +66,7 @@
     transition: all 0.2s;
     background: linear-gradient(90deg, var(--accentColor) 100%, transparent 0) repeat-x;
     background-size: 100% 2px;
+    text-decoration: none !important;
   }
 
   background: linear-gradient(90deg, var(--accentColor) 50%, transparent 0) repeat-x;
