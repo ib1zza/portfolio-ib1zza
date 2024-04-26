@@ -11,7 +11,7 @@ interface Props {
 
 const sidebar = {
   open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at calc(100% - 40px) 55px)`,
+    clipPath: `circle(${height * 2 + 200}px at calc(100% - 40px) 45px)`,
 
     transition: {
       type: "spring",
@@ -20,7 +20,7 @@ const sidebar = {
     },
   }),
   closed: {
-    clipPath: "circle(25px at calc(100% - 40px) 55px)",
+    clipPath: "circle(25px at calc(100% - 40px) 45px)",
 
     transition: {
       type: "spring",
