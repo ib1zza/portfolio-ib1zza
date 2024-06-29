@@ -23,6 +23,14 @@
     "mini": "Chat application with a lot of functions. Built using Google Firebase.",
     "base": "A website with chat functionality. Authentication and storage of chat and user data using google firebase. There is functionality of registration and logging into the account (using email / google account, search for users by username, sending and receiving messages in real time, sending files together with the text, delete chat for both users, edit personal information (username, avatar), change of application theme, change of language (Russian, English). The site is displayed correctly on any device (320 - 4096)px."
   },
+  "stellar-burgers": {
+    "base": "Project work of Yandex Practicum. Burger constructor website with registration and login functionality, building your own burger and placing an order. The user has a personal account where all his orders are stored, there is an opportunity to edit personal data. The project uses unit and e2e testing using Jest and Cypress.",
+    "mini": "Project work of Yandex Practicum. Burger constructor website with registration and login functionality."
+  },
+  "web-larek": {
+    "mini": "Project work of Yandex Practicum. Online store of fictional goods. Written using the MVC pattern in Typescript.",
+    "base": "Project work of Yandex Practicum. Online store of fictional goods. Written using the MVC pattern in Typescript. Interaction between the presentation layer (view) and the data layer (model) is carried out using events (EventEmitter class). There is form validation when placing an order."
+  },
   "me": {
     "heading": "Mikhail is a ",
     "headingTyping1": "Front-end developer",
@@ -55,6 +63,7 @@
     "stack": "Stack",
     "description": "Project description",
     "wantToCheck": "You want to check it out?",
-    "viewDeployment": "view deployment"
+    "viewDeployment": "view deployment",
+    "githubLink": "view code on github"
   }
 }

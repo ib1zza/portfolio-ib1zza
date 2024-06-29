@@ -26,6 +26,16 @@ import kanbanImageDesktop2 from "../assets/img/projects-screens/kanban/kanban1.p
 import kanbanImageDesktop3 from "../assets/img/projects-screens/kanban/kanban2.png";
 import kanbanMockup from "../assets/img/projects-screens/kanban/kanbanMockup.png";
 
+import stellarBurgerImageDesktop1 from "../assets/img/projects-screens/stellarBurgers/stellarImageDesktop1.png";
+import stellarBurgerImageDesktop2 from "../assets/img/projects-screens/stellarBurgers/stellarImageDesktop2.png";
+import stellarBurgerImageDesktop3 from "../assets/img/projects-screens/stellarBurgers/stellarImageDesktop3.png";
+import stellarBurgerImageDesktop4 from "../assets/img/projects-screens/stellarBurgers/stellarImageDesktop4.png";
+
+import webLarekImageDesktop1 from "../assets/img/projects-screens/webLarek/webLarekImageDesktop1.png";
+import webLarekImageDesktop2 from "../assets/img/projects-screens/webLarek/webLarekImageDesktop2.png";
+import webLarekImageDesktop3 from "../assets/img/projects-screens/webLarek/webLarekImageDesktop3.png";
+import webLarekImageDesktop4 from "../assets/img/projects-screens/webLarek/webLarekImageDesktop4.png";
+
 export interface IData {
   id: string;
   displayName: string;
@@ -40,12 +50,25 @@ export interface IData {
     mockup: string[];
   };
   link: string;
+  github: string;
 }
 
-export default [
+const allProjectsOrder = [
+  "kanban",
+  "chat",
+  "movies",
+  "stellarBurgers",
+  "webLarek",
+  "pizza",
+  "weather",
+  "todo",
+];
+
+type OneProject = Partial<IData>;
+
+const projectsData: OneProject[] = [
   {
     id: "kanban",
-    displayId: 1,
     displayName: "Kanban",
     stack: [
       "REACTJS",
@@ -66,10 +89,10 @@ export default [
       mockup: [kanbanMockup],
     },
     link: "https://react-kanban-delta.vercel.app/",
+    github: "https://github.com/ib1zza/react-kanban",
   },
   {
     id: "todo",
-    displayId: 6,
     displayName: "TodoList",
     stack: [
       "REACTJS",
@@ -89,11 +112,11 @@ export default [
       mockup: [todoMockup],
     },
     link: "https://todo-project-localstorage.vercel.app",
+    github: "https://github.com/ib1zza/todo-project-localstorage",
   },
   {
     id: "pizza",
     displayName: "Pizza store",
-    displayId: 5,
     stack: [
       "REACTJS",
       "TYPESCRIPT",
@@ -111,10 +134,10 @@ export default [
       mockup: [pizzaMockup],
     },
     link: "https://react-pizza-red.vercel.app",
+    github: "https://github.com/ib1zza/react-pizza",
   },
   {
     id: "weather",
-    displayId: 4,
     displayName: "Weather website",
     stack: [
       "REACTJS",
@@ -138,11 +161,11 @@ export default [
       mockup: [weatherMockup],
     },
     link: "https://ib1zza-react-weather.vercel.app/",
+    github: "https://github.com/ib1zza/react-weather",
   },
   {
     id: "movies",
     displayName: "Online Cinema",
-    displayId: 3,
     stack: [
       "REACTJS",
       "TYPESCRIPT",
@@ -160,12 +183,11 @@ export default [
       mockup: [movieMockup],
     },
     link: "https://react-movie-ashy.vercel.app/",
+    github: "https://github.com/ib1zza/react-movie",
   },
-
   {
     id: "chat",
     displayName: "Realtime chat app",
-    displayId: 2,
     stack: [
       "REACTJS",
       "TYPESCRIPT",
@@ -186,5 +208,60 @@ export default [
       mockup: [chatMockup],
     },
     link: "https://react-chat-dusky.vercel.app",
+    github: "https://github.com/ib1zza/react-chat",
   },
-] as IData[];
+  {
+    id: "stellarBurgers",
+    displayName: "Stellar Burgers",
+    stack: [
+      "REACTJS",
+      "TYPESCRIPT",
+      "SCSS",
+      "REDUX-TOOLKIT",
+      "WEBPACK",
+      "JEST",
+      "CYPRESS",
+    ],
+    description: {
+      mini: "stellar-burgers.mini",
+      base: "stellar-burgers.base",
+    },
+    images: {
+      desktop: [
+        stellarBurgerImageDesktop1,
+        stellarBurgerImageDesktop2,
+        stellarBurgerImageDesktop3,
+        stellarBurgerImageDesktop4,
+      ],
+      mockup: [],
+    },
+    link: "https://stellar-burgers-five.vercel.app",
+    github: "https://github.com/ib1zza/react-stellar-burgers",
+  },
+  {
+    id: "webLarek",
+    displayName: "Web Larek",
+    stack: ["TYPESCRIPT", "HTML", "SCSS", "WEBPACK"],
+    description: {
+      mini: "web-larek.mini",
+      base: "web-larek.base",
+    },
+    images: {
+      desktop: [
+        webLarekImageDesktop1,
+        webLarekImageDesktop2,
+        webLarekImageDesktop3,
+        webLarekImageDesktop4,
+      ],
+      mockup: [],
+    },
+    link: "https://web-larek.vercel.app",
+    github: "https://github.com/ib1zza/typescript-web-larek",
+  },
+];
+
+projectsData.forEach((project, index) => {
+  project.displayId = allProjectsOrder.findIndex((el) => el === project.id);
+});
+
+export default projectsData as IData[];

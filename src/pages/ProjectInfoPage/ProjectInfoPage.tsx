@@ -86,17 +86,23 @@ const ProjectInfoPage = () => {
         </div>
 
         <div className={s.description}>
-          <h2>
-            {t("projects.wantToCheck")}{" "}
-            <a
-              href={info.link}
-              target={"_blank"}
-              rel="noreferrer"
-              className={s.link}
-            >
-              {t("projects.viewDeployment")}
-            </a>
-          </h2>
+          <h2>{t("projects.wantToCheck")} </h2>
+          <a
+            href={info.link}
+            target={"_blank"}
+            rel="noreferrer"
+            className={s.link}
+          >
+            {t("projects.viewDeployment")}
+          </a>
+          <a
+            href={info.github}
+            target={"_blank"}
+            rel="noreferrer"
+            className={s.link}
+          >
+            {t("projects.githubLink")}
+          </a>
         </div>
       </div>
     </Wrapper>
