@@ -15,7 +15,9 @@ const Button: React.FC<Props> = ({ children, onClick, className, ...rest }) => {
       {...rest}
       onClick={onClick}
     >
-      {children}
+     <div className={s.button__content}>
+       {children}
+     </div>
     </button>
   );
 };

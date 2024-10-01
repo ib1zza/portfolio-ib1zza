@@ -37,15 +37,17 @@ const Background = () => {
     ctx.fillRect(0, 0, w, h);
 
     function matrix() {
-      ctx.fillStyle = themeBg + "30";
+      ctx.fillStyle = themeBg + "50";
 
       ctx.fillRect(0, 0, w, h);
 
       ctx.fillStyle = themePrim;
-      ctx.font = "15pt monospace";
+      ctx.font = "15pt Roboto Condensed";
 
       ypos.forEach((y, ind) => {
-        const text = String.fromCharCode(Math.random() * 128);
+        const charPos = 33 + Math.random() * 90;
+        const text = String.fromCharCode(charPos);
+        console.log(text,charPos )
         const x = ind * 20;
         ctx.fillText(text, x, y);
         if (y > 100 + Math.random() * 10000) {

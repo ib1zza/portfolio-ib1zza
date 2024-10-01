@@ -6,6 +6,8 @@ import { AppRoutes } from "../../../AppRoutes";
 import ChangeLang from "../../../components/ChangeLang/ChangeLang";
 import { useTranslation } from "react-i18next";
 import ThemePicker from "../../../components/ThemePicker/ThemePicker";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {links} from "../../../constants/links";
 
 const NavVariants = {
   visible: {
@@ -18,18 +20,17 @@ const NavLinkVariants = {
   visible: (custom: number) => ({
     opacity: 1,
     transition: {
-      delay: 0.2 * custom,
+      delay: 0.2 * (custom),
     },
   }),
   hidden: (custom: number) => ({
     opacity: 0,
     transition: {
-      delay: 0.15 * custom,
     },
   }),
 };
 
-const links = [
+const appLinks = [
   { name: "links.home", to: AppRoutes.HOME },
   { name: "links.works", to: AppRoutes.PROJECTS },
   // { name: "about-me", to: AppRoutes.NOT_FOUND },
@@ -48,10 +49,10 @@ export const Navigation = () => {
         exit={"hidden"}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        {links.map((link, i) => (
+        {appLinks.map((link, i) => (
           <motion.div
             key={link.name}
-            custom={i}
+            custom={i + 1}
             variants={NavLinkVariants}
             animate={"visible"}
             initial={"hidden"}
@@ -89,6 +90,26 @@ export const Navigation = () => {
           className={s.header__burger__nav__link}
         >
           <ThemePicker />
+        </motion.div>
+
+        <motion.div
+          custom={1}
+          variants={NavLinkVariants}
+          animate={"visible"}
+          initial={"hidden"}
+          exit={"hidden"}
+          className={s.header__burger__socials}
+          >
+          {links.map((link) => (
+              <a
+                  key={link.href}
+                  href={link.href}
+                  target={"_blank"}
+                  rel="noreferrer"
+              >
+                <FontAwesomeIcon icon={link.icon} />
+              </a>
+          ))}
         </motion.div>
       </motion.nav>
     </>

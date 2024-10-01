@@ -2,6 +2,8 @@ import React from "react";
 import { langs } from "../../locales/i18n";
 import i18n from "i18next";
 import s from "./ChangeLang.module.scss";
+import Button from "../../UI/Button/Button";
+import button from "../../UI/Button/Button";
 
 interface Props {
   inBurger?: boolean;
@@ -13,15 +15,18 @@ const ChangeLang = ({ inBurger }: Props) => {
   return (
     <div className={s.changeLanguage + " " + (inBurger ? s.inBurger : "")}>
       {langs.map((lang) => (
-        <button
-          key={lang}
-          className={
-            s.lang + " " + (i18n.resolvedLanguage === lang ? s.active : "")
-          }
-          onClick={() => onClick(lang)}
-        >
-          {lang.toUpperCase()}
-        </button>
+          <Button key={lang} className={ s.lang + " " + (i18n.resolvedLanguage === lang ? s.active : "")} onClick={() => onClick(lang)}>
+            {lang.toUpperCase()}
+          </Button>
+        // <button
+        //   key={lang}
+        //   className={
+        //     s.lang + " " + (i18n.resolvedLanguage === lang ? s.active : "")
+        //   }
+        //   onClick={() => onClick(lang)}
+        // >
+        //   {lang.toUpperCase()}
+        // </button>
       ))}
     </div>
   );

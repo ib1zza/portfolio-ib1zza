@@ -34,7 +34,7 @@
         border: 1px solid var(--textGrayColor);
         transition: 0.2s ease-in-out;
 
-        &:hover {
+        &:hover, &__hovered {
           border-radius: 10px;
           border: 1px solid var(--accentColor);
           transition: 0.2s ease-in-out;

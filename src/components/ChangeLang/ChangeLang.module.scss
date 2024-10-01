@@ -5,30 +5,14 @@
   gap: 10px;
 
 
-  button {
-    padding: 3px 15px;
+  .lang {
+    --bottomOffset: 0px;
+    padding: calc(3px - var(--bottomOffset)) calc(15px - var(--bottomOffset));
     border-radius: 10px;
     font-size: 14px;
-    border: 1px solid var(--accentColor);;
-    color: var(--accentLightColor);
-    background-color: transparent;
-    transition: .2s ease-in-out;
-
-    &:hover {
-      background-color: var(--accentLightColor);;
-      //border: 1px solid  var(--accentLightColor);;
-      color: var(--bgColor);
-      transition: .2s ease-in-out;
-
-      &.active {
-        //background-color: $accentColor;
-        border-bottom: 4px solid transparent;
-      }
-    }
-
     &.active {
-      //background-color: $accentColor;
-      border-bottom: 4px solid var(--accentColor);;
+      --bottomOffset: 1px;
+      border: 2px solid var(--accentColor);;
     }
   }
 
@@ -36,15 +20,11 @@
     button {
       color: var(--bgColor);
       font-size: 18px;
-      &:hover {
-        background-color: var(--accentColor);;
-        border: 1px solid  var(--accentLightColor);;
-        transition: .2s ease-in-out;
 
         &.active {
-          border-bottom: 4px solid transparent;
+          border: 4px solid var(--accentColor);
         }
-      }
+
     }
   }
 }

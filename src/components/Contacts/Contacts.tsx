@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiscord, faTelegram } from "@fortawesome/free-brands-svg-icons";
 import { useTranslation } from "react-i18next";
 import { Element } from "react-scroll";
+import HoverSkew from "../HoverSkew/HoverSkew";
 
 const Contacts = () => {
   const { t } = useTranslation();
@@ -12,6 +13,9 @@ const Contacts = () => {
     <div className={s.contactsBlock}>
       <div className={s.contactsBlock__text}>
         <p>{t("me.contactsText")}</p>
+        <HoverSkew withoutShine>
+
+
         <section className={s.contactsBlock__section}>
           <h3>{t("me.messageMeHere")}</h3>
           <div>
@@ -23,6 +27,7 @@ const Contacts = () => {
             @ib1zza
           </a>
         </section>
+        </HoverSkew>
       </div>
       <Element name={"contacts"} />
     </div>

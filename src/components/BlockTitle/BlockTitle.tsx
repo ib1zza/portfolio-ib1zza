@@ -17,12 +17,12 @@ const BlockTitle: React.FC<Props> = ({ text, children, isHovered }) => {
   return (
     <motion.div
       className={s.title + (isHovered ? " " + s.title__hovered : "")}
-      viewport={{ amount: 0.2 }}
+      viewport={{ amount: 0.1 }}
       initial={"hidden"}
       whileInView={"visible"}
       exit={"exit"}
       variants={AnimationVariants}
-      transition={{ duration: 0.2 }}
+      transition={{ duration: 0.4 }}
     >
       <h1>{text}</h1>
       <div className={s.title__line} />

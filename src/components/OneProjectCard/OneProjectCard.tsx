@@ -1,12 +1,13 @@
 import React from "react";
 import s from "./OneProjectCard.module.scss";
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import { AppRoutes } from "../../AppRoutes";
 import { IData } from "../../constants/data";
 import { useTranslation } from "react-i18next";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { convertStringToJSX } from "../../assets/utils/format";
+import Button from "../../UI/Button/Button";
 
 interface Props {
   projectInfo: IData;
@@ -14,7 +15,7 @@ interface Props {
 
 const OneProjectCard = ({ projectInfo }: Props) => {
   const { t } = useTranslation();
-
+const navigate = useNavigate();
   return (
     <div className={s.projects__slider__item} key={projectInfo.id}>
       <div className={s.projects__image}>
@@ -35,13 +36,7 @@ const OneProjectCard = ({ projectInfo }: Props) => {
               __html: convertStringToJSX(t(projectInfo.description.mini)),
             }}
           />
-          <Link
-            className={s.button}
-            to={AppRoutes.PROJECTS + "/" + projectInfo.id}
-          >
-            {t("view")}
-            <FontAwesomeIcon icon={faArrowRight} />
-          </Link>
+            <Button className={s.button} onClick={() => navigate(AppRoutes.PROJECTS + "/" + projectInfo.id)}>{t("view")}<FontAwesomeIcon icon={faArrowRight} /></Button>
         </div>
       </div>
     </div>

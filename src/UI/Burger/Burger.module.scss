@@ -45,13 +45,28 @@
   z-index: 20;
   display: flex;
   flex-flow: column;
-  height: 130vh;
+  height: 105vh;
   background-color: transparent;
   right: 0;
 
   @media screen and (max-width: 450px) {
     width: calc(100% - 60px);
   }
+}
+
+.header__burger__socials {
+  padding: 18px 35px;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 40px;
+  color: var(--bgColor);
+  a {
+    opacity: 0.5;
+  }
+
+  margin-bottom: 5vh;
 }
 
 .header__burger__nav__link {
