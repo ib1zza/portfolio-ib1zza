@@ -10,7 +10,7 @@ export function useTheme(): UseThemeResult {
   const { theme, setTheme } = useContext(ThemeContext);
   const toggleTheme = (theme: Theme) => {
     setTheme(theme);
-    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
   };
+
   return { theme, toggleTheme };
 }

@@ -1,4 +1,4 @@
-import { createContext, FC, useMemo, useState } from "react";
+import {createContext, FC, useEffect, useMemo, useState} from "react";
 
 export enum Theme {
   VIOLET = "violet",
@@ -29,6 +29,7 @@ interface ThemeProviderProps {
 const ThemeProvider: FC<ThemeProviderProps> = (props) => {
   const { initialTheme, children } = props;
   const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
+
   const defaultProps = useMemo(
     () => ({
       theme,
@@ -36,6 +37,23 @@ const ThemeProvider: FC<ThemeProviderProps> = (props) => {
     }),
     [theme]
   );
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
+    const app = document.querySelector(".App") as Element;
+    const bgColor = getComputedStyle(app).getPropertyValue("--bgColor");
+    const accentColor = getComputedStyle(app).getPropertyValue("--accentColor");
+    const accentLightColor = getComputedStyle(app).getPropertyValue(
+      "--accentLightColor"
+    )
+    const textGrayColor = getComputedStyle(app).getPropertyValue("--textGrayColor");
+
+    const appVars = { bgColor, accentColor, accentLightColor, textGrayColor };
+
+    Object.entries(appVars).forEach(([key, value]) => {
+      document.documentElement.style.setProperty(`--${key}`, value);
+    })
+  }, [theme])
 
   return (
     <ThemeContext.Provider value={defaultProps}>

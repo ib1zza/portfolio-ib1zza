@@ -8,6 +8,7 @@ import BlockWithHoverTitle from "../components/BlockWithHoverTitle/BlockWithHove
 import { useTranslation } from "react-i18next";
 import Education from "../components/Education/Education";
 
+
 const HomePage = () => {
   const { t } = useTranslation();
   return (

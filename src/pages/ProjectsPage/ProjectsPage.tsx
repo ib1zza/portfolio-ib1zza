@@ -7,12 +7,12 @@ import HoverSkew from "../../components/HoverSkew/HoverSkew";
 
 const ProjectsPage = () => {
   return (
-    <Wrapper>
+    <Wrapper noYmove>
       <div className={s.container}>
         {data
           .sort((a, b) => a.displayId - b.displayId)
-          .map((el) => (
-            <HoverSkew key={el.id}>
+          .map((el, i) => (
+            <HoverSkew key={el.id} index={i} noYmove={false}>
               <OneProjectCard projectInfo={el} />
             </HoverSkew>
           ))}

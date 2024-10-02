@@ -25,6 +25,10 @@ body {
     }
 }
 
+.overflow-hidden {
+    overflow: hidden;
+    height: 100vh;
+}
 
 * {
     outline: none;
@@ -53,4 +57,25 @@ h6
 
 button {
     //cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--bgColor);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--accentColor);
+    opacity: .7;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

@@ -19,18 +19,24 @@ interface Props {
     withoutShine?: boolean;
     className?: string;
     index?: number;
+    noYmove?: boolean;
 }
 
 const animationVariants = {
-    initial: {
+    initial: (config: {
+        noYmove?: boolean
+    }) => ({
         opacity: 0,
-        y: 100,
-    },
-    animate: (index: number) => ({
+        y: config.noYmove ? 0 : 100,
+    }),
+    animate: (config: {
+        noYmove?: boolean,
+        index: number
+    }) => ({
         opacity: 1,
         y: 0,
         transition: {
-            delay: 0.1 * index,
+            delay: 0.1 * config.index,
         }
     })
 }
@@ -41,6 +47,7 @@ const HoverSkew: React.FC<Props> = ({
                                         withoutShine = false,
                                         className = "",
                                         index = 0,
+                                        noYmove = false,
                                     }) => {
     const [tiltEffectSettings] = React.useState<TiltSettings>({
         max: 7, // max tilt rotation (degrees (deg))
@@ -143,7 +150,7 @@ const HoverSkew: React.FC<Props> = ({
             viewport={{
                 amount: 0.1
             }}
-            custom={index}
+            custom={{index, noYmove}}
         >
             {!withoutShine && (
                 <div

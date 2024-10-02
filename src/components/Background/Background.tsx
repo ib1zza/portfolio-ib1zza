@@ -47,7 +47,6 @@ const Background = () => {
       ypos.forEach((y, ind) => {
         const charPos = 33 + Math.random() * 90;
         const text = String.fromCharCode(charPos);
-        console.log(text,charPos )
         const x = ind * 20;
         ctx.fillText(text, x, y);
         if (y > 100 + Math.random() * 10000) {
