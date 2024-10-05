@@ -12,43 +12,17 @@ import {useTheme} from "./context/ThemeContext/useTheme";
 import LeftLinks from "./components/LeftLinks/LeftLinks";
 import Cursor from "./components/Cursor/Cursor";
 import Background from "./components/Background/Background";
-import {AnimatePresence} from "framer-motion";
 import InitialTransition from "./components/InitialTransition/InitialTransition";
 import {useAnimationStore} from "./store/store";
 
 function App() {
     const {theme: currentTheme} = useTheme();
     const {isMainTransitionEnded} = useAnimationStore();
-    const location = useLocation();
-
-    console.log(isMainTransitionEnded)
 
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [location.pathname]);
+        console.log("hello world!")
+    }, []);
 
-    const Components = useMemo(
-        () => (
-            <>
-                {!isMainTransitionEnded && <InitialTransition />}
-                <Cursor/>
-                <Header/>
-                <LeftLinks/>
-                <Background/>
-                <Routes>
-                    <Route index element={<HomePage/>}/>
-                    <Route path={AppRoutes.PROJECTS} element={<ProjectsPage />}/>
-                    <Route
-                        path={AppRoutes.PROJECTS + "/:projectId"}
-                        element={<ProjectInfoPage/>}
-                    />
-                    <Route path={"*"} element={<NotFoundPage/>}/>
-                </Routes>
-                <Footer/>
-            </>
-        ),
-        [isMainTransitionEnded]
-    );
     return <div className={`App ${currentTheme}`}>
             {!isMainTransitionEnded && <InitialTransition />}
             <Cursor/>

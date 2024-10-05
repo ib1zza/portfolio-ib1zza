@@ -45,6 +45,20 @@
           }
         }
 
+        .skillList {
+          display: flex;
+          gap: 5px;
+          flex-wrap: wrap;
+        }
+        a {
+          display: inline-block;
+          line-height: 100%;
+          border-bottom: 1px solid rgba(141, 141, 141, 0.66);
+          &:hover {
+              text-decoration: underline;
+          }
+        }
+
         @media screen and (max-width: 915px) {
           width: 100%;
           margin-right: 0;
