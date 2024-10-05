@@ -14,4 +14,4 @@
 
 ## Использование
 
-Портфолио размещено на хостинге Vercel - https://portfolio-react-ib1zza.vercel.app/
+Портфолио размещено на хостинге Vercel - https://portfolio-react-ib1zzas-projects.vercel.app
