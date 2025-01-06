@@ -6,7 +6,7 @@
   color: var(--accentLightColor);
 
   border: 1px solid var(--accentColor);
-  transition: color 0.3s ease-out, background 0.3s ease-out, border-radius 0.3s ease-out;
+  transition: color 0.3s ease-out, background 0.3s ease-out, transform 0.3s ease-out, border-radius 0.3s ease-out;
 
   position: relative;
   overflow: hidden;
@@ -40,6 +40,10 @@
     &::after {
       top: 0;
     }
+  }
+
+  &:active {
+    transform: scale(0.9);
   }
 
   a {

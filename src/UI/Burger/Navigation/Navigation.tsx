@@ -93,7 +93,7 @@ export const Navigation = () => {
         </motion.div>
 
         <motion.div
-          custom={1}
+          custom={5}
           variants={NavLinkVariants}
           animate={"visible"}
           initial={"hidden"}

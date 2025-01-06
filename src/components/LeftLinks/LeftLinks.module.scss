@@ -30,6 +30,11 @@ $linksPaddingTop: 10px;
     &:hover {
       color: var(--accentColor);
       transition: 0.3s ease-in-out;
+
+      svg {
+        -webkit-filter: drop-shadow( 0px 0px 3px var(--accentColor));
+        filter: drop-shadow( 0px 0px 3px var(--accentColor));
+      }
     }
     &:not(:last-of-type) {
       margin-bottom: 10px;

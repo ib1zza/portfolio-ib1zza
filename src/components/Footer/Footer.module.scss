@@ -42,9 +42,14 @@
       color: var(--accentColor);
       transition: .2s ease-in-out;
 
+
       &:hover {
         color: var(--accentLightColor);
-        transition: .2s ease-in-out;
+        //box-shadow: var(--accentColor) 0px 0px 0px 2px;
+        svg {
+          -webkit-filter: drop-shadow( 0px 0px 5px  var(--accentColor));
+          filter: drop-shadow( 0px 0px 5px var(--accentColor));
+        }
 
       }
       &:not(:last-child) {
