@@ -1,4 +1,4 @@
-import React from "react";
+import React, {forwardRef} from "react";
 import s from "./HoverSkew.module.scss";
 
 import {motion} from "framer-motion";
@@ -23,32 +23,31 @@ interface Props {
 }
 
 const animationVariants = {
-    initial: (config: {
+    hidden: (config: {
         noYmove?: boolean
     }) => ({
         opacity: 0,
         y: config.noYmove ? 0 : 100,
     }),
-    animate: (config: {
+    visible: (config: {
         noYmove?: boolean,
         index: number
     }) => ({
         opacity: 1,
         y: 0,
-        transition: {
-            delay: 0.1 * config.index,
-        }
-    })
+    }),
 }
 
-const HoverSkew: React.FC<Props> = ({
-                                        children,
-                                        settings,
-                                        withoutShine = false,
-                                        className = "",
-                                        index = 0,
-                                        noYmove = false,
-                                    }) => {
+const HoverSkew: React.FC<Props> = forwardRef<HTMLDivElement, Props>((props, ref) => {
+    const {
+        index = 0,
+        noYmove = false,
+        children,
+        settings = {},
+        withoutShine = false,
+        className = '',
+
+    } = props;
     const [tiltEffectSettings] = React.useState<TiltSettings>({
         max: 7, // max tilt rotation (degrees (deg))
         perspective: 1500, // transform perspective, the lower, the more extreme the tilt gets (pixels (px))
@@ -140,16 +139,12 @@ const HoverSkew: React.FC<Props> = ({
 
     return (
         <motion.div
+            ref={ref}
             className={s.card + " " + className}
             onMouseEnter={cardMouseEnter}
             onMouseMove={cardMouseMove}
             onMouseLeave={cardMouseLeave}
             variants={animationVariants}
-            initial={"initial"}
-            whileInView={"animate"}
-            viewport={{
-                amount: 0.1
-            }}
             custom={{index, noYmove}}
         >
             {!withoutShine && (
@@ -164,6 +159,6 @@ const HoverSkew: React.FC<Props> = ({
             {children}
         </motion.div>
     );
-};
+});
 
-export default HoverSkew;
+export default motion(HoverSkew);

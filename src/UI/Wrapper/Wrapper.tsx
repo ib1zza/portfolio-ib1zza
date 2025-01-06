@@ -14,16 +14,21 @@ const Wrapper: React.FC<WrapperProps> = ({noYmove = false, children, className})
 
     return <motion.div
         initial={{
-        opacity: 0,
-        y: noYmove ? 0 : 100
-    }} animate={{
-        y: 0,
-        opacity: 1,
-        transition: {
-            duration: 0.75,
-            delay: !isMainTransitionEnded ? 2.25 : 0,
-        }
-    }} className={s.wrapper + " " + (className || "")}>{children}</motion.div>;
+            opacity: 0,
+            y: noYmove ? 0 : 100
+        }}
+        animate={{
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.5,
+                delay: !isMainTransitionEnded ? 2.25 : 0,
+            }
+        }}
+        className={s.wrapper + " " + (className || "")}
+    >
+        {children}
+    </motion.div>;
 };
 
 export default Wrapper;
