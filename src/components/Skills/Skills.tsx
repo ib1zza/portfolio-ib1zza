@@ -3,7 +3,7 @@ import s from "./Skills.module.scss";
 import {useTranslation} from "react-i18next";
 import HoverSkew from "../HoverSkew/HoverSkew";
 import {useScroll} from "framer-motion";
-import {motion} from "framer-motion";
+import {motion, useMotionValue} from "framer-motion";
 
 const Skills = () => {
     const {t} = useTranslation();
@@ -11,8 +11,7 @@ const Skills = () => {
     const [currentHovered, setCurrentHovered] = React.useState(-1);
     const {scrollYProgress} = useScroll({
         target: blockRef,
-        // offset: ["0 0.5", "0 0.5"],
-        offset: ["start center", "end center"],
+        offset: ["center 20vh", "center 80vh"],
     })
 
     const data = {
@@ -45,6 +44,9 @@ const Skills = () => {
 
     console.log(currentHovered)
 
+    scrollYProgress.onChange((e) => {
+        console.log(e.toFixed(2));
+    })
 
     // @ts-ignore
     return (
@@ -82,7 +84,7 @@ const Skills = () => {
                                    '--opacity': 0,
                                 }
                             }}
-                            className={s.skill + " " + (index === currentHovered ? s.skill__hovered : "")}>
+                            className={s.skill + " " + (3 - index === currentHovered ? s.skill__hovered : "")}>
                             <h4>{category}</h4>
                             <div className={s.skillList}>
                                 {data[category].map((item: string) =>
