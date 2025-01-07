@@ -3,6 +3,7 @@ $borderSize: 20px;
 $blockSize: 380px;
 
 .welcomeBlock {
+  overflow: hidden;
   margin-bottom: 70px;
   display: flex;
   align-items: center;

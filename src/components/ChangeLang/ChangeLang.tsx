@@ -18,15 +18,6 @@ const ChangeLang = ({ inBurger }: Props) => {
           <Button key={lang} className={ s.lang + " " + (i18n.resolvedLanguage === lang ? s.active : "")} onClick={() => onClick(lang)}>
             {lang.toUpperCase()}
           </Button>
-        // <button
-        //   key={lang}
-        //   className={
-        //     s.lang + " " + (i18n.resolvedLanguage === lang ? s.active : "")
-        //   }
-        //   onClick={() => onClick(lang)}
-        // >
-        //   {lang.toUpperCase()}
-        // </button>
       ))}
     </div>
   );

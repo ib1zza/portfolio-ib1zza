@@ -7,9 +7,14 @@
 
   .lang {
     --bottomOffset: 0px;
-    padding: calc(3px - var(--bottomOffset)) calc(15px - var(--bottomOffset));
+    padding: calc(5px - var(--bottomOffset)) calc(15px - var(--bottomOffset));
     border-radius: 10px;
     font-size: 14px;
+    line-height: 100%;
+
+    div {
+      margin-top: 2px;
+    }
     &.active {
       --bottomOffset: 1px;
       border: 2px solid var(--accentColor);;

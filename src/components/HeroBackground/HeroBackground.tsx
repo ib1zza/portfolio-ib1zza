@@ -30,16 +30,12 @@ const HeroBackground = () => {
     // ];
 
     const text = [`фронтенд разработчик `.repeat(4).toUpperCase(),
-        `frontend dev `.repeat(3).toUpperCase(),
+        `frontend dev `.repeat(4).toUpperCase(),
         `フロントエンド開発者 `.repeat(3).toUpperCase(),
         `Frontend-Entwickler `.repeat(3).toUpperCase(),
         `développeur front-end `.repeat(3).toUpperCase(),
         `前端开发人员 `.repeat(5).toUpperCase(),
     ];
-
-    scrollYProgress.onChange((value) => {
-        console.log(value);
-    })
 
     return (
         <motion.div

@@ -1,47 +1,4 @@
-@font-face {
-  font-family: 'PPNeueMachina-Light';
-  src: url('/assets/fonts/PPNeueMachina-PlainLight.otf');
-}
 
-@font-face {
-  font-family: 'PPNeueMachina-Regular';
-  src: url('/assets/fonts/PPNeueMachina-PlainRegular.otf');
-}
-
-@font-face {
-  font-family: 'PPNeueMachina-Ultrabold';
-  src: url('/assets/fonts/PPNeueMachina-PlainUltrabold.otf');
-}
-
-@font-face {
-  font-family: 'PPNeueMachina-Light-Italic';
-  src: url('/assets/fonts/PPNeueMachina-PlainLightItalic.otf');
-}
-
-@font-face {
-  font-family: 'PPNeueMachina-Regular-Italic';
-  src: url('/assets/fonts/PPNeueMachina-PlainRegularItalic.otf');
-}
-
-@font-face {
-  font-family: 'PPNeueMachina-Ultrabold-Italic';
-  src: url('/assets/fonts/PPNeueMachina-PlainUltraboldItalic.otf');
-}
-
-@font-face {
-  font-family: 'PPNeueMachina-Inktrap-Regular';
-  src: url('/assets/fonts/PPNeueMachina-InktrapRegular.otf');
-}
-
-@font-face {
-  font-family: 'PPNeueMachina-Inktrap-Ultrabold';
-  src: url('/assets/fonts/PPNeueMachina-InktrapUltrabold.otf');
-}
-
-@font-face {
-  font-family: 'PPNeueMachina-Inktrap-Regular-Italic';
-  src: url('/assets/fonts/PPNeueMachina-InktrapRegularItalic.otf');
-}
 
 .container {
   height: 200vh;
@@ -49,16 +6,24 @@
   background: var(--bgColor);
   margin-top: -150px;
   //overflow: hidden;
-  padding-top: 105px;
+  //padding-top: 105px;
   margin-bottom: calc(-100vh + 125px);
   z-index: 110;
   pointer-events: none;
+
+
 
 }
 .bgFirstBlock {
   position: sticky;
   top: 125px;
   bottom: 0;
+  padding: 3px;
+
+
+  @media screen and (max-width: 650px) {
+    top: 100px;
+  }
   //transform: translateY(-50vh);
   overflow: hidden;
 
@@ -69,9 +34,12 @@
   .text {
     opacity: 0.15;
 
-    font-size: 15vh;
+    display: flex;
+    align-items: center;
+    font-size: 14vh;
     //font-size: calc((100vw / 14) * 1);
-    line-height: 14vh;
+    //line-height: 14vh;
+    height: 14vh;
     font-family: 'PPNeueMachina-Regular', sans-serif;
     text-wrap: nowrap;
     filter: blur(var(--blur, 0px));
@@ -88,7 +56,9 @@
     }
 
     &:nth-child(3) {
-      font-family: 'PPNeueMachina-Regular-Italic', sans-serif;
+      //font-family: 'Roboto', sans-serif;
+      font-family: "IBM Plex Sans JP", serif;
+      font-weight: 400;
     }
 
     &:nth-child(4) {
@@ -100,7 +70,9 @@
     }
 
     &:nth-child(6) {
-      font-family: 'PPNeueMachina-Inktrap-Ultrabold', sans-serif;
+      font-family: "ZCOOL XiaoWei", serif;
+      font-weight: 400;
+      font-style: normal;
     }
   }
 }
