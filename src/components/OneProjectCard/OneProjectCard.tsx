@@ -6,7 +6,7 @@ import { IData } from "../../constants/data";
 import { useTranslation } from "react-i18next";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { convertStringToJSX } from "../../assets/utils/format";
+import { convertStringToJSX } from "../../helpers/utils/format";
 import Button from "../../UI/Button/Button";
 
 interface Props {

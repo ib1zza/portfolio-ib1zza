@@ -11,6 +11,7 @@ const Skills = () => {
     const [currentHovered, setCurrentHovered] = React.useState(-1);
     const {scrollYProgress} = useScroll({
         target: blockRef,
+        // [{targetStart, containerStart}, {targetEnd, containerEnd}]
         offset: ["center 20vh", "center 80vh"],
     })
 
@@ -40,12 +41,6 @@ const Skills = () => {
         const currentItem = Math.floor(e * 4) - 1
 
         if (currentItem !== currentHovered) setCurrentHovered(currentItem)
-    })
-
-    console.log(currentHovered)
-
-    scrollYProgress.onChange((e) => {
-        console.log(e.toFixed(2));
     })
 
     // @ts-ignore

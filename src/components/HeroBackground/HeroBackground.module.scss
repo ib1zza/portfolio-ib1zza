@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'PPNeueMachina-Light';
+  src: url('/assets/fonts/PPNeueMachina-PlainLight.otf');
+}
+
+@font-face {
+  font-family: 'PPNeueMachina-Regular';
+  src: url('/assets/fonts/PPNeueMachina-PlainRegular.otf');
+}
+
+@font-face {
+  font-family: 'PPNeueMachina-Ultrabold';
+  src: url('/assets/fonts/PPNeueMachina-PlainUltrabold.otf');
+}
+
+@font-face {
+  font-family: 'PPNeueMachina-Light-Italic';
+  src: url('/assets/fonts/PPNeueMachina-PlainLightItalic.otf');
+}
+
+@font-face {
+  font-family: 'PPNeueMachina-Regular-Italic';
+  src: url('/assets/fonts/PPNeueMachina-PlainRegularItalic.otf');
+}
+
+@font-face {
+  font-family: 'PPNeueMachina-Ultrabold-Italic';
+  src: url('/assets/fonts/PPNeueMachina-PlainUltraboldItalic.otf');
+}
+
+@font-face {
+  font-family: 'PPNeueMachina-Inktrap-Regular';
+  src: url('/assets/fonts/PPNeueMachina-InktrapRegular.otf');
+}
+
+@font-face {
+  font-family: 'PPNeueMachina-Inktrap-Ultrabold';
+  src: url('/assets/fonts/PPNeueMachina-InktrapUltrabold.otf');
+}
+
+@font-face {
+  font-family: 'PPNeueMachina-Inktrap-Regular-Italic';
+  src: url('/assets/fonts/PPNeueMachina-InktrapRegularItalic.otf');
+}
+
+.container {
+  height: 200vh;
+  position: relative;
+  background: var(--bgColor);
+  margin-top: -150px;
+  //overflow: hidden;
+  padding-top: 105px;
+  margin-bottom: calc(-100vh + 125px);
+  z-index: 110;
+  pointer-events: none;
+
+}
+.bgFirstBlock {
+  position: sticky;
+  top: 125px;
+  bottom: 0;
+  //transform: translateY(-50vh);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  //background: var(--bgColor);
+
+  .text {
+    opacity: 0.15;
+
+    font-size: 15vh;
+    //font-size: calc((100vw / 14) * 1);
+    line-height: 14vh;
+    font-family: 'PPNeueMachina-Regular', sans-serif;
+    text-wrap: nowrap;
+    filter: blur(var(--blur, 0px));
+    -webkit-text-stroke: 2px var(--accentColor);
+    //text-shadow:  0px 0px 3px var(--accentColor);
+    color: transparent;
+
+    &:nth-child(1) {
+      font-family: 'PPNeueMachina-Regular', sans-serif;
+    }
+
+    &:nth-child(2) {
+      font-family: 'PPNeueMachina-Ultrabold', sans-serif;
+    }
+
+    &:nth-child(3) {
+      font-family: 'PPNeueMachina-Regular-Italic', sans-serif;
+    }
+
+    &:nth-child(4) {
+      font-family: 'PPNeueMachina-Ultrabold-Italic', sans-serif;
+    }
+
+    &:nth-child(5) {
+      font-family: 'PPNeueMachina-Inktrap-Regular', sans-serif;
+    }
+
+    &:nth-child(6) {
+      font-family: 'PPNeueMachina-Inktrap-Ultrabold', sans-serif;
+    }
+  }
+}

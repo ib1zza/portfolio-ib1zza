@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useTranslation } from "react-i18next";
 import HoverSkew from "../../components/HoverSkew/HoverSkew";
-import { convertStringToJSX } from "../../assets/utils/format";
+import { convertStringToJSX } from "../../helpers/utils/format";
 
 const ProjectInfoPage = () => {
   const { t } = useTranslation();

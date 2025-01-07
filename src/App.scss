@@ -7,7 +7,7 @@
 .App {
     padding-top: 150px;
     min-height: 100vh;
-    overflow: hidden;
+    //overflow: hidden;
     background-color: var(--bgColor);
     color: var(--textGrayColor);
 }
@@ -17,6 +17,10 @@ body {
     scroll-behavior: smooth;
     user-select: none;
     cursor: none !important;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 @media screen and (max-width: 700px) {
