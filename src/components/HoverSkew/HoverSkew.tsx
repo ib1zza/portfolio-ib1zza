@@ -22,21 +22,7 @@ interface Props {
     noYmove?: boolean;
 }
 
-const animationVariants = {
-    hidden: (config: {
-        noYmove?: boolean
-    }) => ({
-        opacity: 0,
-        y: config.noYmove ? 0 : 100,
-    }),
-    visible: (config: {
-        noYmove?: boolean,
-        index: number
-    }) => ({
-        opacity: 1,
-        y: 0,
-    }),
-}
+
 
 const HoverSkew: React.FC<Props> = forwardRef<HTMLDivElement, Props>((props, ref) => {
     const {
@@ -46,7 +32,6 @@ const HoverSkew: React.FC<Props> = forwardRef<HTMLDivElement, Props>((props, ref
         settings = {},
         withoutShine = false,
         className = '',
-
     } = props;
     const [tiltEffectSettings] = React.useState<TiltSettings>({
         max: 7, // max tilt rotation (degrees (deg))
@@ -144,7 +129,7 @@ const HoverSkew: React.FC<Props> = forwardRef<HTMLDivElement, Props>((props, ref
             onMouseEnter={cardMouseEnter}
             onMouseMove={cardMouseMove}
             onMouseLeave={cardMouseLeave}
-            variants={animationVariants}
+            // variants={animationVariants}
             custom={{index, noYmove}}
         >
             {!withoutShine && (

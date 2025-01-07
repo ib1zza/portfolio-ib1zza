@@ -56,6 +56,22 @@ const settings: Settings = {
   customPaging: () => <div className={s.dot} />,
 };
 
+const animationVariants = {
+  hidden: (config: {
+    noYmove?: boolean
+  }) => ({
+    opacity: 0,
+    y: config.noYmove ? 0 : 100,
+  }),
+  visible: (config: {
+    noYmove?: boolean,
+    index: number
+  }) => ({
+    opacity: 1,
+    y: 0,
+  }),
+}
+
 const Projects = () => {
   return (
     <div className={s.projectsBlock}>
@@ -70,7 +86,7 @@ const Projects = () => {
           .sort((a, b) => a.displayId - b.displayId)
           .map((el) => (
             <div key={el.id} className={s.projects__slider__container}>
-              <HoverSkew className={s.hoverContainer}>
+              <HoverSkew className={s.hoverContainer} >
                 <OneProjectCard projectInfo={el} key={el.id} />
               </HoverSkew>
             </div>

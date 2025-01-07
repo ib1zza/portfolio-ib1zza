@@ -8,13 +8,17 @@
     align-self: flex-end;
     display: flex;
     align-items: flex-start;
+    justify-content: flex-end;
     flex-wrap: wrap;
     min-width: 430px;
     gap: 16px;
+    width: 100%;
 
 
     &>div {
       width: auto;
+
+
     }
 
     @media screen and (max-width: 915px) {
@@ -34,14 +38,29 @@
         border: 1px solid var(--textGrayColor);
         transition: 0.2s ease-in-out;
 
-        &:hover, &__hovered {
+        &:hover{
           border-radius: 10px;
           border: 1px solid var(--accentColor);
           transition: 0.2s ease-in-out;
+          box-shadow: inset 0px 0px 5px 0px var(--accentColor);
 
           &>h4 {
             color: var(--accentColor);
             transition: 0.2s ease-in-out;
+          }
+        }
+
+        @media screen and (max-width: 915px) {
+          &.skill__hovered {
+            border-radius: 10px;
+            border: 1px solid var(--accentColor);
+            transition: 0.2s ease-in-out;
+            box-shadow: inset 0px 0px 5px 0px var(--accentColor);
+
+            &>h4 {
+              color: var(--accentColor);
+              transition: 0.2s ease-in-out;
+            }
           }
         }
 

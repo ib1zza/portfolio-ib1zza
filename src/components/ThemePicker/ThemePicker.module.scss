@@ -67,12 +67,16 @@ $sizeInner: $size - 10px;
   position: absolute;
   top: calc(100%);
   right: -2.5px;
-  background: rgba(89, 89, 89, 0.8);
+  background: rgba(85, 85, 85, 0.8);
   border-radius:  10px 0 10px 10px ;
   opacity: 0;
-  transition: 0.3s ease-in-out;
   padding: 5px 0;
   pointer-events: none;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  clip-path: inset(0% 0% 0% 0% round 10px);
 
 
 
@@ -91,9 +95,6 @@ $sizeInner: $size - 10px;
 
 
   &.open {
-    top: calc(100% + 10px);
-    opacity: 1;
-    transition: 0.3s ease-in-out;
     pointer-events: auto;
   }
 

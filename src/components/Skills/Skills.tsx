@@ -3,13 +3,15 @@ import s from "./Skills.module.scss";
 import {useTranslation} from "react-i18next";
 import HoverSkew from "../HoverSkew/HoverSkew";
 import {useScroll} from "framer-motion";
+import {motion} from "framer-motion";
 
 const Skills = () => {
     const {t} = useTranslation();
     const blockRef = useRef(null);
-    const [currentHovered, setCurrentHovered] = React.useState(0);
+    const [currentHovered, setCurrentHovered] = React.useState(-1);
     const {scrollYProgress} = useScroll({
         target: blockRef,
+        // offset: ["0 0.5", "0 0.5"],
         offset: ["start center", "end center"],
     })
 
@@ -36,15 +38,20 @@ const Skills = () => {
     };
 
     scrollYProgress.onChange((e) => {
-        const currentItem = Math.floor(e * 3)
+        const currentItem = Math.floor(e * 4) - 1
 
         if (currentItem !== currentHovered) setCurrentHovered(currentItem)
     })
 
+    console.log(currentHovered)
 
+
+    // @ts-ignore
     return (
         <div className={s.skillsBlock} ref={blockRef}>
-            <div className={s.skillsBlock__grid}>
+            <motion.div
+                layout
+                className={s.skillsBlock__grid}>
                 {Object.keys(data).map((category: string, index: number) => (
                     <HoverSkew
                         settings={{
@@ -54,20 +61,40 @@ const Skills = () => {
                         key={category}
                         withoutShine={true}
                         index={index}
+                        variants={{
+                            [`item_${index}`]: {
+                                flexGrow: 1,
+                            },
+                            inactive: {
+                                flexGrow: 0,
+                            }
+                        }}
+                        animate={`item_${currentHovered}`}
+                        initial="inactive"
                     >
-                        <div className={s.skill + " " + (index === currentHovered ? s.skill__hovered : "")}>
+                        <motion.div
+                            variants={{
+                                [`item_${index}`]: {
+                                    ['--opacity']: 1,
+                                },
+                                inactive: {
+                                   // @ts-ignore
+                                   '--opacity': 0,
+                                }
+                            }}
+                            className={s.skill + " " + (index === currentHovered ? s.skill__hovered : "")}>
                             <h4>{category}</h4>
                             <div className={s.skillList}>
                                 {data[category].map((item: string) =>
-                                    <a target={"_blank"} rel={"noreferrer"}
+                                    <a key={item} target={"_blank"} rel={"noreferrer"}
                                        href={`https://www.google.com/search?q=${item}`}>
                                         {item}
                                     </a>)}
                             </div>
-                        </div>
+                        </motion.div>
                     </HoverSkew>
                 ))}
-            </div>
+            </motion.div>
         </div>
     );
 };
