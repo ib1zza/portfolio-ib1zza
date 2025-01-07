@@ -25,9 +25,21 @@ body {
     }
 }
 
-.overflow-hidden {
-    overflow: hidden;
-    height: 100vh;
+body {
+    --scrollBgColor: var(--accentColor);
+    overflow-y: scroll;
+}
+
+body.overflow-hidden {
+    //overflow: hidden;
+    height: calc(100vh);
+
+    --scrollBgColor: var(--bgColor);
+
+    #root {
+        height: calc(100vh);
+        overflow: hidden;
+    }
 }
 
 * {
@@ -70,12 +82,7 @@ button {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: var(--accentColor);
+    background: var(--scrollBgColor);
     opacity: .7;
     border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
 }

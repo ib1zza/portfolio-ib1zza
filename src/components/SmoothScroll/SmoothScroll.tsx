@@ -1,7 +1,7 @@
-import {ReactLenis, useLenis} from '@studio-freight/react-lenis'
 import Lenis from '@studio-freight/lenis';
 import {useEffect, useRef} from "react";
 import {useLocation} from "react-router-dom";
+import {useAnimationStore} from "../../store/store";
 
 export default function SmoothScroll({
                           children
@@ -29,9 +29,6 @@ export default function SmoothScroll({
 
         lenis.current = lenisObj;
 
-        lenisObj.on('scroll', (e: any) => {
-            // console.log(e);
-        });
 
         function raf(time: number) {
             lenisObj.raf(time);

@@ -10,8 +10,10 @@ import { useTranslation } from "react-i18next";
 import ChangeLang from "../ChangeLang/ChangeLang";
 import ThemePicker from "../ThemePicker/ThemePicker";
 import Flip from "../Flip/Flip";
+import {useAnimationStore} from "../../store/store";
 const Header = () => {
   const { scrollYProgress } = useScroll();
+  const { isMainTransitionEnded } = useAnimationStore();
 
   const { t } = useTranslation();
   const [burger, setBurger] = useState(false);
@@ -31,12 +33,16 @@ const Header = () => {
     });
   }
 
+  useEffect(() => {
+      scrollYProgress.set(0)
+  }, [isMainTransitionEnded, scrollYProgress]);
+
   return (
     <div className={s.headerContainer}>
       <header className={s.header}>
         <motion.div
           className={s.header__progress}
-          style={{ scaleX: scrollYProgress }}
+          style={{ scaleX: isMainTransitionEnded ? scrollYProgress : 0 }}
         />
 
         <Link to={AppRoutes.HOME} onClick={scrollOnTop}>

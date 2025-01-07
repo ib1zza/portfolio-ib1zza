@@ -14,6 +14,7 @@ import Cursor from "./components/Cursor/Cursor";
 import Background from "./components/Background/Background";
 import InitialTransition from "./components/InitialTransition/InitialTransition";
 import {useAnimationStore} from "./store/store";
+import {TopBtn} from "./components/TopBtn/TopBtn";
 
 function App() {
     const {theme: currentTheme} = useTheme();
@@ -24,21 +25,22 @@ function App() {
     }, []);
 
     return <div className={`App ${currentTheme}`}>
-            {!isMainTransitionEnded && <InitialTransition />}
-            <Cursor/>
-            <Header/>
-            <LeftLinks/>
-            <Background/>
-            <Routes>
-                <Route index element={<HomePage/>}/>
-                <Route path={AppRoutes.PROJECTS} element={<ProjectsPage />}/>
-                <Route
-                    path={AppRoutes.PROJECTS + "/:projectId"}
-                    element={<ProjectInfoPage/>}
-                />
-                <Route path={"*"} element={<NotFoundPage/>}/>
-            </Routes>
-            <Footer/>
+        {!isMainTransitionEnded && <InitialTransition/>}
+        <Cursor/>
+        <Header/>
+        <LeftLinks/>
+        <Background/>
+        <Routes>
+            <Route index element={<HomePage/>}/>
+            <Route path={AppRoutes.PROJECTS} element={<ProjectsPage/>}/>
+            <Route
+                path={AppRoutes.PROJECTS + "/:projectId"}
+                element={<ProjectInfoPage/>}
+            />
+            <Route path={"*"} element={<NotFoundPage/>}/>
+        </Routes>
+        <TopBtn/>
+        <Footer/>
     </div>;
 }
 

@@ -1,10 +1,11 @@
-import {motion} from "framer-motion";
+import {motion, useScroll} from "framer-motion";
 import s from "./InitialTransition.module.scss";
 import Flip from "../Flip/Flip";
-import React from "react";
+import React, {useEffect} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faReact} from "@fortawesome/free-brands-svg-icons";
 import {useAnimationStore} from "../../store/store";
+import {disableScroll, enableScroll} from "../../helpers/scroll";
 
 const blackBox = {
     initial: {
@@ -42,13 +43,26 @@ const InitialTransition = () => {
     const {endTransition} = useAnimationStore();
 
     const onAnimationStart = () => {
-        document.getElementById("root")?.classList.add("overflow-hidden")
+        document.querySelector("body")?.classList.add("overflow-hidden")
     }
 
     const onAnimationEnd = () => {
-        document.getElementById("root")?.classList.remove("overflow-hidden")
-        endTransition();
+        document.querySelector("body")?.classList.remove("overflow-hidden")
+
+        setTimeout(() => {
+            endTransition();
+        })
     }
+
+    useEffect(() => {
+        disableScroll();
+
+        return () => {
+            enableScroll();
+        }
+    }, []);
+
+
     return (
         <div className={s.container}>
             <motion.div
