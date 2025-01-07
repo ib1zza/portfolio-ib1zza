@@ -15,7 +15,7 @@ const Education = () => {
   }, [language]);
 
   return (
-    <div>
+    <div className={s.education}>
       <HoverSkew withoutShine>
         <img className={s.image} src={currentImage} alt="diploma" />
       </HoverSkew>

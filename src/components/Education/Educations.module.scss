@@ -13,3 +13,15 @@
 
   }
 }
+
+.education {
+  padding: 0 40px;
+
+  @media screen and (max-width: 750px) {
+    padding: 0 30px;
+  }
+
+  @media screen and (max-width: 450px) {
+    padding: 0;
+  }
+}

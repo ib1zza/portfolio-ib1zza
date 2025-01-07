@@ -4,16 +4,25 @@
   display: flex;
   flex-direction: column;
 
+
   &__grid {
     align-self: flex-end;
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     min-width: 430px;
     gap: 16px;
     width: 100%;
+    padding: 0 40px;
 
+    @media screen and (max-width: 750px) {
+      padding: 0 30px;
+    }
+
+    @media screen and (max-width: 450px) {
+      padding: 0;
+    }
 
     &>div {
       width: auto;
@@ -32,7 +41,8 @@
     }
 
       & .skill {
-        width: 200px;
+        max-width: 200px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         border: 1px solid var(--textGrayColor);
@@ -79,7 +89,8 @@
         }
 
         @media screen and (max-width: 915px) {
-          width: 100%;
+          max-width: 100%;
+
           margin-right: 0;
           margin-bottom: 16px;
         }

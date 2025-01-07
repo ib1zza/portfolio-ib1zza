@@ -1,9 +1,17 @@
 
-
 .contactsBlock {
   margin-top: 70px;
-  padding-bottom: 10px;
+  padding: 0 40px;
 
+  @media screen and (max-width: 750px) {
+    padding: 0 30px;
+  }
+
+  @media screen and (max-width: 450px) {
+    padding: 0;
+  }
+
+  padding-bottom: 10px !important;
 
   &__text {
     display: flex;
@@ -38,7 +46,7 @@
       border: 1px solid var(--accentColor);
       transition: 0.2s ease-in-out;
 
-      &>h3 {
+      & > h3 {
         color: var(--accentColor);
         transition: 0.2s ease-in-out;
       }
