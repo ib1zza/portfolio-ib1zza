@@ -131,6 +131,8 @@ const HoverSkew: React.FC<Props> = forwardRef<HTMLDivElement, Props>((props, ref
             onMouseLeave={cardMouseLeave}
             // variants={animationVariants}
             custom={{index, noYmove}}
+            whileHover={"hovered"}
+            initial="initial"
         >
             {!withoutShine && (
                 <div

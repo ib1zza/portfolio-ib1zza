@@ -1,4 +1,3 @@
-
 $borderSize: 20px;
 $blockSize: 380px;
 
@@ -29,7 +28,7 @@ $blockSize: 380px;
   height: 100vh;
   overflow: hidden;
   display: flex;
-  gap: 60px;
+  gap: 57px;
   align-items: center;
   justify-content: space-between;
 
@@ -45,6 +44,7 @@ $blockSize: 380px;
     margin-top: 60px;
     gap: 0;
   }
+
   &__text {
     width: calc(100% - 380px);
     @media screen and (max-width: 800px) {
@@ -61,7 +61,7 @@ $blockSize: 380px;
     color: #FFFFFF;
     align-items: start;
 
-    &>h1 {
+    & > h1 {
       margin-bottom: 32px;
       font-weight: 600;
       font-size: 32px;
@@ -71,14 +71,15 @@ $blockSize: 380px;
         min-height: 96px;
       }
 
-      @media screen and (max-width: 650px){
+      @media screen and (max-width: 650px) {
         font-size: 25px;
         min-height: 75px;
         padding-left: 0;
         margin-bottom: 10px;
       }
     }
-    &>p{
+
+    & > p {
       margin-bottom: 24px;
       font-size: 16px;
       font-weight: 400;
@@ -88,12 +89,13 @@ $blockSize: 380px;
         margin-bottom: 66px;
       }
 
-      @media screen and (max-width: 650px){
+      @media screen and (max-width: 650px) {
         margin-bottom: 26px;
 
       }
     }
-    &> a {
+
+    & > a {
       width: 100%;
 
       .button {
@@ -137,12 +139,10 @@ $blockSize: 380px;
 $size: $blockSize + 5px;
 
 @keyframes animate {
-  0%
-  {
+  0% {
     transform: rotate(360deg);
   }
-  100%
-  {
+  100% {
     transform: rotate(0deg);
   }
 }
@@ -151,7 +151,7 @@ $size: $blockSize + 5px;
 .rotate {
   position: absolute;
   top: 0;
-
+  pointer-events: none;
   right: 0;
   bottom: 0;
   left: 0;

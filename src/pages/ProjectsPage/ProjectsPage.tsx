@@ -30,7 +30,8 @@ const ProjectsPage = () => {
                         }
                     },
                 }}
-                initial="hidden"
+                // layout
+                initial={["initial", "hidden"]}
                 animate={isMainTransitionEnded ? "visible" : "hidden"}
                 className={s.container}
             >
@@ -38,7 +39,7 @@ const ProjectsPage = () => {
                     data
                         .sort((a, b) => a.displayId - b.displayId)
                         .map((el, i) => (
-                            <HoverSkew key={el.id} noYmove={false} variants={animationVariants}>
+                            <HoverSkew key={el.id} noYmove={false} variants={animationVariants} >
                                 <OneProjectCard projectInfo={el}/>
                             </HoverSkew>
                         ))
