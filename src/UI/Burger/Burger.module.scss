@@ -23,8 +23,8 @@
 }
 .header__burger__button {
   position: absolute;
-  top:  calc(35px);
-  right: calc(20px);
+  top:  calc(15px);
+  right: calc(8px);
   background-color: transparent;
   display: block;
   width: 40px;
@@ -32,7 +32,14 @@
   z-index: 23;
 
   &>svg>path {
-    stroke: var(--bgColor);
+    transition: stroke 0.3s ease-in-out;
+    stroke: var(--accentLightColor);
+  }
+
+  &.open {
+    &>svg>path {
+      stroke: var(--bgColor);
+    }
   }
 }
 

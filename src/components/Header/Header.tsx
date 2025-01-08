@@ -11,6 +11,7 @@ import ChangeLang from "../ChangeLang/ChangeLang";
 import ThemePicker from "../ThemePicker/ThemePicker";
 import Flip from "../Flip/Flip";
 import {useAnimationStore} from "../../store/store";
+import {useLenis} from "../SmoothScroll/SmoothScroll";
 const Header = () => {
   const { scrollYProgress } = useScroll();
   const { isMainTransitionEnded } = useAnimationStore();
@@ -26,16 +27,11 @@ const Header = () => {
     setBurger(false);
   }, [pathname]);
 
-  function scrollOnTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
 
   useEffect(() => {
       scrollYProgress.set(0)
   }, [isMainTransitionEnded, scrollYProgress]);
+
 
   return (
     <div className={s.headerContainer}>
@@ -45,7 +41,7 @@ const Header = () => {
           style={{ scaleX: isMainTransitionEnded ? scrollYProgress : 0 }}
         />
 
-        <Link to={AppRoutes.HOME} onClick={scrollOnTop}>
+        <Link to={AppRoutes.HOME}>
           <div className={s.header__logo}>
             <div className={s.header__logo__reactContainer}>
               <motion.div

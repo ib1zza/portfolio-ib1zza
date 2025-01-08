@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import s from "./Projects.module.scss";
 import data from "../../constants/data";
 
@@ -73,6 +73,8 @@ const animationVariants = {
 }
 
 const Projects = () => {
+
+
   return (
     <div className={s.projectsBlock}>
       <Slider

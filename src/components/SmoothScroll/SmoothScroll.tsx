@@ -1,34 +1,19 @@
+import {createContext, useContext, useEffect, useState} from 'react';
 import Lenis from '@studio-freight/lenis';
-import {useEffect, useRef} from "react";
 import {useLocation} from "react-router-dom";
-import {useAnimationStore} from "../../store/store";
 
-export default function SmoothScroll({
-                          children
-                      }: {
-                          children: React.ReactNode
-                      }
-) {
-    const lenis = useRef<Lenis | null>(null);
-    const {pathname} = useLocation();
+const LenisContext = createContext<Lenis | null>(null);
 
-    useEffect(() => {
-        if (lenis.current) {
-
-            lenis.current!.scrollTo(0,  {
-                immediate: true,
-            });
-
-        }
-    }, [pathname, lenis]);
+export const LenisProvider = ({ children }: { children: React.ReactNode }) => {
+    const [lenis, setLenis] = useState<Lenis | null>(null);
 
     useEffect(() => {
         const lenisObj = new Lenis({
             lerp: 0.05,
+            // syncTouch: true,
         });
 
-        lenis.current = lenisObj;
-
+        setLenis(lenisObj);
 
         function raf(time: number) {
             lenisObj.raf(time);
@@ -37,15 +22,44 @@ export default function SmoothScroll({
 
         requestAnimationFrame(raf);
 
-
         return () => {
             lenisObj.destroy();
         };
     }, []);
 
     return (
+        <LenisContext.Provider value={lenis}>
+            {children}
+        </LenisContext.Provider>
+    );
+};
+
+export const useLenis = () => {
+    return useContext(LenisContext);
+};
+
+export default function SmoothScroll({
+                                         children,
+                                     }: {
+    children: React.ReactNode;
+}) {
+    const lenis = useLenis();
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        if (lenis) {
+            lenis.scrollTo(0, {
+                immediate: true,
+                // duration: 0.1,
+                lock: false,
+
+            });
+        }
+    }, [pathname, lenis]);
+
+    return (
         <>
             {children}
         </>
-    )
+    );
 }

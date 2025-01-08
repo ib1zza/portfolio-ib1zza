@@ -13,11 +13,13 @@ const Path = (props: any) => (
 
 interface Props {
   toggle: () => void;
+  flag: boolean;
 }
 
-const MenuToggle: React.FC<Props> = ({ toggle }) => {
+const MenuToggle: React.FC<Props> = ({ toggle, flag }) => {
   return (
-    <button className={s.header__burger__button} onClick={toggle}>
+    <motion.button
+        className={s.header__burger__button + " " + (flag ? s.open : "")} onClick={toggle}>
       <svg width="23" height="23" viewBox="0 0 23 23">
         <Path
           variants={{
@@ -46,7 +48,7 @@ const MenuToggle: React.FC<Props> = ({ toggle }) => {
           }}
         />
       </svg>
-    </button>
+    </motion.button>
   );
 };
 

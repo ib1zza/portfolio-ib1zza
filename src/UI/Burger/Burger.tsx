@@ -12,7 +12,7 @@ interface Props {
 const sidebar = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at calc(100% - 40px) 45px)`,
-
+    opacity: 1,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -20,9 +20,13 @@ const sidebar = {
     },
   }),
   closed: {
-    clipPath: "circle(25px at calc(100% - 40px) 45px)",
-
+    clipPath: "circle(2px at calc(100% - 27.5px) 25px)",
+    opacity: 0,
     transition: {
+      opacity: {
+        duration: 0.2,
+        delay: 0.3
+      },
       type: "spring",
       stiffness: 400,
       damping: 40,
@@ -45,7 +49,7 @@ const Burger: React.FC<Props> = ({ flag, onChange }) => {
         variants={sidebar}
         style={{ position: flag ? "fixed" : "absolute" }}
       />
-      <MenuToggle toggle={toggler} />
+      <MenuToggle toggle={toggler} flag={flag} />
 
       <AnimatePresence mode="wait">
         {flag && (

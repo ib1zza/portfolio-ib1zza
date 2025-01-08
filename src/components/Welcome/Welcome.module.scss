@@ -9,9 +9,15 @@ $blockSize: 380px;
   align-items: center;
   justify-content: center;
   margin-top: -150px;
+
+
   position: relative;
   margin-bottom: calc(-100vh + 125px);
 
+  @media screen and (max-width: 650px) {
+    margin-top: -80px;
+    margin-bottom: calc(-100vh + 200px);
+  }
 }
 
 .welcomeBlock {
@@ -35,7 +41,8 @@ $blockSize: 380px;
 
   @media screen and (max-width: 650px) {
     flex-direction: column-reverse;
-    justify-content: center;
+    justify-content: flex-end;
+    margin-top: 60px;
     gap: 0;
   }
   &__text {
