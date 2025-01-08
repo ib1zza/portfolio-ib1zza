@@ -2,15 +2,41 @@
 $borderSize: 20px;
 $blockSize: 380px;
 
-.welcomeBlock {
-  overflow: hidden;
-  margin-bottom: 70px;
+.welcomeContainer {
+  height: 200vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -150px;
+  position: relative;
+  margin-bottom: calc(-100vh + 125px);
+
+}
+
+.welcomeBlock {
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  gap: 60px;
   align-items: center;
   justify-content: space-between;
 
+  width: 1024px;
+  max-width: 95%;
+  margin: 0 auto;
+  margin-bottom: 70px;
+
+
   @media screen and (max-width: 650px) {
     flex-direction: column-reverse;
+    justify-content: center;
+    gap: 0;
   }
   &__text {
     width: calc(100% - 380px);
@@ -20,6 +46,7 @@ $blockSize: 380px;
 
     @media screen and (max-width: 650px) {
       width: 100%;
+      padding-top: 30px;
     }
     padding-top: 74px;
     display: flex;
@@ -37,10 +64,11 @@ $blockSize: 380px;
         min-height: 96px;
       }
 
-      @media screen and (max-width: 420px){
+      @media screen and (max-width: 650px){
         font-size: 25px;
         min-height: 75px;
         padding-left: 0;
+        margin-bottom: 10px;
       }
     }
     &>p{
@@ -53,8 +81,8 @@ $blockSize: 380px;
         margin-bottom: 66px;
       }
 
-      @media screen and (max-width: 420px){
-        margin-bottom: 46px;
+      @media screen and (max-width: 650px){
+        margin-bottom: 26px;
 
       }
     }
@@ -79,6 +107,7 @@ $blockSize: 380px;
     transition: 0.3s ease-in-out;
     position: relative;
     padding: $borderSize;
+    flex-shrink: 0;
 
     img {
       width: 100%;

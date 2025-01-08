@@ -6,21 +6,21 @@ const HeroBackground = () => {
     const parent = useRef(null);
     const {scrollYProgress} = useScroll({
         target: parent,
-        offset: ["start start", "end start"],
+        offset: ["start start", "end end"],
     });
 
     // const offset = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
-    const offset = useTransform(scrollYProgress, [0, 0.4], ["0vh", "-200vh"]);
-    const offset2 = useTransform(scrollYProgress, [0, 0.4], ["-200vh", "-50vh"]);
-    const offset3 = useTransform(scrollYProgress, [0, 0.4], ["0vh", "-250vh"]);
-    const offset4 = useTransform(scrollYProgress, [0, 0.4], ["-200vh", "0vh"]);
-    const offset5 = useTransform(scrollYProgress, [0, 0.4], ["-100vh", "-250vh"]);
-    const offset6 = useTransform(scrollYProgress, [0, 0.4], ["-200vh", "-100vh"]);
+    const offset = useTransform(scrollYProgress, [0, 1], ["0vh", "-200vh"]);
+    const offset2 = useTransform(scrollYProgress, [0, 1], ["-200vh", "-50vh"]);
+    const offset3 = useTransform(scrollYProgress, [0, 1], ["0vh", "-250vh"]);
+    const offset4 = useTransform(scrollYProgress, [0, 1], ["-200vh", "0vh"]);
+    const offset5 = useTransform(scrollYProgress, [0, 1], ["-100vh", "-250vh"]);
+    const offset6 = useTransform(scrollYProgress, [0, 1], ["-200vh", "-100vh"]);
 
     const offsets = [offset, offset2, offset3, offset4, offset5, offset6];
-    const blur = useTransform(scrollYProgress, [0, 0.3, 0.4], ["1px", "2px", "20px"]);
-    const opacity = useTransform(scrollYProgress, [0, 0.4, 0.5], [0.7, 0.1, 0]);
-    const bgOpacity = useTransform(scrollYProgress, [0, 0.3, 0.5], [1, 1, 0]);
+    const blur = useTransform(scrollYProgress, [0, 0.0, 0.1, 0.9, 1], ["20px", "20px", "2px", "2px", "20px"]);
+    const opacity = useTransform(scrollYProgress, [0, 0.0, 0.1, 0.9, 1], [0, 0, 1, 1, 0]);
+    const bgOpacity = useTransform(scrollYProgress, [0, 0.0, 0.1, 0.9, 1], [0, 0, 1, 1, 0]);
     // const text = [`Creative Solutions `.repeat(4).toUpperCase(),
     //     `User Experience `.repeat(3).toUpperCase(),
     //     `Visual Design `.repeat(3).toUpperCase(),

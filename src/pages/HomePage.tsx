@@ -14,9 +14,10 @@ const HomePage = () => {
     const {t} = useTranslation();
     return (
         <>
-            <HeroBackground/>
+            <Welcome/>
+
             <Wrapper>
-                <Welcome/>
+
                 <BlockWithHoverTitle title={t("global.projects")} page={<Projects/>}/>
                 <BlockWithHoverTitle title={t("global.skills")} page={<Skills/>}/>
                 <BlockWithHoverTitle title={t("global.education")} page={<Education/>}/>

@@ -2,16 +2,19 @@
 
 .container {
   height: 200vh;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   background: var(--bgColor);
-  margin-top: -150px;
+  //margin-top: -200vh;
   //overflow: hidden;
   //padding-top: 105px;
-  margin-bottom: calc(-100vh + 125px);
   z-index: 110;
   pointer-events: none;
+  //overflow: hidden;
+  width: 100%;
 
-
+  //opacity: 0.5 !important;
 
 }
 .bgFirstBlock {
@@ -19,6 +22,7 @@
   top: 125px;
   bottom: 0;
   padding: 3px;
+
 
 
   @media screen and (max-width: 650px) {
