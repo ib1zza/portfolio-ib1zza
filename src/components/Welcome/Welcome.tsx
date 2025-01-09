@@ -22,7 +22,7 @@ const Welcome = () => {
 
     const opacity = useTransform(scrollYProgress, [0, 0.1, 0.6], [1, 0, 0]);
     const scale = useTransform(scrollYProgress, [0, 0.1, 0.6], [1, 0.5, 0]);
-
+    const blur = useTransform(scrollYProgress, [0, 0.1, 0.6], ["0px", "20px", 0]);
 
     return (
         <motion.div className={s.welcomeContainer} ref={parent}>
@@ -36,8 +36,9 @@ const Welcome = () => {
                 }
                 animate={{
                     y: 0,
-                    opacity: 1
-                }} style={{opacity, scale}} className={s.welcomeBlock}>
+                    opacity: 1,
+                    // @ts-ignore
+                }} style={{opacity, scale, '--blur': blur}} className={s.welcomeBlock}>
 
                 <div className={s.welcomeBlock__text}>
                     <h1>

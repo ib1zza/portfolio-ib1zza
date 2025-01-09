@@ -33,8 +33,8 @@ const HeroBackground = () => {
     const offset6 = useTransform(scrollYProgress, [0, 1], ["-200vh", "-100vh"]);
 
     const offsets = [offset, offset2, offset3, offset4, offset5, offset6];
-    const blur = useTransform(scrollYProgress, [0, 0.0, 0.1, 0.9, 1], ["20px", "20px", "2px", "2px", "20px"]);
-    const opacity = useTransform(scrollYProgress, [0, 0.0, 0.1, 0.9, 1], [0, 0, 1, 1, 0]);
+    const blur = useTransform(scrollYProgress, [0, 0.0, 0.1, 0.8, 0.9], ["20px", "20px", "1px", "1px", "10px"]);
+    const opacity = useTransform(scrollYProgress, [0, 0.0, 0.1, 0.8, 0.9], [0, 0, 1, 1, 0]);
     const bgOpacity = useTransform(scrollYProgress, [0, 0.0, 0.1, 0.9, 1], [0, 0, 1, 1, 0]);
 
     const text = [

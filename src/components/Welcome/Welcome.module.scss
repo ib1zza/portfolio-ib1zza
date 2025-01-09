@@ -31,6 +31,7 @@ $blockSize: 380px;
   gap: 57px;
   align-items: center;
   justify-content: space-between;
+  filter: blur(var(--blur));
 
   width: 1024px;
   max-width: 95%;
