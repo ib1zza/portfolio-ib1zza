@@ -61,8 +61,8 @@ const Welcome = () => {
                                 key={el + i}
                                 className={s.char}
                             >
-              {el}
-            </span>
+                              {el}
+                            </span>
                         ))}
                     </div>
                 </div>

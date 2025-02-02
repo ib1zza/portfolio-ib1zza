@@ -158,6 +158,7 @@ $size: $blockSize + 5px;
   left: 0;
   width: 100%;
   height: 100%;
+  font-family: 'Roboto-Black', sans-serif;
   //position: relative;
   animation: animate 15s linear infinite;
 
@@ -179,7 +180,7 @@ $size: $blockSize + 5px;
   line-height: 100%;
   font-weight: bold;
   //font-family: 'Playfair Display', sans-serif;
-  font-family: 'Roboto', sans-serif;
+  font-family: inherit;
   -webkit-text-stroke: 1px var(--accentColor);
   transition: 0.4s ease-in-out;
   //color: var(--accentColor);

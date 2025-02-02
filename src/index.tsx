@@ -13,9 +13,7 @@ root.render(
         <LenisProvider>
             <SmoothScroll>
                 <ThemeProvider>
-
                     <App/>
-
                 </ThemeProvider>
             </SmoothScroll>
         </LenisProvider>
