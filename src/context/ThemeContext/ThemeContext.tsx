@@ -13,8 +13,10 @@ export interface ThemeContextProps {
 }
 
 export const LOCAL_STORAGE_THEME_KEY = "theme";
-const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) ||
-  Theme.GREEN) as Theme;
+const themeFromLs = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme;
+
+// check if Theme includes themeFrom ls
+const defaultTheme = Object.values(Theme).includes(themeFromLs as Theme) ? themeFromLs : Theme.GREEN;
 
 export const ThemeContext = createContext<ThemeContextProps>({
   theme: defaultTheme,

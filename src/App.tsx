@@ -15,6 +15,7 @@ import Background from "./components/Background/Background";
 import InitialTransition from "./components/InitialTransition/InitialTransition";
 import {useAnimationStore} from "./store/store";
 import {TopBtn} from "./components/TopBtn/TopBtn";
+import {ThemeList} from "./components/ThemeList/ThemeList";
 
 function App() {
     const {theme: currentTheme} = useTheme();
@@ -28,6 +29,7 @@ function App() {
         {!isMainTransitionEnded && <InitialTransition/>}
         <Cursor/>
         <Header/>
+        <ThemeList disableOnMobile/>
         <LeftLinks/>
         <Background/>
         <Routes>

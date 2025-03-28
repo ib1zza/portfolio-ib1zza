@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import ThemePicker from "../../../components/ThemePicker/ThemePicker";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {links} from "../../../constants/links";
+import {ThemeList} from "../../../components/ThemeList/ThemeList";
 
 const NavVariants = {
   visible: {
@@ -89,7 +90,8 @@ export const Navigation = () => {
           exit={"hidden"}
           className={s.header__burger__nav__link}
         >
-          <ThemePicker />
+          <ThemePicker/>
+          <ThemeList />
         </motion.div>
 
         <motion.div

@@ -1,0 +1,185 @@
+@import "../../scss/vars";
+
+$size: 35px;
+$sizeInner: $size - 10px;
+
+
+
+
+.themeList {
+
+  --topOffset: calc(105px - 40px);
+  --rightOffset: calc((100vw - min(100vw, 1024px)) / 2);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: var(--topOffset);
+  right: var(--rightOffset);
+  //background-color: var(--bgColor);
+
+  z-index: 10;
+  backdrop-filter: blur(3px);
+  border-radius: 10px 0 10px 10px;
+  opacity: 0;
+  padding: 5px 0;
+  z-index: 121;
+  pointer-events: none;
+  //backdrop-filter: blur(4px);
+  //-webkit-backdrop-filter: blur(4px);
+
+  clip-path: inset(0% 0% 0% 0% round 10px);
+
+  @media (max-width: 650px) {
+    &.disableOnMobile {
+      display: none;
+    }
+    position: static;
+    right: auto;
+    left: $sizeInner / 2 - 5px;
+    //background-color: var(--bgColor);
+
+    .cover {
+
+      //display: none;
+    }
+
+    border-radius:  0 10px 10px 10px ;
+    .themeItem {
+      padding: 8px 15px;
+    }
+    .trio {
+      right: auto;
+      left: 0;
+    }
+
+    &.open {
+      top: calc(100% + 15px);
+    }
+  }
+
+  &.open {
+    pointer-events: auto;
+  }
+
+}
+
+.trio {
+  position: absolute;
+  top: -19.3px;
+  right: 0;
+  //background: rgba(255, 255, 255, 0.22);
+  height: 10px;
+  width: 10px;
+  //transform: rotate(-135deg);
+  /* Положение треугольника */
+  border: 10px solid transparent; /* Прозрачные границы */
+  border-bottom: 10px solid rgba(89, 89, 89, 0.8); /* Добавляем треугольник */
+}
+
+
+
+.themeItem {
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .themeItemName {
+    white-space: nowrap;
+
+  }
+
+  $miniCircleSize: 20px;
+  .themeItemInnerCircle {
+    transform: rotate(-135deg);
+    height: $miniCircleSize;
+    width: $miniCircleSize;
+    background-color: var(--accentColor);
+    border-radius: 50%;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      height: $miniCircleSize;
+      width: $miniCircleSize / 2;
+      border-top-right-radius: $miniCircleSize;
+      border-bottom-right-radius: $miniCircleSize;
+      background-color: var(--bgColor);
+      opacity: 0.8;
+      border-left: none;
+    }
+  }
+
+  &.violet {
+    color: $accentColorViolet;
+
+
+    .themeItemInnerCircle {
+      background-color: $accentColorViolet;
+      &::before {
+        background-color: $bgColorViolet;
+      }
+    }
+  }
+
+  &.green {
+    color: $accentColorGreen;
+
+    .themeItemInnerCircle {
+      background-color: $accentColorGreen;
+      &::before {
+        background-color: $bgColorGreen;
+      }
+    }
+  }
+
+  &.greenLight {
+    color: $accentColorGreenLight;
+
+    .themeItemInnerCircle {
+      background-color: $accentColorGreenLight;
+      &::before {
+        background-color: $bgColorGreenLight;
+      }
+    }
+  }
+
+  &.violetLight {
+    color: $accentColorVioletLight;
+
+    .themeItemInnerCircle {
+      background-color: $accentColorVioletLight;
+
+      &::before {
+        background-color: $bgColorVioletLight;
+      }
+    }
+  }
+}
+
+.cover {
+  //-webkit-mask: radial-gradient(120% 100% at 107.1% -9.2%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%) add;
+  //background-color: var(--token-f32baa44-90b8-42a5-8bca-ffba9d95b23a, #0f1115);
+  //border-radius: 10px;
+  background-color: var(--bgColor);
+  opacity: 0.5;
+
+  flex: none;
+  inset: 1px;
+  //mask: radial-gradient(200px 200px at 100% 100%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%) add;
+  overflow: hidden;
+  position: absolute;
+  will-change: var(--framer-will-change-override, transform);
+  z-index: -1;
+}
+
+
+

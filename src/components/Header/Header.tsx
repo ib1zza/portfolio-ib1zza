@@ -81,6 +81,8 @@ const Header = () => {
           <ThemePicker />
         </div>
       </header>
+      <div className={s.background}/>
+      <div className={s.cover}/>
     </div>
   );
 };
