@@ -39,9 +39,10 @@ $blockSize: 380px;
 
   @media screen and (max-width: 650px) {
     flex-direction: column-reverse;
-    justify-content: flex-end;
+    justify-content: center;
     margin-top: 60px;
     gap: 0;
+    height: calc(100vh - 60px);
   }
 
   &__text {
