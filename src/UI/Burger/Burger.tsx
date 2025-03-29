@@ -1,5 +1,5 @@
 import React from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import {AnimatePresence, motion, Variants} from "framer-motion";
 import s from "./Burger.module.scss";
 import MenuToggle from "./MenuToggle/MenuToggle";
 import { Navigation } from "./Navigation/Navigation";
@@ -9,7 +9,7 @@ interface Props {
   onChange: (flag: boolean) => void;
 }
 
-const sidebar = {
+const sidebar:Variants = {
   open: (height = 1000) => ({
     clipPath: `circle(120vh at calc(100% - 27.5px) 25px)`,
     opacity: 1,
@@ -25,11 +25,13 @@ const sidebar = {
     transition: {
       opacity: {
         duration: 0.2,
-        delay: 0.3
+        delay: 0.7
       },
-      type: "spring",
-      stiffness: 400,
-      damping: 40,
+      // delay: 0.5,
+      duration: 0.3,
+      // type: "spring",
+      // stiffness: 20,
+      restDelta: 2,
     },
   },
 };
@@ -47,7 +49,6 @@ const Burger: React.FC<Props> = ({ flag, onChange }) => {
         initial={false}
         className={s.burger__background}
         variants={sidebar}
-        style={{ position: flag ? "fixed" : "absolute" }}
       />
       <MenuToggle toggle={toggler} flag={flag} />
 

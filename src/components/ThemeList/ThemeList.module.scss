@@ -7,7 +7,6 @@ $sizeInner: $size - 10px;
 
 
 .themeList {
-
   --topOffset: calc(105px - 40px);
   --rightOffset: calc((100vw - min(100vw, 1024px)) / 2);
   display: flex;
@@ -15,17 +14,12 @@ $sizeInner: $size - 10px;
   position: fixed;
   top: var(--topOffset);
   right: var(--rightOffset);
-  //background-color: var(--bgColor);
-
-  z-index: 10;
   backdrop-filter: blur(3px);
   border-radius: 10px 0 10px 10px;
   opacity: 0;
   padding: 5px 0;
   z-index: 121;
   pointer-events: none;
-  //backdrop-filter: blur(4px);
-  //-webkit-backdrop-filter: blur(4px);
 
   clip-path: inset(0% 0% 0% 0% round 10px);
 
@@ -36,12 +30,6 @@ $sizeInner: $size - 10px;
     position: static;
     right: auto;
     left: $sizeInner / 2 - 5px;
-    //background-color: var(--bgColor);
-
-    .cover {
-
-      //display: none;
-    }
 
     border-radius:  0 10px 10px 10px ;
     .themeItem {

@@ -24,28 +24,29 @@
 
 
   .icon {
-    height: 10vh;
-    width: 10vh;
+    height: 12vh;
+    width: 12vh;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border: 2px solid var(--accentColor);
+    //border: 2px solid var(--accentColor);
     border-radius: 50%;
     overflow: hidden;
     margin: 0 20px;
 
-    transform: scale(0.7);
+    //transform: scale(0.7);
+    opacity: 0.7;
 
-    svg {
+    .svg {
 
+color: var(--accentLightColor);
+      //fill: none;
+      //stroke: var(--accentColor);
+      stroke-width: 2;
 
-      fill: none;
-      stroke: var(--accentColor);
-      stroke-width: 10;
-
-      transform: scale(0.4);
+      //transform: scale(0.4);
     }
   }
 
@@ -122,3 +123,4 @@
 
   }
 }
+

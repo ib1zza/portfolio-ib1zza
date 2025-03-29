@@ -196,3 +196,9 @@
   will-change: var(--framer-will-change-override, transform);
   z-index: 1;
 }
+
+.icon {
+  height: 35px;
+  stroke-width: 3px;
+
+}

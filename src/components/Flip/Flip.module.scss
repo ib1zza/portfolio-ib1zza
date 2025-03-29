@@ -15,7 +15,9 @@ $color: black;
   &:hover, .flipped {
     &:after {
       opacity: 1;
-      transform: translateY(0) rotateX(0);
+      transform: translateY(0px) rotateX(0);
+      line-height: 30px;
+
     }
 
     &:before {
@@ -34,7 +36,9 @@ $color: black;
     position: absolute;
     // background: #adadaf;
     content: attr(data-back);
-    font-family: "Roboto Condensed", monospace;
+    font-family: 'Playfair Display', sans-serif;
+
+    //font-family: 'PPNeueMachina-Inktrap-Ultrabold', monospace;
     line-height: 115%;
     transform: translateY(-50%) rotateX(90deg);
   }
