@@ -18,10 +18,10 @@ const OneProjectCard = ({projectInfo}: Props) => {
     const {t} = useTranslation();
     const navigate = useNavigate();
     return (
-        <div className={s.projects__slider__item} key={projectInfo.id}>
+        <motion.div whileHover={'parentHover'}   className={s.projects__slider__item} key={projectInfo.id}>
             <div className={s.projects__image}>
                 <Link to={AppRoutes.PROJECTS + "/" + projectInfo.id}>
-                    <motion.div className={s.project__link} whileHover={'hov'}>
+                    <motion.div className={s.project__link}>
                         <motion.img
                             variants={{
                                 initial: {
@@ -39,18 +39,13 @@ const OneProjectCard = ({projectInfo}: Props) => {
                         />
                         <motion.div
                             variants={{
-                                initial: {
-                                    opacity: 0
-                                },
-                                hov: {
+                                parentHover: {
                                     opacity: 0.5,
                                     transition: {
                                         duration: 0.2
                                     }
                                 }
                             }}
-                            whileHover={'hov'}
-                            initial={'initial'}
                             className={s.iconContainer}
                         >
                             <motion.svg initial={'initial'} animate={'animate'} className={s.icon} width="70"
@@ -93,7 +88,7 @@ const OneProjectCard = ({projectInfo}: Props) => {
                         icon={faArrowRight}/></Button>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

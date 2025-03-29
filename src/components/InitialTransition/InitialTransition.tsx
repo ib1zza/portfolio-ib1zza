@@ -12,7 +12,6 @@ const circleAnimationDuration = 0.5;
 
 const blackBox = {
     initial: {
-        height: "100vh",
         bottom: 0,
     },
     animate: {
