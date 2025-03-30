@@ -15,18 +15,23 @@
   //overflow: hidden;
   width: 100%;
 }
-.bgFirstBlock {
+.background {
+  --fontSize: calc(90vh  / 6);
+
   position: sticky;
-  top: 125px;
+  //top: 125px;
+  top: 0;
   bottom: 0;
   padding: 3px;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 0px);
+  justify-content: center;
 
 
   .icon {
     height: 12vh;
     width: 12vh;
     flex-shrink: 0;
+    align-self: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,10 +57,6 @@ color: var(--accentLightColor);
 
 
 
-
-  @media screen and (max-width: 650px) {
-    top: 50px;
-  }
   //transform: translateY(-50vh);
   overflow: hidden;
 
@@ -63,11 +64,12 @@ color: var(--accentLightColor);
   flex-direction: column;
   //background: var(--bgColor);
 
-  .textContainer {
+
+  .lineContainer {
     opacity: 0.15;
 
     display: flex;
-    font-size: 14vh;
+    font-size: var(--fontSize);
     //font-size: calc((100vw / 14) * 1);
     //line-height: 14vh;
     height: 13.5vh;
@@ -105,22 +107,18 @@ color: var(--accentLightColor);
       font-weight: 400;
       font-style: normal;
     }
-
-    }
+  }
 
   .text {
     height: 14vh;
-
     display: flex;
     align-items: baseline;
     font-family: inherit;
-
+    line-height: 1;
 
     span {
       font-family: inherit;
     }
-
-
   }
 }
 

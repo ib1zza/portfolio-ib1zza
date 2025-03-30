@@ -71,8 +71,6 @@ const HeroBackground = () => {
 
     const lenis = useLenis();
 
-
-
     useEffect(() => {
         if (!inView && scrollYProgress.get() > 0.5) {
             lenis?.stop();
@@ -84,19 +82,15 @@ const HeroBackground = () => {
         }
     }, [inView]);
 
-    // function handleAnimationEnd() {
-    //     lenis?.stop();
-    //     setTimeout(() => {
-    //         lenis?.start();
-    //     }, 300);
-    // }
-
     return (
         <motion.div
             style={{
                 opacity: bgOpacity,
-            }} className={s.container} ref={parent}>
-            <motion.div className={s.bgFirstBlock}>
+            }}
+            className={s.container}
+            ref={parent}
+        >
+            <motion.div className={s.background}>
                 {text.map((Comp, i) => <motion.div
                     style={{
                         x: offsets[i],
@@ -104,13 +98,14 @@ const HeroBackground = () => {
                         "--blur": blur,
                         opacity,
                     }}
-                    key={i} className={s.textContainer}>
+                    key={i} className={s.lineContainer}>
 
                     {Array(4)
                         .fill(Comp)
                         .map((c, index) => (
                             <React.Fragment key={i * 4 + index}>{c}</React.Fragment>
-                        ))}
+                        ))
+                    }
                 </motion.div>)}
             </motion.div>
         </motion.div>
