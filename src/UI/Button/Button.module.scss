@@ -18,7 +18,6 @@
     justify-content: center;
     align-items: center;
     font-family: 'PPNeueMachina-Inktrap-Regular', sans-serif;
-
   }
 
   &::after {
@@ -34,6 +33,9 @@
     transition: 0.3s ease-out;
   }
 
+  box-shadow: 0 0 0 var(--accentLightColor);
+
+
   &:hover {
     background: rgba(199, 120, 221, 0.2);
     border-radius: 20px;
@@ -42,6 +44,9 @@
     &::after {
       top: 0;
     }
+
+    box-shadow: 0 0 6px var(--accentLightColor);
+
   }
 
   &:active {
