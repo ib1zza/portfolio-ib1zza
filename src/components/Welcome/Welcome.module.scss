@@ -26,7 +26,7 @@ $blockSize: 380px;
   height: 100vh;
   overflow: hidden;
   display: flex;
-  gap: 57px;
+  gap: 20px;
   align-items: center;
   justify-content: space-between;
   filter: blur(var(--blur));
@@ -82,6 +82,7 @@ $blockSize: 380px;
     & > p {
       margin-bottom: 24px;
       font-size: 16px;
+      //padding-right: 20px;
       font-weight: 400;
       color: var(--textGrayColor);
 
