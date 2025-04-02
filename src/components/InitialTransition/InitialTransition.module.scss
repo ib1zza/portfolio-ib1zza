@@ -37,6 +37,7 @@
   stroke-dashoffset: 100; /* Начальное смещение */
   //animation: draw 2s infinite; /* Анимация */
   //transition: all 0.3s ease-in-out;
+  overflow: visible;
 }
 
 @keyframes draw {

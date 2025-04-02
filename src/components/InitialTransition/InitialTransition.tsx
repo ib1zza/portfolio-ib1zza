@@ -7,7 +7,7 @@ import {faReact} from "@fortawesome/free-brands-svg-icons";
 import {useAnimationStore} from "../../store/store";
 import {disableScroll, enableScroll} from "../../helpers/scroll";
 
-const iconAnimationDuration = 2;
+const iconAnimationDuration = 2.5;
 const circleAnimationDuration = 0.5;
 
 const blackBox = {
@@ -17,23 +17,23 @@ const blackBox = {
     animate: {
         opacity: 0,
         transition: {
-            delay: iconAnimationDuration + 0.6,
+            delay: iconAnimationDuration + circleAnimationDuration + 0.6,
             duration: 0.5,
             ease: "easeOut",
         },
     },
 };
 
-const text: Variants = {
+const logoVariants: Variants = {
     initial: {
         opacity: 1,
         scale: 2,
     },
     animateText: {
-        opacity: [1, 0],
+        opacity: 0,
         transition: {
-            delay: iconAnimationDuration + 0.1,
-            duration: 0.5,
+            delay: iconAnimationDuration + circleAnimationDuration,
+            duration: 0.6,
         },
     },
 }
@@ -50,6 +50,7 @@ const iconVariants: Variants = {
         strokeDashoffset: 0,
         transition: {
             duration: iconAnimationDuration,
+            // repeat: Infinity
         }
     },
 }
@@ -57,17 +58,18 @@ const iconVariants: Variants = {
 const circleVariants: Variants = {
     initial: {
         scale: 0,
-        y: -10,
+        y: -20,
     },
     animate: {
         scale: 1,
         y: 0,
         transition: {
             duration: circleAnimationDuration,
-            delay: 1.5,
+            delay: iconAnimationDuration - 0.2,
             type: "spring",
             stiffness: 400,
-            damping: 40
+            damping: 40,
+            // repeat: Infinity
         }
     }
 }
@@ -77,9 +79,9 @@ const backgroundVariants: Variants = {
 
     },
     animate: {
-        backgroundSize: ["10px 10px", "12px 12px", "10px 10px"],
+        backgroundSize: ["14px 14px", "12px 12px", "10px 10px"],
         transition: {
-            duration: (iconAnimationDuration + 0.6),
+            duration: iconAnimationDuration + circleAnimationDuration + 1,
             ease: "linear"
         }
     }
@@ -122,7 +124,7 @@ const InitialTransition = () => {
                 <motion.div
                     initial="initial"
                     animate="animateText"
-                    variants={text}
+                    variants={logoVariants}
                 >
                     <motion.svg variants={iconVariants} initial={'initial'} animate={'animate'}  className={s.icon} width="70" height="70" viewBox="0 0 34 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7.99763 16.0278C11.9013 12.1241 16.9941 6.53133 16.9941 7.03133C16.9941 7.53133 16.9941 36.5197 16.9941 37.0195C16.9941 37.5193 32.488 22.0254 31.9882 22.0254C31.4884 22.0254 2 22 2 22" stroke="currentColor"  stroke-linecap="round"/>
