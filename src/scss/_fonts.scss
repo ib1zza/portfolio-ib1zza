@@ -7,67 +7,80 @@
 @font-face {
   font-family: 'PPNeueMachina-Light';
   src: url('/assets/fonts/PPNeueMachina-PlainLight.otf');
+  font-display: swap
 }
 
 @font-face {
   font-family: 'PPNeueMachina-Regular';
   src: url('/assets/fonts/PPNeueMachina-PlainRegular.otf');
+  font-display: swap
 }
 
 @font-face {
   font-family: 'PPNeueMachina-Ultrabold';
   src: url('/assets/fonts/PPNeueMachina-PlainUltrabold.otf');
+  font-display: swap
 }
 
 @font-face {
   font-family: 'PPNeueMachina-Light-Italic';
   src: url('/assets/fonts/PPNeueMachina-PlainLightItalic.otf');
+  font-display: swap
 }
 
 @font-face {
   font-family: 'PPNeueMachina-Regular-Italic';
   src: url('/assets/fonts/PPNeueMachina-PlainRegularItalic.otf');
+  font-display: swap
 }
 
 @font-face {
   font-family: 'PPNeueMachina-Ultrabold-Italic';
   src: url('/assets/fonts/PPNeueMachina-PlainUltraboldItalic.otf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'PPNeueMachina-Inktrap-Regular';
   src: url('/assets/fonts/PPNeueMachina-InktrapRegular.otf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'PPNeueMachina-Inktrap-Ultrabold';
   src: url('/assets/fonts/PPNeueMachina-InktrapUltrabold.otf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'PPNeueMachina-Inktrap-Regular-Italic';
-  src: url('/assets/fonts/PPNeueMachina-InktrapRegularItalic.otf') ;
+  src: url('/assets/fonts/PPNeueMachina-InktrapRegularItalic.otf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: "ZCOOL XiaoWei";
   src: url('/assets/fonts/ZCOOLXiaoWei-Regular.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: "IBM Plex Sans JP";
   src: url('/assets/fonts/IBMPlexSansJP-Regular.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Roboto Condensed";
   src: url('/assets/fonts/RobotoCondensed-Regular.ttf') format('truetype');
+  font-display: swap;
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Roboto Condensed";
   src: url('/assets/fonts/RobotoCondensed-Bold.ttf') format('truetype');
+  font-display: swap;
   font-weight: 600;
 }
 
