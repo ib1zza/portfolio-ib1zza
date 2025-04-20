@@ -45,13 +45,13 @@ const Welcome = () => {
                         {t("me.heading")} <Typing/>
                     </h1>
                     <p>{t("me.subheading")}</p>
-                    <Link to={"contacts"} smooth={true} offset={-70} duration={1500}>
+                    <Link to={"contacts"} aria-label={'Contact me'} smooth={true} offset={-70} duration={1500}>
                         <Button className={s.button}>{t("me.contactme")}</Button>
                     </Link>
                 </div>
 
                 <div className={s.welcomeBlock__photo}>
-                    <img src={"./im.jpg"} alt="me"/>
+                    <img src={"./im.webp"} alt="me" />
                     <div className={s.rotate}>
                         {text.split("").map((el, i) => (
                             <span

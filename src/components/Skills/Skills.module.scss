@@ -26,8 +26,6 @@
 
     &>div {
       width: auto;
-
-
     }
 
     @media screen and (max-width: 915px) {
@@ -47,6 +45,14 @@
         flex-direction: column;
         border: 1px solid var(--textGrayColor);
         transition: 0.2s ease-in-out;
+        border-radius: 10px;
+
+
+
+        .skill__title {
+          font-size: 16px;
+        }
+
 
         &:hover{
           border-radius: 10px;

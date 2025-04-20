@@ -88,27 +88,27 @@ const backgroundVariants: Variants = {
 }
 
 const InitialTransition = () => {
-    const {endTransition} = useAnimationStore();
-
-    const onAnimationStart = () => {
-        document.querySelector("body")?.classList.add("overflow-hidden")
-    }
-
-    const onAnimationEnd = () => {
-        document.querySelector("body")?.classList.remove("overflow-hidden")
-
-        setTimeout(() => {
-            endTransition();
-        })
-    }
-
-    useEffect(() => {
-        disableScroll();
-
-        return () => {
-            enableScroll();
-        }
-    }, []);
+    // const {endTransition} = useAnimationStore();
+    //
+    // const onAnimationStart = () => {
+    //     document.querySelector("body")?.classList.add("overflow-hidden")
+    // }
+    //
+    // const onAnimationEnd = () => {
+    //     document.querySelector("body")?.classList.remove("overflow-hidden")
+    //
+    //     setTimeout(() => {
+    //         endTransition();
+    //     })
+    // }
+    //
+    // useEffect(() => {
+    //     disableScroll();
+    //
+    //     return () => {
+    //         enableScroll();
+    //     }
+    // }, []);
 
 
     return (
@@ -118,8 +118,8 @@ const InitialTransition = () => {
                 initial="initial"
                 animate="animate"
                 variants={blackBox}
-                onAnimationStart={onAnimationStart}
-                onAnimationComplete={onAnimationEnd}
+                // onAnimationStart={onAnimationStart}
+                // onAnimationComplete={onAnimationEnd}
             >
                 <motion.div
                     initial="initial"
@@ -127,7 +127,7 @@ const InitialTransition = () => {
                     variants={logoVariants}
                 >
                     <motion.svg variants={iconVariants} initial={'initial'} animate={'animate'}  className={s.icon} width="70" height="70" viewBox="0 0 34 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7.99763 16.0278C11.9013 12.1241 16.9941 6.53133 16.9941 7.03133C16.9941 7.53133 16.9941 36.5197 16.9941 37.0195C16.9941 37.5193 32.488 22.0254 31.9882 22.0254C31.4884 22.0254 2 22 2 22" stroke="currentColor"  stroke-linecap="round"/>
+                        <path d="M7.99763 16.0278C11.9013 12.1241 16.9941 6.53133 16.9941 7.03133C16.9941 7.53133 16.9941 36.5197 16.9941 37.0195C16.9941 37.5193 32.488 22.0254 31.9882 22.0254C31.4884 22.0254 2 22 2 22" stroke="currentColor"  strokeLinecap="round"/>
                         <motion.circle variants={circleVariants} cx="17" cy="2" r="2" fill="currentColor"/>
                     </motion.svg>
                 </motion.div>

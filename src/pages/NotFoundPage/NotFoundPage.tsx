@@ -11,7 +11,7 @@ const NotFoundPage = () => {
         <h1>404</h1>
         <p>Not Found ;(</p>
         <Button>
-          <Link to={AppRoutes.HOME}>Go to home</Link>
+          <Link aria-label={'Go to home page'} to={AppRoutes.HOME}>Go to home</Link>
         </Button>
       </div>
     </Wrapper>

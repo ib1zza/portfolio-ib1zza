@@ -41,7 +41,7 @@ const Header = () => {
           style={{ scaleX: isMainTransitionEnded ? scrollYProgress : 0 }}
         />
 
-        <Link to={AppRoutes.HOME}>
+        <Link to={AppRoutes.HOME} aria-label={'Go to home page'}>
           <div className={s.header__logo}>
             <div className={s.header__logo__reactContainer}>
               <motion.div

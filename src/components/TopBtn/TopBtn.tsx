@@ -34,7 +34,7 @@ const TopBtn = ({className} : TopBtnProps) => {
     return (
         <motion.div
             style={{opacity, scale: opacity}} className={s.btnContainer}>
-            <Button onClick={handleScrollToTop} className={s.btn}>
+            <Button onClick={handleScrollToTop} className={s.btn} aria-label={'Scroll to top'} title={'Scroll to top'} >
                 <FontAwesomeIcon icon={faArrowUp} />
 
             </Button>

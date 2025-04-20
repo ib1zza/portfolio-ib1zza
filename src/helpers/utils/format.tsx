@@ -16,7 +16,7 @@ export function convertStringToJSX(string: string): string {
       const [link, name] = part.split(/[()]/);
 
       jsxElements.push(
-        ` <a href=${link}>
+        ` <a href=${link} aria-label="Link to ${name}">
           ${name}
         </a>`
       );

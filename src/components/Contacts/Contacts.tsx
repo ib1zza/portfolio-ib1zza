@@ -17,12 +17,12 @@ const Contacts = () => {
 
 
         <section className={s.contactsBlock__section}>
-          <h3>{t("me.messageMeHere")}</h3>
+          <h2 className={s.msg}>{t("me.messageMeHere")}</h2>
           <div>
             <FontAwesomeIcon icon={faDiscord} />
             @ib1zza
           </div>
-          <a href={"https://t.me/ib1zza"} target={"_blank"} rel="noreferrer">
+          <a href={"https://t.me/ib1zza"} target={"_blank"} rel="noreferrer" aria-label="Contact me on Telegram">
             <FontAwesomeIcon icon={faTelegram} />
             @ib1zza
           </a>

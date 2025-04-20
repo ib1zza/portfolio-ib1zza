@@ -80,10 +80,11 @@ const Skills = () => {
                                 }
                             }}
                             className={s.skill + " " + (3 - index === currentHovered ? s.skill__hovered : "")}>
-                            <h4>{category}</h4>
+                            <h2 className={s.skill__title}>{category}</h2>
                             <div className={s.skillList}>
                                 {data[category].map((item: string) =>
                                     <a key={item} target={"_blank"} rel={"noreferrer"}
+                                       aria-label={'Go to ' + item + ' page'}
                                        href={`https://www.google.com/search?q=${item}`}>
                                         {item}
                                     </a>)}
